@@ -2,6 +2,7 @@
 title: modern guilt
 subtitle: beck - modern guilt
 layout: post
+design: monotron + raphael.js
 ---
 
 <h1 class="tagline">these people talk about impossible things</h1>
