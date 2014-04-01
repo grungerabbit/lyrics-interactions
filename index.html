@@ -1,0 +1,26 @@
+---
+layout: default
+title: welcome
+---
+<aside class="about">
+{% capture intro %}
+  {% include intro.markdown %}
+{% endcapture %}
+{{ intro | unindent | markdownify }}
+</aside>
+
+
+
+<section class="blog" id="welcome">
+<div class="site">
+{% for post in site.posts %}
+	<h2><a href="{{post.url}}">{{post.title}}</a></h2>
+{% endfor %}
+	
+</div>
+</section>
+
+
+
+
+{% include footer.html %}
