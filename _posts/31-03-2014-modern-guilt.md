@@ -1,5 +1,5 @@
 ---
-title: modern guilt
+title: modern guilt I
 subtitle: beck - modern guilt
 layout: post
 design: monotron + raphael.js

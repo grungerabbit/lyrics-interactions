@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>modern guilt I</title>
+        <title>modern guilt II</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- Custom CSS -->
@@ -28,7 +28,7 @@
 <header class="post-header">
 	<i class="post-header__question ion-ios7-help" data-pack="ios7" data-tags="question, information, ?"></i>
 	<div class="post-header__title">
-	<h1 class="title">modern guilt I</h1>
+	<h1 class="title">modern guilt II</h1>
 	<h3>beck - modern guilt</h3>
 	<p class="meta">31 Mar 2014</p>
 	</div>
@@ -36,37 +36,38 @@
 </header>
 	
 	<div class="post">
-		<h1 class="tagline">these people talk about impossible things</h1>
-
-<style>
-@import url(http://fonts.googleapis.com/css?family=Monoton);
+		<style>
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:900italic);
 
 body {
-    background: #eee;
-    font-family: "monoton";
-    text-transform: uppercase;
+    background: #330033;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
 }
 h1 {
-    text-transform: uppercase;
     font-size: 4em;
     line-height: 1;
     max-width: 50%;
 }
 .tagline {
-    position: absolute;
-    top: 75px;
-    right: 0;
+    position: fixed;
+    bottom: 75px;
+    left: 100px;
+    text-align: right;
     z-index: 1000;
+    color: #33ffff;
 }
 ::selection {
-    background-color: yellow;
+    background-color: white;
 }
 </style>
+
+<h1 class="tagline">don't know what i've done but i feel ashamed</h1>
 
 <script>
 var paper = Raphael(10, 50, 2000, 2000);
 
-var limit = 150;
+var limit = 80;
 
 function eTriangle(oS, oX, oY, mS, mX, mY, color, animate) {
     var s = oS + (i*mS);
@@ -77,31 +78,19 @@ function eTriangle(oS, oX, oY, mS, mX, mY, color, animate) {
     var equilX = (begX + ox) / 2;
     var equil = oy + (s * .866);
     
-    if (!color) {
-        color = "#ffff00";   
-    } else {
-        animate = true;
-    }
-    
-    var anim = Raphael.animation({"stroke-width": 2, "stroke": color}, 500);
-    var resetAnim = Raphael.animation({"stroke-width": 1, "stroke": "#000"}, 500);
-    var generated = paper.path("M" + ox + "," + oy +"," + begX + "," + oy + "," + equilX + "," + equil + ",Z");
-    
-    if (animate) {
-        generated.hover(function() {
-            generated.animate(anim.delay(100));
-        }, function() {
-            generated.animate(resetAnim.delay(2000));
-        });
-    }
+    var generated = paper.path("M" + ox + "," + oy +"," + begX + "," + oy + "," + equilX + "," + equil + ",Z").attr({"stroke": "#cc0000"});
 }
 
 for (i=0; i<limit; i++) {
-    eTriangle(10, 50, 300, 2, 0, 0);
-    eTriangle(100, 0, 0, 5, 0, 0, "#69FCFF");
-    eTriangle(100, 100, 100, 5, 5, 5, "#FF0080");
-    eTriangle(200, 100, 100, 0, 0, 0, null, true);
-    eTriangle(100, 100, 100, 5, 2, 2, null, true);
+    eTriangle(10, 50, 300, 25, 5, 0);
+    eTriangle(50, 50, 70, 205, 5, 0);
+    eTriangle(160, 500, 0, 44, 4, 4);
+    eTriangle(600, 30, 700, 10, 8, 3);
+    eTriangle(400, -500, 300, 2, 40, 40);
+    eTriangle(20, 0, 1800, 2, 5, 0);
+    eTriangle(70, 0, 1800, 1, 1, 0);
+    eTriangle(40, 100, 0, 0, 0, 100);
+    eTriangle(400, 100, 0, 0, 0, 50);
 }
 
 </script>
