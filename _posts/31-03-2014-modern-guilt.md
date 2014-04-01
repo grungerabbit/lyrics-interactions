@@ -1,4 +1,6 @@
 ---
+title: modern guilt
+subtitle: beck - modern guilt
 layout: post
 ---
 
@@ -8,12 +10,10 @@ layout: post
 <style>
 @import url(http://fonts.googleapis.com/css?family=Monoton);
 
-* {
-    font-family: "monoton";
-    text-transform: uppercase;
-}
 body {
     background: #eee;
+    font-family: "monoton";
+    text-transform: uppercase;
 }
 h1 {
     text-transform: uppercase;

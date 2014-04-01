@@ -154,9 +154,25 @@ hr {
   padding: 1em 0;
 }
 .post-header {
-  position: absolute;
+  position: fixed;
+  z-index: 500000;
   top: 0px;
   left: 0px;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif !important;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  padding: 0.25em;
+}
+.post-header__question {
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  height: 1.5rem;
+}
+.post-header__title {
+  font-size: 25%;
+  font-weight: normal;
+  font-family: helvetica !important;
 }
 footer {
   font-size: 110%;
