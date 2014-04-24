@@ -2,7 +2,7 @@
 title: modern guilt II
 subtitle: beck - modern guilt
 layout: post
-design: monotron + raphael.js
+design: playfair display italic + raphael.js
 ---
 
 <style>

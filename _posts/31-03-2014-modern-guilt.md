@@ -33,6 +33,7 @@ h1 {
 }
 </style>
 
+
 <script>
 var paper = Raphael(10, 50, 2000, 2000);
 
