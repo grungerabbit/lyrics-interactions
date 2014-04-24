@@ -1,4 +1,6 @@
 
-#lyric interactions
+#interactions
 
-an introduction paragraph would go here, or not
+small interactions and designs built in code
+
+many song lyrics

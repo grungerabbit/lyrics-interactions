@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>smart snacks</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/lib/css/styles.css">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
+		<script src="/lib/js/jquery.js"></script>
+		<script src="/lib/js/knockout-3.0.0.js"></script>
+		<script src="/lib/js/jquery.fittext.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+			
+
+	
+		
+			
+			   <div class="site content">
+<header class="post-header">
+	<i class="post-header__question ion-ios7-help" data-pack="ios7" data-tags="question, information, ?"></i>
+	<div class="post-header__title">
+	<h1 class="title">smart snacks</h1>
+	<h3>from the USDA</h3>
+	<p class="meta">20 Apr 2014</p>
+	</div>
+	<a href="/">back</a>
+</header>
+	
+	<div class="post">
+		<p><a href="http://www.fns.usda.gov/cnd/governance/legislation/allfoods_infographic.pdf">smart snacks</a></p>
+
+<script>
+var paper = Raphael(10, 10, 1000, 1000);
+
+var snacks = [
+    {
+        'name' : "Choco \n Sandwich",
+        'totCal' : 286,
+        'emptyCal' : 182,
+        'when' : "Before"
+    },
+    {
+        'name' : "Flavored \n Candies",
+        'totCal' : 249,
+        'emptyCal' : 177,
+        'when' : "Before"
+    },
+    {
+        'name' : "Donut",
+        'totCal' : 242,
+        'emptyCal' : 147,
+        'when' : "Before"
+    },
+    {
+        'name' : "Chocolate Bar",
+        'totCal' : 235,
+        'emptyCal' : 112,
+        'when' : "Before"
+    },
+    {
+        'name' : "Regular Cola",
+        'totCal' : 136,
+        'emptyCal' : 126,
+        'when' : "Before"
+    },
+    {
+        'name' : "Peanuts",
+        'totCal' : 170,
+        'emptyCal' : 0,
+        'when' : "After"
+    },
+    {
+        'name' : "Light Popcorn",
+        'totCal' : 161,
+        'emptyCal' : 17,
+        'when' : "After"
+    },
+    {
+        'name' : "Tortilla Chips",
+        'totCal' : 118,
+        'emptyCal' : 0,
+        'when' : "After"
+    },
+    {
+        'name' : "Granola Bar",
+        'totCal' : 95,
+        'emptyCal' : 32,
+        'when' : "After"
+    },
+    {
+        'name' : "Water",
+        'totCal' : 0,
+        'emptyCal' : 0,
+        'when' : "After"
+    },
+]
+
+function generateCircleArray(xStart, yStart, rowLength, radius, raw) {
+    var rowMultipler;
+    
+    var total = raw.totCal;
+    var empty = raw.emptyCal;
+    var status = raw.when;
+    
+    var blue = "#79b6e3";
+    var green = "#bdd530";
+    var trans = "transparent";
+    
+    var fill, stroke;
+    
+    for (var i = 0; i < total; i++) {
+        var xCoord, yCoord;
+        
+        if (i % rowLength === 0) {
+            // start new row
+            xBase = 2 * radius + xStart;
+            rowMultiplier = i/rowLength;
+            
+            yCoord = yStart + i * radius/1.5;
+            xCoord = xBase;
+        } else {
+            var xRowFix = i - (rowMultiplier * rowLength);
+            xCoord = xBase + (3 * radius) * xRowFix;   
+        }
+
+        point = paper.circle(xCoord, yCoord, radius);
+    
+        if (status === "Before") {
+            if (i >= empty) {
+                fill = blue;
+            } else {
+                stroke = blue;
+            }
+        } else if (status === "After") {
+            if (i >= empty) {
+                fill = green;
+            } else {
+                stroke = green;
+            }
+        }
+        point.attr({"fill": fill, "stroke" : stroke});
+    }
+}
+
+function drawBars(originX, originY) {
+    var sL = snacks.length;
+    
+    for (var k=0; k < sL; k++) {
+        var currentSnack = snacks[k];
+
+        var cal = currentSnack.totCal;
+
+        generateCircleArray(k*80, 100, 5, 4, currentSnack);
+
+        paper.text(k*80 + 30, 70, currentSnack.name).attr({"fill": "#222"});
+    }
+}
+
+drawBars();
+</script>
+
+	</div>
+</div>
+			   
+			   
+		
+        </div> 
+		
+		<script src="/lib/js/app.js"></script>
+    </body>
+</html>
