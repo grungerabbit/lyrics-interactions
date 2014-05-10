@@ -52,14 +52,53 @@ var Madras = function(originX, originY, widthX, widthY) {
     this.widthY = widthY;    
 }
 
+Madras.prototype.colors = {
+    "pink" : "#f00279",
+    "teal" : "#00ab89",
+    "white" : "#fff",
+    "yellow" : "#ffff00"
+}
+
+
 Madras.prototype.init = function() {
     var stripe = new Stripe();
-    stripe.makeStripe("XL-V", "#f40f7c");
-    stripe.makeStripe("XS-H", "#f40f7c");
-    stripe.makeStripe("L-H", "#00ab89");
-    stripe.makeStripe("M-H", "#fff");
-    stripe.makeStripe("S-H", "#ffff00")
+    
+    var pink = this.colors.pink;
+    var teal = this.colors.teal;
+    var white = this.colors.white;
+    var yellow = this.colors.yellow;
+    
+    // DOWN
+    stripe.makeStripe("XL-V", pink);
+    stripe.makeStripe("XXS-V", teal);
+    stripe.makeStripe("XXS-V", white);
+    stripe.makeStripe("XXS-V", teal);
+    stripe.makeStripe("XXS-V", white);
+    stripe.makeStripe("XXS-V", teal);
+    stripe.makeStripe("XL-V", pink);
+    stripe.makeStripe("S-V", teal);
+    stripe.makeStripe("XXS-V", pink);
+    stripe.makeStripe("XS-V", teal);
+    
+    // ACROSS
+    stripe.makeStripe("M-H", pink);
+    stripe.makeStripe("XS-H", teal);
+    stripe.makeStripe("XS-H", pink);
+    stripe.makeStripe("XS-H", teal);
+    stripe.makeStripe("XS-H", pink);
+    stripe.makeStripe("XS-H", teal);
+    stripe.makeStripe("M-H", pink);
+    stripe.makeStripe("XL-H", white);
+    stripe.makeStripe("XS-H", yellow);
+    stripe.makeStripe("XS-H", white);
+    stripe.makeStripe("XS-H", yellow);
+    stripe.makeStripe("XS-H", white);
+    stripe.makeStripe("XS-H", yellow);
+    stripe.makeStripe("M-H", white);
+    stripe.makeStripe("XL-H", teal);
+    stripe.makeStripe("XXS-H", white);
 }
+
 
 var Stripe = function() {
     this.offsetX = 0;
@@ -68,11 +107,20 @@ var Stripe = function() {
     this.startY = 0;
     this.Xcollection = [];
     this.Ycollection = [];
+    this.multiplier = 2;
+}
+
+Stripe.prototype.rando = function (original) {
+    
 }
 
 Stripe.prototype.makeStripe = function (readWidth, color) {
     var threads, orientation;
     var threadsLookup = [
+        {
+            "name" : "XXS",
+            "number" : 3
+        },
         {
             "name" : "XS",
             "number": 10
@@ -105,7 +153,7 @@ Stripe.prototype.makeStripe = function (readWidth, color) {
     var offsetY = 0;
     
     if (orientation === "horizontal") {
-        this.Xcollection.push(threads * 3);
+        this.Xcollection.push(threads * this.multiplier);
         this.startX++;
         
         for (var k = 1; k < this.Xcollection.length; k++) {
@@ -117,10 +165,10 @@ Stripe.prototype.makeStripe = function (readWidth, color) {
             }
         }
     } else if (orientation === "vertical") {
-        this.Ycollection.push(threads * 3);
+        this.Ycollection.push(threads * this.multiplier);
         this.startY++;
         
-        for (var k = 0; k < this.Ycollection.length; k++) {
+        for (var k = 1; k < this.Ycollection.length; k++) {
             if (this.Ycollection.length === 1) {
                 offsetY = 0;
             } else {
@@ -128,12 +176,22 @@ Stripe.prototype.makeStripe = function (readWidth, color) {
             }
         }
     }
+    
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    
     var make;
+    var m = this.multiplier;
+    
     for (var j = 0; j<threads; j++) {
+        
+        var fix = getRandomInt(1,5);
+        
         if (j%2 === 0) {
-            make = orientation === "vertical" ? new Thread(orientation, 1000, offsetX + 0, offsetY + (j*3)) : new Thread(orientation, 1000, offsetX + (j*3), offsetY +  0);
+            make = orientation === "vertical" ? new Thread(orientation, 1000, offsetX + 0, offsetY + (j*m)) : new Thread(orientation, 1000, offsetX + (j*m), offsetY +  0);
         } else {
-            make = orientation === "vertical" ? new Thread(orientation, 1000, offsetX + 2, offsetY + (j*3)) : new Thread(orientation, 1000, offsetX + (j*3), offsetY +  2);   
+            make = orientation === "vertical" ? new Thread(orientation, 1000, offsetX + fix, offsetY + (j*m)) : new Thread(orientation, 1000, offsetX + (j*m), offsetY + fix);   
         }
         make.defaultDash(color);
     }
