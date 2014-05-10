@@ -36,14 +36,10 @@
 </header>
 	
 	<div class="post">
-		<style>
-body {
-    background-color: #fff
-}
-</style>
+		<h1>my favorite shirt, a polo ralph lauren madras button-down, algorithmically illustrated in raphaël with semi-random scattering moiré weave and line variation simulating the warp and weft of threads in imperfect machines</h1>
 
 <script>
-var paper = Raphael(0,50,2000,1000);
+var paper = Raphael(0,0,2000,2000);
 
 var Madras = function(originX, originY, widthX, widthY) {
     this.originX = originX;
@@ -153,39 +149,39 @@ Stripe.prototype.varyWidth = function (original) {
 }
 
 Stripe.prototype.threadsLookup = [
-        {
-            "name" : "XXS",
-            "number" : 3
-        },
-        {
-            "name" : "XSM",
-            "number": 6,
-        },
-        {
-            "name" : "XS",
-            "number": 10
-        },
-        {
-            "name" : "S",
-            "number": 20
-        },
-        {
-            "name" : "M",
-            "number" : 25
-        },
-        {
-            "name" : "L",
-            "number" : 40
-        },
-        {
-            "name" : "XL",
-            "number" : 100
-        }, 
-        {
-            "name" : "XXL",
-            "number" : 125
-        }
-    ];
+    {
+        "name" : "XXS",
+        "number" : 3
+    },
+    {
+        "name" : "XSM",
+        "number": 6,
+    },
+    {
+        "name" : "XS",
+        "number": 10
+    },
+    {
+        "name" : "S",
+        "number": 20
+    },
+    {
+        "name" : "M",
+        "number" : 25
+    },
+    {
+        "name" : "L",
+        "number" : 40
+    },
+    {
+        "name" : "XL",
+        "number" : 100
+    }, 
+    {
+        "name" : "XXL",
+        "number" : 125
+    }
+];
 
 Stripe.prototype.makeStripe = function (readWidth, color) {
     var threads, orientation;
@@ -197,13 +193,12 @@ Stripe.prototype.makeStripe = function (readWidth, color) {
             threads = this.varyWidth(threadsLookup[i].number);
         }
     }
-    var offsetX = 0;
-    var offsetY = 0;
+    var offsetX = 0, offsetY = 0;
+    
     
     if (orientation === "horizontal") {
         this.Xcollection.push(threads * this.multiplier);
         this.startX++;
-        
         for (var k = 1; k < this.Xcollection.length; k++) {
             if (this.Xcollection.length === 1) {
                 offsetX = 0;
@@ -215,7 +210,6 @@ Stripe.prototype.makeStripe = function (readWidth, color) {
     } else if (orientation === "vertical") {
         this.Ycollection.push(threads * this.multiplier);
         this.startY++;
-        
         for (var k = 1; k < this.Ycollection.length; k++) {
             if (this.Ycollection.length === 1) {
                 offsetY = 0;
@@ -248,7 +242,6 @@ var Thread = function(direction, length, originX, originY) {
     this.length = length;
     this.originX = originX;
     this.originY = originY;
-    this.multiplier = 4;
 }
 
 Thread.prototype.point = function (x, y) {
@@ -258,7 +251,6 @@ Thread.prototype.point = function (x, y) {
 Thread.prototype.defaultDash = function (color) {
     var x = this.originX;
     var y = this.originY;
-    var tr; 
     if (this.direction === "vertical") {
         tr = this.line(this.point(x, y) + this.point(x+this.length, y));
     }
