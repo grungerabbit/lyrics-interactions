@@ -129,6 +129,26 @@ input {
     margin-bottom: 1em;
     white-space: pre-wrap;
 }
+#panic {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 10em;
+    background-color: #eee;
+    color: #ccc;
+    white-space: pre-wrap;
+    line-height: 1;
+}
+#panic p {
+    line-height: 1;
+    padding: 1em;
+}
+#panic textarea {
+    font-size: .95;
+    border: 1px solid #ccc;
+    font: 0.5em 'Monaco';
+    position: fixed;
+}
 </style>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
@@ -139,6 +159,10 @@ input {
 function Thesis($scope) {
     $scope.question = "QUESTION";
     $scope.export = "";
+}
+
+function Panic($scope) {
+    $scope.panic = "";
 }
 
 (function($){
@@ -301,9 +325,17 @@ function Thesis($scope) {
 </script>
 
 <div ng-app>
+    <div ng-controller="Panic" id="panic">
+    <textarea type="text" placeholder="anti-panic box // distraction diary" ng-model="panic"></textarea>
+    <p ng-bind="panic"></p>
+    </div>
+    
 <div ng-controller="Thesis">
 <div class="fixed">
 <h1>Thesis Writer</h1>
+
+
+
 <input type="text" placeholder="question" ng-model="question" />
 <textarea class="picture-frame" placeholder="start your story..." ng-model="export">
 </textarea>
