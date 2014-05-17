@@ -86,6 +86,9 @@ input {
 .pf--done p {
     font-family: 'IM Fell DW Pica', serif;
 }
+.pf--done .hidden {
+    font-size: 0;
+}
 .pf__control {
     position: absolute;
     right: 0;
@@ -174,10 +177,52 @@ function Thesis($scope) {
                 return text.replace(check, "</p><p>");
             }
             
+            function checkIfImport(text) {
+                var dReg = /\#\#\#\#\#\#/g;
+                var lReg = /\-\-\-\-\-\-/g;
+            
+                if (text.match(dReg) && text.match(lReg)) {
+                    var chunks = text.split(lReg);
+                    var humpty = [];
+                    
+                    for (var i=0; i<chunks.length; i++) {
+                        var post = chunks[i].split(dReg);
+                        
+                        var content = post[0];
+                        var date = post[1];
+                        
+                        humpty.push("<div class='pf--done'><div class='pf__control'><button class='pf__edit'>edit</button><button class='pf__delete'>delete</button></div><p>" + processLinebreaks(content) + "</p><p class='hidden'></p><small><span class='hidden'>######</span>" + date +"</small><div class='hidden'>------</div></div>");
+                    }
+                    $output.prepend(humpty.join(""));
+                    $input.val("");
+                    $input.trigger("focus");        
+                    
+                } else {
+                    done(text);
+                }
+            }
+            
             function done(para) {
-                $output.prepend("<div class='pf--done'><div class='pf__control'><button class='pf__edit'>edit</button><button class='pf__delete'>delete</button></div><p>" + processLinebreaks(para) + "</p><small>" + moment().format('MMMM Do YYYY, h:mm:ss a') + "</small></div>");
-                //$input.val("");
+                $output.prepend("<div class='pf--done'><div class='pf__control'><button class='pf__edit'>edit</button><button class='pf__delete'>delete</button></div><p>" + processLinebreaks(para) + "</p><p class='hidden'></p><small><span class='hidden'>######</span>" + moment().format('MMMM Do YYYY, h:mm:ss a') + "</small><div class='hidden'>------</div></div>");
                 $input.trigger("focus");
+            }
+            
+            function SelectText(element) {
+                var doc = document
+                    , text = doc.getElementById(element)
+                    , range, selection
+                ;    
+                if (doc.body.createTextRange) {
+                    range = document.body.createTextRange();
+                    range.moveToElementText(text);
+                    range.select();
+                } else if (window.getSelection) {
+                    selection = window.getSelection();        
+                    range = document.createRange();
+                    range.selectNodeContents(text);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                }
             }
         
             function showControl(element) {
@@ -216,7 +261,7 @@ function Thesis($scope) {
             });
 
             $input.on("change", function() {
-                done($(this).val());
+                checkIfImport($(this).val());
             });
             
             $("body").on("mouseenter", ".pf--done", function() {
@@ -241,6 +286,10 @@ function Thesis($scope) {
             
             $("#clear").on("click", function () {
                 $(this).siblings("textarea").val("");
+            });
+            
+            $('.pf__finished').click(function() {
+                 SelectText('select');
             });
         }         
     };
@@ -271,7 +320,7 @@ function Thesis($scope) {
 
 <pre ng-bind="export" class="exported"></pre>
 
-<div class="pf__finished"></div>
+<div class="pf__finished" id="select"></div>
 <p>Restrict attention to the basic biolinguistics question. How did modern human language and signal processing arise from early hominid and animal abilities? How do the approaches of Mayr, Chomsky, and Fitch differ in their theories and methods for answering this question? Do they agree on basic data? On the mathematical/computational possibilities for answers?</p>
 </div>
 
