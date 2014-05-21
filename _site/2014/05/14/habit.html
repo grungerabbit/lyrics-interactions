@@ -37,8 +37,9 @@
 	
 	<div class="post">
 		<style>
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
 body {
-    font: 1em futura;
+    font: 0.85em futura;
     text-align: center;
 }
 
@@ -53,7 +54,16 @@ h2 {
     float: left;
     width: 33%;
 }
-
+input {
+    border: none;
+    font: 2em 'Permanent Marker';
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+input:focus {
+    border-bottom-color: green;
+    outline: 0;
+}
 .madlibs {
     display: inline-block;
     position: relative;
@@ -105,8 +115,8 @@ blockquote {
 
 .step input {
     width: 100%;
-    padding: 0.5em;
     display: none;
+    font-size: 150%;
 }
 .on {
     border-color: green;
@@ -117,6 +127,14 @@ blockquote {
 }
 .off input {
     display: none;
+}
+.addendum {
+    font-weight: bold;
+}
+.addendum strong {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
 }
 </style>
 
@@ -142,7 +160,7 @@ function Habit($scope) {
             
         for (var i = 0; i < cues.length; i++) {
             var current = cues[i].cue;
-            
+        
             if ($scope[current] && $scope[current].length > 0) {
                 cues[i].used = true;
                 used += cues[i].used === true ? 1 : -1;
@@ -151,8 +169,7 @@ function Habit($scope) {
                 test += assemble;
             }
             cues[i].used = false;
-        } 
-        console.log(used)
+        }
         return test;
     }
     
@@ -175,7 +192,6 @@ function Habit($scope) {
 <div ng-app>
 <div ng-controller="Habit">
 <h1>How to Create a Habit</h1>
-<h1 ng-bind="combinedCue"></h1>
 <a href="http://duhigg-site.s3.amazonaws.com/wp-content/uploads/2014/04/Flowchart-How-to-Create-a-Habit.pdf">duhigg</a>
 <h3>What behavior do you want to create?</h3>
 <input type="text" placeholder="your new habit" ng-model="routine" />
@@ -199,16 +215,21 @@ function Habit($scope) {
     <div class="step" ng-Dblclick="toggles[4] = toggles[4] === 'on' ? 'off' : 'on'" ng-class="toggles[4]">
         <label>What emotion do you think you will be feeling?</label><input type="text" ng-model="emotion" />
     </div>
+    
+    <article class="addendum"><p>You don't need all of these to create a habit.</p> <strong>Only one of them is needed to become a cue.</strong> <p>But the more you test out, the faster the habit takes hold.</p></article>
+
 </div>
 
 <div class="reward third">
 <h2 class="step__name">The Reward</h2>
 
-<label>What reward will you give yourself at the end of the behavior?</label><input ng-model="reward" type="text" /><br>
+<div class="step" ng-Dblclick = "rewardClass = rewardClass === 'on' ? 'off' : 'on'" ng-class="rewardClass">
+    <label>What reward will you give yourself at the end of the behavior?</label><input ng-model="reward" type="text" /><br>
 </div>
 
+<p></div>
 <div class="routine third">
-<h2 class="step__name">The Routine</h2>
+<h2 class="step__name">The Routine</h2></p>
 
 <blockquote>When <div class="description"><span class="madlibs" ng-bind="combinedCue()"></span><small>Cue</small></div>, I will <div class="description"><span class="madlibs" ng-bind="routine"></span><small>Routine</small></div>, because<br>
     it provides me with <div class="description"><span class="madlibs" ng-bind="reward"></span><small>Reward</small></div> </blockquote>
