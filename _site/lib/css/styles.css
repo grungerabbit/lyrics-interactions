@@ -222,8 +222,8 @@ footer .colophon {
 }
 @media only screen and (min-width: 70em) {
   .site {
-    max-width: 50em;
-    width: 65%;
+    max-width: 60em;
+    width: 75%;
     font-size: 125%;
   }
 }
