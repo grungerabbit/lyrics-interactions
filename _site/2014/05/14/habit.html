@@ -89,11 +89,20 @@ blockquote {
     width: 100%;
 }
 
-.green {
-    background-color: green;
+.step input {
+    width: 100%;
+    padding: 0.5em;
+    display: none;
 }
-.red {
-    background-color: red;
+.on {
+    border-color: green;
+    text-align: center;
+}
+.on input {
+    display: block;
+}
+.off input {
+    display: none;
 }
 </style>
 
@@ -102,15 +111,44 @@ blockquote {
 
 <script>
 function Habit($scope) {
-    $scope.cue = "your cue";
+    
+    $scope.time = "12pm";
+    $scope.where = "";
+    
+    var cues = [
+        {cue :"time", prepend: "the time is "}, 
+        {cue : "where", prepend: "you are"}
+    ]
+    
+    $scope.combinedCue = function () {
+        var test = "";
+        for (var i = 0; i < cues.length; i++) {
+            
+            var current = cues[i].cue;
+            
+            if ($scope[current].length > 0) {
+                var assemble = cues[i].prepend + $scope[current];
+                test += assemble;
+            }
+            
+        } 
+        return test;
+    }
+    
     $scope.routine = "your routine";
     $scope.reward = "your reward";
+    
+    //$scope.tog = "off";
+    //$scope.toggleStep = function () {
+    //  return this.tog = this.tog === 'off' ? 'on' : 'off';
+    //}
 }
 </script>
 
 <div ng-app>
 <div ng-controller="Habit">
 <h1>How to Create a Habit</h1>
+<h1 ng-bind="combinedCue"></h1>
 <a href="http://duhigg-site.s3.amazonaws.com/wp-content/uploads/2014/04/Flowchart-How-to-Create-a-Habit.pdf">duhigg</a>
 <h3>What behavior do you want to create?</h3>
 <input type="text" placeholder="your new habit" ng-model="routine" />
@@ -119,11 +157,11 @@ function Habit($scope) {
     <div class="cue third">
     <h2 class="step__name">The Cue</h2>
     
-    <div class="step" ng-click="myVar = myVar === 'green' ? 'red' : 'green'" ng-class="myVar">
-        <label>What time will this habit occur?</label><input type="text" ng-model="cue" />
+    <div class="step" ng-Dblclick="toggleStep = toggleStep === 'on' ? 'off' : 'on'" ng-class="toggleStep">
+        <label>What time will this habit occur?</label><input type="text" ng-model="time" />
     </div>
-    <div class="step">
-        <label>Where will you be?</label><input type="text" />
+    <div class="step" ng-Dblclick="toggleStep2 = toggleStep2 === 'on' ? 'off' : 'on'" ng-class="toggleStep2">
+        <label>Where will you be?</label><input type="text" ng-model="where" />
     </div>
     <div class="step">
         <label>Who else will be around?</label><input type="text" />
@@ -145,7 +183,7 @@ function Habit($scope) {
 <div class="routine third">
 <h2 class="step__name">The Routine</h2>
 
-<blockquote>When <div class="description"><span class="madlibs" ng-bind="cue"></span><small>Cue</small></div>, I will <div class="description"><span class="madlibs" ng-bind="routine"></span><small>Routine</small></div>, because<br>
+<blockquote>When <div class="description"><span class="madlibs" ng-bind="combinedCue()"></span><small>Cue</small></div>, I will <div class="description"><span class="madlibs" ng-bind="routine"></span><small>Routine</small></div>, because<br>
     it provides me with <div class="description"><span class="madlibs" ng-bind="reward"></span><small>Reward</small></div> </blockquote>
 
 <div class="step"><p>Post this plan where you will see it. Try it for a week.</p>
