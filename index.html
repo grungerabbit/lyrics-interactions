@@ -2,13 +2,6 @@
 layout: default
 title: welcome
 ---
-<aside class="about site">
-{% capture intro %}
-  {% include intro.markdown %}
-{% endcapture %}
-{{ intro | unindent | markdownify }}
-</aside>
-
 
 {% for post in site.posts %}
 	<div class="post--album">

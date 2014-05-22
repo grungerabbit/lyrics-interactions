@@ -166,11 +166,50 @@ hr {
 .posts li {
   padding: 1em 0;
 }
+header {
+  *zoom: 1;
+}
+header:before,
+header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+header:after {
+  clear: both;
+}
+header:before,
+header:after {
+  content: " ";
+  display: table;
+}
+header:after {
+  clear: both;
+}
 .post--album {
   width: 15rem;
   height: 15rem;
-  border: 1px solid black;
   float: left;
+  background: url(http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg);
+}
+.post--album a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(-45deg, #ffffff 25%, transparent 25%, transparent 50%, #ffffff 50%, #ffffff 75%, transparent 75%, transparent);
+  -webkit-background-size: 480px 480px;
+}
+.taglines {
+  float: left;
+}
+.about {
+  width: 15em;
+  text-align: justify;
+  float: right;
+  font-size: 0.75em;
+}
+.about p {
+  line-height: 1;
 }
 .libraries li {
   border: 1px solid black;

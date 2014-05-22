@@ -1,2 +1,2 @@
 
-interactions, dreams, experiments, prototypes, designs, interfaces &para; songs and thoughts and books &para; gratuitous pilcrow
+interactions, dreams, experiments, prototypes, designs, interfaces &para; songs and thoughts and books and graphs &para; gratuitous pilcrow
