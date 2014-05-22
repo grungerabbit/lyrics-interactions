@@ -2,6 +2,7 @@
 title: modern guilt I
 subtitle: beck - modern guilt
 layout: post
+featured: true
 design: monotron + raphael.js
 version: 1.0.0
 customJS:
