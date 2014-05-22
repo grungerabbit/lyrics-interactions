@@ -3,6 +3,7 @@ title: modern guilt I
 subtitle: beck - modern guilt
 layout: post
 design: monotron + raphael.js
+version: 1.0.0
 customJS:
 - lib: raphael
 - file: triangles.js

@@ -2,7 +2,7 @@
 layout: default
 title: welcome
 ---
-<aside class="about">
+<aside class="about site">
 {% capture intro %}
   {% include intro.markdown %}
 {% endcapture %}
@@ -16,7 +16,7 @@ title: welcome
 		<h2>{{post.title}}</h2>
 		<p>{{post.subtitle}}</p>
 		<p>{{post.date | date_to_string }}</p>
-		<small>{{post.design}}</small>
+		<small>{{post.version}}</small>
 		<ul class="libraries">
 		{% for customJS in post.customJS %}
 			{% if customJS.lib %}

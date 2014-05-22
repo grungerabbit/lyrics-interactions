@@ -3,6 +3,7 @@ title: modern guilt II
 subtitle: beck - modern guilt
 layout: post
 design: playfair display italic + raphael.js
+version: 0.5.0
 customJS:
 - lib: raphael
 - file: triangles2.js

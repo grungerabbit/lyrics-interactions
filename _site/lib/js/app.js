@@ -2,8 +2,7 @@
 	var welcome = {
 		'config' : {
 			'module' : $(""),
-		},
-                
+		},      
 		'init' : function () {
 			var main = welcome.mainMethods();
 			main.post();
@@ -11,19 +10,6 @@
 			$("body").on("click", ".post-header", function() {
 				main.postHover();
 			});
-			
-			//var ko = welcome.knockout();
-			//ko.activate();
-		},
-		'knockout' : function () {
-			function welcomeKO() {
-				var self = this;
-			}
-			return {
-				activate: function () {
-					ko.applyBindings(new welcomeKO());
-				}
-			}
 		},
 		'mainMethods' : function () {
 			function fittype() {
@@ -57,8 +43,7 @@
 				postHover: function () {
 					toggleShow();
 					slideTitle();
-				}
-                                
+				}                
 			};
 		}         
 	};
