@@ -166,6 +166,11 @@ hr {
   height: 15rem;
   border: 1px solid black;
 }
+.libraries li {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 0 0.5em;
+}
 footer {
   font-size: 110%;
   background: #cccccc;

@@ -17,6 +17,13 @@ title: welcome
 		<p>{{post.subtitle}}</p>
 		<p>{{post.date | date_to_string }}</p>
 		<small>{{post.design}}</small>
+		<ul class="libraries">
+		{% for customJS in post.customJS %}
+			{% if customJS.lib %}
+				<li>{{customJS.lib}}</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
 		</a>
 	</div>
 {% endfor %}
