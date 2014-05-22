@@ -1,0 +1,27 @@
+.post-header {
+  position: fixed;
+  z-index: 500000;
+  top: 0px;
+  left: 0px;
+  font-family: "WhitneyLight", helvetica, arial, sans-serif !important;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  text-transform: uppercase !important;
+  font-style: normal !important;
+  padding: 0.25em;
+}
+.post-header__question {
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  height: 1.5rem;
+}
+.post-header__title {
+  font-size: 25%;
+  font-weight: normal !important;
+  text-transform: uppercase !important;
+  font-style: normal !important;
+  font-family: helvetica !important;
+  height: 7rem;
+  width: 10rem;
+}

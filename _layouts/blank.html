@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom CSS -->
+		<link rel="stylesheet" href="/lib/css/post.css">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+		
+		{% for customJS in page.customJS %}
+			{% if customJS.lib %}
+				{% if customJS.lib == "knockout" %}
+					<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+				{% elsif customJS.lib == "raphael" %}
+					<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+				{% elsif customJS.lib == "mustache" %}
+					<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		
+		
+		{% for customJS in page.customJS %}
+			{% if customJS.file %}
+				<script src="/lib/js/interactions/{{customJS.file}}"></script>
+			{% endif %}
+		{% endfor %}
+		
+    </head>
+    <body>
+		
+			   {{ content }}
+			   
+			   
+		
+		
+		<script src="/lib/js/app.js"></script>
+    </body>
+</html>

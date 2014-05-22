@@ -7,25 +7,38 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="/lib/css/styles.css">
+		<link rel="stylesheet" href="/lib/css/post.css">
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
-		<script src="/lib/js/jquery.js"></script>
-		<script src="/lib/js/knockout-3.0.0.js"></script>
-		<script src="/lib/js/jquery.fittext.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-    </head>
-    <body>
-        <div class="container">
-			
-
-	
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+		
 		
 			
-			   <div class="site content">
-<header class="post-header">
+				
+					<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+				
+			
+		
+			
+		
+		
+		
+		
+			
+		
+			
+				<script src="/lib/js/interactions/triangles.js"></script>
+			
+		
+		
+    </head>
+    <body>
+		
+			   <header class="post-header">
 	<i class="post-header__question ion-ios7-help" data-pack="ios7" data-tags="question, information, ?"></i>
 	<div class="post-header__title">
 	<h1 class="title">modern guilt I</h1>
@@ -64,54 +77,13 @@ h1 {
 </style>
 
 <script>
-var paper = Raphael(10, 50, 2000, 2000);
-
-var limit = 150;
-
-function eTriangle(oS, oX, oY, mS, mX, mY, color, animate) {
-    var s = oS + (i*mS);
-    var ox = oX + (i*mX);
-    var oy = oY + (i*mY);    
-    
-    var begX = ox + s;
-    var equilX = (begX + ox) / 2;
-    var equil = oy + (s * .866);
-    
-    if (!color) {
-        color = "#ffff00";   
-    } else {
-        animate = true;
-    }
-    
-    var anim = Raphael.animation({"stroke-width": 2, "stroke": color}, 500);
-    var resetAnim = Raphael.animation({"stroke-width": 1, "stroke": "#000"}, 500);
-    var generated = paper.path("M" + ox + "," + oy +"," + begX + "," + oy + "," + equilX + "," + equil + ",Z");
-    
-    if (animate) {
-        generated.hover(function() {
-            generated.animate(anim.delay(100));
-        }, function() {
-            generated.animate(resetAnim.delay(2000));
-        });
-    }
-}
-
-for (i=0; i<limit; i++) {
-    eTriangle(10, 50, 300, 2, 0, 0);
-    eTriangle(100, 0, 0, 5, 0, 0, "#69FCFF");
-    eTriangle(100, 100, 100, 5, 5, 5, "#FF0080");
-    eTriangle(200, 100, 100, 0, 0, 0, null, true);
-    eTriangle(100, 100, 100, 5, 2, 2, null, true);
-}
 
 </script>
 
 	</div>
-</div>
 			   
 			   
 		
-        </div> 
 		
 		<script src="/lib/js/app.js"></script>
     </body>
