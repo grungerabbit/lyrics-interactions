@@ -1,2 +1,2 @@
 
-interactions, dreams, experiments, prototypes, designs, interfaces &para; songs and thoughts and books and graphs &para; gratuitous pilcrow
+interactions, dreams, experiments, prototypes, designs, interfaces &para; songs and thoughts and geometries and books and graphs &para; gratuitous pilcrow &para; impossible recursion intentional rivers insanity diagonals margins for days multi-dimensional rules &para; other people readymade &para; ruler vision utopia unjustified get out of the gutter and onto. dry. land. &para; chinese pocket diaries stationaries oblique-greeking fashion statements with approximate english linguist input imprint for the look look well here you are, but coherent (?) &para; thanks for craning your neck.

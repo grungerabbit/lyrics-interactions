@@ -37,6 +37,7 @@ body {
 	padding: 0 0 2em;
 }
 
+
 hr {
 	height: .05em;
 	border: none;
@@ -73,7 +74,6 @@ header {
 	height: @square;
 	//border: 1px solid black;
 	float: left;
-	background: url(http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg);
 	background-size: cover;
 	box-shadow: @sqSixth @sqSixth black;
 	a {
@@ -85,6 +85,7 @@ header {
 			transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,
 			transparent 75%, transparent);
 		-webkit-background-size: @sq2 @sq2;
+		
 	}
 	&.featured {
 		font-size: 150%;
@@ -96,14 +97,39 @@ header {
 	}
 }
 
-.taglines {
-	float: left;
+.uiuiu {
+	text-align: center;
+	.one-sixth, .two-thirds {
+		height: 3.5rem;
+		float: left;
+		border-bottom: 1px solid #eee;
+	}
+	.one-sixth {
+		color: #ccc;
+		width: 16%;
+		padding: 1em 0;
+	}
+	.two-thirds {
+		padding-top: 0.1em;
+		border-right: 1px solid #eee;
+		border-left: 1px solid #eee;
+		width: 68%;
+	}
 }
+.taglines {
+	clear: both;
+}
+
 .about {
-	width: 15em;
+	display: none;
+	width: 10em;
 	text-align: justify;
 	float: right;
 	font-size: 0.75em;
+	position: absolute;
+	top: -3em;
+	right: 10em;
+	-webkit-transform: rotate(90deg);
 	p {
 		line-height: 1;
 	}
