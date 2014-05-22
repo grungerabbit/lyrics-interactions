@@ -18,12 +18,16 @@
 		
 		{% for customJS in page.customJS %}
 			{% if customJS.lib %}
-				{% if customJS.lib == "knockout" %}
+				{% if customJS.lib == "angular" %}
+					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+				{% elsif customJS.lib == "knockout" %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
 				{% elsif customJS.lib == "raphael" %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
 				{% elsif customJS.lib == "mustache" %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+				{% elsif customJS.lib == "moment" %}
+					<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 				{% endif %}
 			{% endif %}
 		{% endfor %}
