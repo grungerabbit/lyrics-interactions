@@ -4,6 +4,7 @@ subtitle: beck - modern guilt
 layout: post
 design: playfair display italic + raphael.js
 version: 0.5.0
+image: ashamed.png
 customJS:
 - lib: raphael
 - file: triangles2.js

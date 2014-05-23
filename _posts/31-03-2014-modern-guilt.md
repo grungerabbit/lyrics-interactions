@@ -5,6 +5,7 @@ layout: post
 featured: true
 design: monotron + raphael.js
 version: 1.0.0
+image: impossible.png
 customJS:
 - lib: raphael
 - file: triangles.js
