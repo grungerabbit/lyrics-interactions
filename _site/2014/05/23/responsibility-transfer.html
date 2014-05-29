@@ -59,6 +59,13 @@ body {
     font: 1em 'Montserrat';
     text-align: center;
 }
+.breathe--annotate {
+    position: absolute;
+    top: 150px;
+    left: 175px;
+    width: 100px;
+    text-align: center;
+}
 </style>
 
 <h1>responsibility transfer</h1>
@@ -67,7 +74,17 @@ body {
 
 <div class="breathing__box"></div>
 
+<div class="breathe--annotate">follow me</div>
+
 <p>tell the universe what you&#39;re worried about</p>
+
+<div ng-app>
+    <div ng-controller="Transfer">
+        <input ng-model="worry" />
+        
+        <h3 ng-bind="worry"></h3>
+    </div>
+</div>
 
 	</div>
 			   

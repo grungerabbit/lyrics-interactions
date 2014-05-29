@@ -9,6 +9,8 @@ function Panic($scope) {
 }
 
 (function($){
+	var development = false;
+	
 	var prototype = {
 		'config' : {
 			'module' : $(""),
@@ -124,9 +126,11 @@ function Panic($scope) {
 				}
 			}
 			
-			//$(window).on('beforeunload', function(){
-			//	return 'Save your changes!';
-			//});
+			if (!development) {
+				$(window).on('beforeunload', function(){
+					return 'Save your changes!';
+				});
+			}
 
 			$input.on("change", function() {
 				checkIfImport($(this).val());
