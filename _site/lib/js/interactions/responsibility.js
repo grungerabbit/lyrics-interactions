@@ -1,4 +1,4 @@
-// transfer 0.5.0
+// transfer 0.6.0
 // last modified: 05/28/2014
 
 $(document).ready(function () {
@@ -48,19 +48,24 @@ $(document).ready(function () {
 	
 	generateStarfield(universe/2);
 	
-	
+	var coordsTop = [];
+	var coordsLeft = [];
 	$("body").on("click", ".transfer", function() {
-		var newTop = randomUniverse();
-		var newLeft = randomUniverse();
+
 		
-		var $big = $("#big__worry");
-		var cache = $big.text() + " - " + moment().format('MMMM Do YYYY, h:mm:ss a');
-		
-		$big.css({"-webkit-transition": "font 7s cubic-bezier(0.190, 1.000, 0.220, 1.000)", "font-size": "2px", "position" : "absolute", "left": newLeft, "top": newTop});
-		$("body").animate({"delay" : 1000, "scrollLeft": newLeft, "scrollTop": newTop, "duration": 7000});
+		var $finished = $(".finished__worry");
+		var cache = $finished.text() + " - " + moment().format('MMMM Do YYYY, h:mm:ss a');
 		
 		setTimeout(function() {
-			$big.addClass("done").attr("title", cache);
+			var newTop = randomUniverse();
+			var newLeft = randomUniverse();
+			
+			$finished.css({"-webkit-transition": "font 20s cubic-bezier(0.190, 1.000, 0.220, 1.000)", "font-size": "2px", "position" : "absolute", "left": newLeft, "top": newTop});
+			$("body").animate({"delay" : 1000, "scrollLeft": newLeft, "scrollTop": newTop, "duration": 7000});	
+		}, 1000);
+		
+		setTimeout(function() {
+			$finished.addClass("done").attr("title", cache);
 		}, 5000)
 	});
 	
@@ -70,5 +75,13 @@ $(document).ready(function () {
 });
 
 function Transfer($scope) {
-	$scope.worry = "";
+	$scope.worry = [{}];
+	
+	$scope.addWorry = function() {
+		$scope.worry.push({text: $scope.worryText});
+	}
+	
+	$scope.resetWorries = function() {
+		$scope.worryText = "";
+	};
 }

@@ -3,7 +3,7 @@ title: responsibility transfer
 subtitle: from the charisma myth
 layout: post
 design: raphael.js
-version: 0.5.0
+version: 0.6.0
 customJS:
 - lib: raphael
 - lib: angular
@@ -54,6 +54,9 @@ h1 {
 .worry__box h3 {
 	font-size: 5em;
 }
+.finished__worry {
+	font-size: 20em;
+}
 .transfer {
 	color: #cc00cc;
 }
@@ -73,12 +76,15 @@ select {
 .done {
 	cursor: help;
 }
+li {
+	list-style: none;
+}
 </style>
 
 #responsibility transfer
 
 <div id="breathing__star">
-<div class="breathe--annotate">breathe after me</div>
+<div class="breathe--annotate"><p>breathe after me</p> <small>in and out through your nose</small></div>
 </div>
 
 <div ng-app class="worry__box">
@@ -90,10 +96,14 @@ select {
 			<option>God</option>
 		</select>, I am worried that
 			
-			<input ng-model="worry" /></span>
+			<input ng-model="worryText" /></span>
 		
-		<h3 ng-bind="worry" id="big__worry"></h3>
+		<h3 ng-bind="worryText" id="big__worry"></h3>
 		
-		<a href="#" ng-if="worry.length > 0" class="transfer">transfer responsibility</a>
+		<a href="#" ng-if="worryText.length > 0" class="transfer" ng-click="addWorry()">transfer responsibility</a>
+		<li ng-repeat="text in worry">
+			<p ng-bind="text.text" ng-click="Transfer.resetWorries()" class="finished__worry" style="font-size: 20em"></p>
+		</li>
+		
 	</div>
 </div>
