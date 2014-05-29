@@ -3,7 +3,7 @@ title: responsibility transfer
 subtitle: from the charisma myth
 layout: post
 design: raphael.js
-version: 0.4.0
+version: 0.5.0
 customJS:
 - lib: raphael
 - lib: angular
@@ -22,13 +22,16 @@ body {
 h1 {
 	color: #999;
 }
+#breathing__star {
+	position: fixed;
+	width: 200px;
+	top: 25px;
+	right: 80px;
+}
 .breathe--annotate {
-	position: absolute;
-	top: 150px;
-	left: 175px;
-	width: 100px;
 	text-align: center;
 	color: #aaa;
+	margin-left: 30px;
 }
 .worry__box {
 	position: absolute;
@@ -74,12 +77,13 @@ select {
 
 #responsibility transfer
 
+<div id="breathing__star">
 <div class="breathe--annotate">breathe after me</div>
-
+</div>
 
 <div ng-app class="worry__box">
 	<div ng-controller="Transfer">
-		<span>Dear 
+		<span id="worry__instructions">Dear 
 		<select>
 			<option>Universe</option>
 			<option>Fate</option>
