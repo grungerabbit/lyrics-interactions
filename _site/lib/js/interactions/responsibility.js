@@ -1,4 +1,4 @@
-// transfer 0.2.0
+// transfer 0.3.0
 // last modified: 05/28/2014
 
 $(document).ready(function () {
@@ -28,6 +28,21 @@ $(document).ready(function () {
 			$breathe.text("exhale")
 		}	
 	}, time);
+	
+	
+	function generateStarfield(number) {
+		for (var i = 0; i < number; i++) {
+			//var size = Math.log(Math.random() * 1000) / Math.LN10;
+			
+			var size = Math.ceil(Math.random() * (3 + (Math.random() > 0.9 ? Math.random() * 4 : 0)));
+			var star = breathing.circle(Math.random() * 2000, Math.random() * 2000, size).attr({"fill" : "white", "stroke" : "none", "opacity" : size/10});
+			if (size > 5) {
+				star.glow({"width" : 20, "color" : "white"})
+			}
+		}
+	}
+	
+	generateStarfield(1000);
 	
 	
 });
