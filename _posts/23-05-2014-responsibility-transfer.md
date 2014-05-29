@@ -3,10 +3,11 @@ title: responsibility transfer
 subtitle: from the charisma myth
 layout: post
 design: raphael.js
-version: 0.3.0
+version: 0.4.0
 customJS:
 - lib: raphael
 - lib: angular
+- lib: moment
 - file: responsibility.js
 ---
 
@@ -60,6 +61,15 @@ select {
 	border: none;
 	border-bottom: 3px solid white;
 }
+/*.done:after {
+	content: ':)';
+	font-size: 30px;
+	color: blue;
+	position: absolute;
+}*/
+.done {
+	cursor: help;
+}
 </style>
 
 #responsibility transfer
@@ -78,7 +88,7 @@ select {
 			
 			<input ng-model="worry" /></span>
 		
-		<h3 ng-bind="worry"></h3>
+		<h3 ng-bind="worry" id="big__worry"></h3>
 		
 		<a href="#" ng-if="worry.length > 0" class="transfer">transfer responsibility</a>
 	</div>

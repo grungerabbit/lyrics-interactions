@@ -27,7 +27,15 @@
 			
 		
 			
+				
+					<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+				
+			
 		
+			
+		
+		
+			
 		
 			
 		
@@ -101,6 +109,15 @@ select {
     border: none;
     border-bottom: 3px solid white;
 }
+/*.done:after {
+    content: ':)';
+    font-size: 30px;
+    color: blue;
+    position: absolute;
+}*/
+.done {
+    cursor: help;
+}
 </style>
 
 <h1>responsibility transfer</h1>
@@ -118,7 +135,7 @@ select {
             
             <input ng-model="worry" /></span>
         
-        <h3 ng-bind="worry"></h3>
+        <h3 ng-bind="worry" id="big__worry"></h3>
         
         <a href="#" ng-if="worry.length > 0" class="transfer">transfer responsibility</a>
     </div>
