@@ -1,8 +1,8 @@
-// transfer 0.6.0
-// last modified: 05/28/2014
+// transfer 0.7.0
+// last modified: 05/29/2014
 
 $(document).ready(function () {
-	var universe = 3000;
+	var universe = 10000;
 	var breathing = Raphael("breathing__star", 200,140);
 	
 	var starfield = Raphael(0,0,universe,universe);
@@ -48,28 +48,43 @@ $(document).ready(function () {
 	
 	generateStarfield(universe/2);
 	
-	var coordsTop = [];
-	var coordsLeft = [];
+	
 	$("body").on("click", ".transfer", function() {
-
-		
-		var $finished = $(".finished__worry");
+		var $finished = $(".finished__worry").last();
 		var cache = $finished.text() + " - " + moment().format('MMMM Do YYYY, h:mm:ss a');
 		
 		setTimeout(function() {
 			var newTop = randomUniverse();
 			var newLeft = randomUniverse();
 			
-			$finished.css({"-webkit-transition": "font 20s cubic-bezier(0.190, 1.000, 0.220, 1.000)", "font-size": "2px", "position" : "absolute", "left": newLeft, "top": newTop});
+			$finished.css({"-webkit-transition": "font 7s cubic-bezier(0.190, 1.000, 0.220, 1.000)", "font-size": "2px", "position" : "absolute", "left": newLeft, "top": newTop});
 			$("body").animate({"delay" : 1000, "scrollLeft": newLeft, "scrollTop": newTop, "duration": 7000});	
 		}, 1000);
 		
 		setTimeout(function() {
+			
+		}, 5000);
+		
+		function addDone() {
 			$finished.addClass("done").attr("title", cache);
-		}, 5000)
+		};
+		
+		function scrollBack() {
+			$(".resetter").trigger("click");
+			$("body").animate({"scrollTop": 0, "scrollLeft" : 0});
+			setTimeout(function(){ $(".worry__input").trigger("focus") }, 500);
+		};
+		
+		var finCall = [addDone, scrollBack], q = 0, finTimer = setInterval(callDone, 4000);
+		
+		function callDone() {
+			finCall[q++]();
+			if (q === finCall.length) { clearInterval(timer) };
+		}
+		
 	});
 	
-	$("body").on("click", ".done", function () {
+	$("body").on("click", ".done, #breathing__star", function () {
 		$("body").animate({"scrollTop": 0, "scrollLeft" : 0});
 	});
 });
