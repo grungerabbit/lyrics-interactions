@@ -221,6 +221,8 @@ header:after {
 }
 .description__content {
   font-size: 1rem;
+  width: 60%;
+  float: right;
 }
 .post--album {
   width: 15rem;
