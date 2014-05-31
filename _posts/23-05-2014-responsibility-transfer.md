@@ -1,14 +1,17 @@
 ---
 title: responsibility transfer
-subtitle: from the charisma myth
+subtitle: from the charisma myth by olivia fox cabane
 layout: post
 design: raphael.js
 version: 0.7.0
+image: universe.png
+featured: true
 customJS:
 - lib: raphael
 - lib: angular
 - lib: moment
 - file: responsibility.js
+description: The universe is waiting for your worries.
 ---
 
 <style>
@@ -121,7 +124,7 @@ li {
 }
 </style>
 
-#responsibility transfer
+<h1>responsibility transfer</h1>
 
 <div id="breathing__star">
 <div class="breathe--annotate"><p><em>breathing star</em></p> <p>breathe after me</p> <small>in and out through your nose</small></div>

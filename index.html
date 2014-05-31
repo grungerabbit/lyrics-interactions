@@ -6,16 +6,27 @@ title: welcome
 {% for post in site.posts %}
 	<div class="post--album {% if post.featured == true %}featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
 		<a href="{{post.url}}">
-		<h2>{{post.title}}</h2>
-		<p>{{post.subtitle}}</p>
-		<p>{{post.date | date_to_string }}</p>
-		<small>{{post.version}}</small>
-		<ul class="libraries">
-		{% for customJS in post.customJS %}
-			{% if customJS.lib %}
-				<li>{{customJS.lib}}</li>
-			{% endif %}
-		{% endfor %}
+			
+			<div class="post--description">
+				<!-- <h2>{{post.title}}</h2>
+				<p>{{post.subtitle}}</p>
+				 -->
+					<h2>{{post.title}}</h2>
+					<p>{{post.subtitle}}</p>
+					<p>{{post.date | date_to_string }} <small>current {{post.version}}</small></p>
+					
+					<ul class="libraries">
+					{% for customJS in post.customJS %}
+						{% if customJS.lib %}
+							<li>{{customJS.lib}}</li>
+						{% endif %}
+					{% endfor %}
+					</ul>
+					
+					{% if post.featured == true && post.description.length > 0 %}<p class="description__content">{{post.description}}</p>{% endif %}
+			</div>
+			
+		
 		</ul>
 		</a>
 	</div>
@@ -23,6 +34,6 @@ title: welcome
 
 
 
-
+<div class="big-overlay"></div>
 
 {% include footer.html %}

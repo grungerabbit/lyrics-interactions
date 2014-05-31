@@ -69,9 +69,41 @@ header {
 @sq4: @sq2 * 2;
 @sqSixth: @square / 6;
 
+.big-overlay {
+	width: 100%;
+	background: rgba(0,0,0,.5);
+	display: none;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+.post--description {
+	width: @square;
+	height: @square;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background: rgba(255,255,255,.85);
+	box-shadow: @sqSixth @sqSixth @accent;
+	z-index: 100;
+	display: none;
+	overflow: hidden;
+	padding: 0.5em;
+	color: black;
+}
+.featured .post--description {
+	width: @sq2;
+	height: @sq2;
+}
+.description__content {
+	font-size: 1rem;
+}
 .post--album {
 	width: @square;
 	height: @square;
+	position: relative;
 	float: left;
 	background-size: cover;
 	box-shadow: @sqSixth @sqSixth black;
@@ -83,8 +115,10 @@ header {
 		background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 25%, transparent 25%,
 			transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,
 			transparent 75%, transparent);
-		-webkit-background-size: @sq2 @sq2;
-		
+		-webkit-background-size: @sq2 @sq2;	
+	}
+	h2 {
+		line-height: 1.15;
 	}
 	&.featured {
 		font-size: 150%;
@@ -92,6 +126,11 @@ header {
 		height: @sq2;
 		a {
 			-webkit-background-size: @sq4 @sq4;
+		}
+	}
+	&:hover {
+		.post--description, .big-overlay {
+			display: block;
 		}
 	}
 }
@@ -134,10 +173,13 @@ header {
 	}
 }
 .libraries {
+	width: 40%;
+	float: left;
 	li {
 		border: 1px solid black;
 		display: inline-block;
 		padding: 0 0.5em;
+		box-shadow: @aggro;
 	}
 }
 footer {	
