@@ -4,7 +4,7 @@ subtitle: antony and the johnsons - i am a bird now
 layout: post
 featured: false
 design: 
-version: 0.1.0
+version: 0.2.0
 image: 
 customJS:
 - lib: raphael
