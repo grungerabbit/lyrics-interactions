@@ -9,6 +9,8 @@ image: impossible.png
 customJS:
 - lib: raphael
 - file: triangles.js
+description: >
+  An geometric and interactive illustration based on the song Modern Guilt by Beck. Equilateral triangles!
 ---
 
 <h1 class="tagline">these people talk about impossible things</h1>

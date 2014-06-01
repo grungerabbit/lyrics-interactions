@@ -2,13 +2,18 @@
 title: spiralling
 subtitle: antony and the johnsons - i am a bird now
 layout: post
-featured: false
-design: 
-version: 0.3.0
-image: 
+featured: true
+design: cellular automata
+version: 1.0.0
+image: spiral.png
+category: song
 customJS:
 - lib: raphael
 - file: spiral.js
+description: >
+  A cellular automaton inspired by the song Spiralling by Antony and the Johnsons. 
+  The parameters include growth, birth, and death states broadly modeled on biological selection.
+  As the circle lineages uncoil, their overlapping lines reveal the lyrics of Spiralling.
 ---
 
 * well and i can and i die
@@ -23,7 +28,7 @@ customJS:
 * well and i'm spiralling
 * i'm spiralling..
 
-* in my broken heart game
+* in my broken hearted game
 * i've got all my files
 * i've got all my ones to choose from
 * i gave waiting for you
@@ -62,16 +67,20 @@ body {
 	background-color: #222;
     font-family: "Arbutus Slab";
 }
+::selection {
+	background-color: rgba(50,50,50,.95);
+}
 .post {
 	position: absolute;
-	right: 0;
+	left: 50%;
+	width: 50em;
+	margin-left: -25em;
+	z-index: 20;
+	text-align: center;
 }
 .post li {
 	list-style: none;
 	font-size: 3em;
+	color: #222;
 }
 </style>
-
-<script>
-
-</script>

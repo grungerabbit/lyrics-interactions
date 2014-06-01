@@ -1,11 +1,12 @@
 ---
 title: responsibility transfer
-subtitle: from the charisma myth by olivia fox cabane
+subtitle: the charisma myth - olivia fox cabane
 layout: post
 design: raphael.js
 version: 0.7.0
 image: universe.png
 featured: true
+category: book
 customJS:
 - lib: raphael
 - lib: angular

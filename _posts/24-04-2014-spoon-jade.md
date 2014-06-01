@@ -1,6 +1,6 @@
 ---
 title: crassula portulacea
-subtitle: variations on a tree
+subtitle: variations on a tiny succulent
 layout: post
 design: raphael
 version: 0.10.0
