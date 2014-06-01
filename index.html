@@ -7,6 +7,8 @@ title: welcome
 	<div class="post--album {% if post.featured == true %}featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
 		<a href="{{post.url}}">
 			
+			<h5>{{post.category}}</h5>
+			
 			<div class="post--description">
 				<!-- <h2>{{post.title}}</h2>
 				<p>{{post.subtitle}}</p>

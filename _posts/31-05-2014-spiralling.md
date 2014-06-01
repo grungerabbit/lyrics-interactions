@@ -26,7 +26,7 @@ description: >
 * a sly curse
 
 * well and i'm spiralling
-* i'm spiralling..
+* i'm spiralling
 
 * in my broken hearted game
 * i've got all my files
@@ -58,7 +58,7 @@ description: >
 * i'm freezing; sly curse
 * i'm spiralling
 * spiralling
-* spiralling...
+* spiralling
 
 <style>
 @import url(http://fonts.googleapis.com/css?family=Arbutus+Slab);
