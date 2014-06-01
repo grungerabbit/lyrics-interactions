@@ -22,6 +22,9 @@ hr {
 	border: none;
 	background: #ccc;
 }
+.post-header.small {
+	width: 60px;
+}
 .post-header {
   position: fixed;
   z-index: 500000;
@@ -49,5 +52,7 @@ hr {
   font-family: helvetica !important;
 }
 .post__amazon {
-	padding-left: 59px;
+	padding: 1em 59px;
+}
+.post-info {
 }

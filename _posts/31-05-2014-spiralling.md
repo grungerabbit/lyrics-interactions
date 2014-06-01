@@ -81,7 +81,7 @@ body {
 }
 .post li {
 	list-style: none;
-	font-size: 3em;
+	font-size: 4em;
 	color: #222;
 }
 </style>

@@ -17,17 +17,19 @@
 			var $info = $ph.find(".post__metadata");
 			
 			function hideTitle() {
-				//$info.hide();
+				$info.hide();
 			}
 			function slideTitle() {
 				if (!$ph.hasClass("title--show")) {
 					$info.slideDown();
+					$ph.toggleClass("title--show");
 				} else {
+					$ph.toggleClass("title--show");
 					$info.slideUp();
 				}
 			}
 			function toggleShow() {
-				$ph.toggleClass("title--show");
+				$ph.toggleClass("small");
 			}
 			
 			function bigZ() {
