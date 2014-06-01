@@ -6,6 +6,7 @@ featured: true
 design: cellular automata
 version: 1.0.0
 image: spiral.png
+amazon: //ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=ss_til&ad_type=product_link&tracking_id=main05-20&marketplace=amazon&region=US&placement=B000777J2S&asins=B000777J2S&linkId=F5RYVQOJC2VOBEAA
 category: song
 customJS:
 - lib: raphael

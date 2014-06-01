@@ -14,16 +14,16 @@
 		},
 		'mainMethods' : function () {
 			var $ph = $(".post-header");
-			var $title = $ph.find(".post-header__title");
+			var $info = $ph.find(".post__metadata");
 			
 			function hideTitle() {
-				$title.hide();
+				//$info.hide();
 			}
 			function slideTitle() {
 				if (!$ph.hasClass("title--show")) {
-					$title.slideDown();
+					$info.slideDown();
 				} else {
-					$title.slideUp();
+					$info.slideUp();
 				}
 			}
 			function toggleShow() {

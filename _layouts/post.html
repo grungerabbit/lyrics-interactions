@@ -3,17 +3,29 @@ layout: blank
 ---
 
 <header class="post-header">
+	<a href="/">back</a><hr>
 	<i class="post-header__question ion-ios7-help" data-pack="ios7" data-tags="question, information, ?">info</i>
-	<div class="post-header__title">
-	<h1 class="title">{{ page.title }}</h1>
-	<h3>{{ page.subtitle }}</h3>
-	<p class="meta">{{ page.date | date_to_string }}</p>
-	</div>
-	<a href="/">back</a>
 	
-	<aside class="post-info">
-		{{ page.description }}
-	</aside>
+	<div class="post__metadata">
+		<div class="post-header__title">
+			<h1 class="title">{{ page.title }}</h1>
+			<h3>{{ page.subtitle }}</h3>
+			<p class="meta">{{ page.date | date_to_string }}</p>
+		</div>
+		
+		<hr>
+		
+		{% if page.amazon %}
+		<div class="post__amazon">
+			<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
+			</iframe>
+		</div>
+		{% endif %}
+		
+		<aside class="post-info">
+			{{ page.description }}
+		</aside>
+	</div>
 </header>
 	
 	<div class="post">
