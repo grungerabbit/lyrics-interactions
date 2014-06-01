@@ -20,10 +20,6 @@ $(document).ready(function () {
 	}
 	
 	Agent.prototype.grow = function(condition) {
-		if (this.dead === true) {
-			return;
-		}
-		
 		if (condition === true) {
 			this.x += 2 * this.RNG(1, 7);
 			this.y += this.RNG(1, 8) * (this.RNG(0, 10) * this.neg());

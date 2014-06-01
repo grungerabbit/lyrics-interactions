@@ -37,7 +37,10 @@ hr {
   padding: 0.25em;
   text-align: left;
   box-shadow: 15px 15px black;
-  width: 15rem;
+  width: 22.5rem;
+}
+.post-header p {
+	line-height: 1.5;
 }
 .post-header__question {
   font-size: 1em;
@@ -52,7 +55,14 @@ hr {
   font-family: helvetica !important;
 }
 .post__amazon {
-	padding: 1em 59px;
+	padding: 1em;
+	float: left;
+	width: 45%;
 }
 .post-info {
+	margin-top: 1em;
+}
+.post__metadata--technology {
+	clear: both;
+	font-size: 90%;
 }
