@@ -73,7 +73,23 @@
     padding: 0 2em;
     float: left;
 }
-
+.instructions li {
+    margin: 0.5em 0;
+}
+.instruction__item {
+    border: none;
+    font-size: 1em;
+    border-bottom: 1px dotted #ccc;
+}
+.instruction__item:focus {
+    outline: none;
+    border-bottom-style: solid;
+}
+.button {
+    border: none;
+    background: #ccc;
+    padding: 0.5em;
+}
 </style>
 
 <div ng-app>
@@ -87,13 +103,13 @@
 
 <p><aside class="control__panel">
 <input ng-model="test">
-<button ng-click="pushList()">Add possible square</button></p>
+<button ng-click="pushList()" class="button">Add possible square</button></p>
 
 <p><ol class="instructions">
-    <li ng-repeat="item in array" ng-bind="item"></li>
+    <li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item"></li>
 </ul></p>
 
-<p><button ng-click="generateBoard()">Generate bingo board</button>
+<p><button ng-click="generateBoard()" class="button">Generate bingo board</button>
 </aside></p>
 
 <p></div>

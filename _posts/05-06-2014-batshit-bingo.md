@@ -4,7 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.0.0
+version: 0.1.0
 image: 
 category: 
 customJS:
@@ -27,7 +27,23 @@ description: Batshit bingo
 	padding: 0 2em;
 	float: left;
 }
-
+.instructions li {
+	margin: 0.5em 0;
+}
+.instruction__item {
+	border: none;
+	font-size: 1em;
+	border-bottom: 1px dotted #ccc;
+}
+.instruction__item:focus {
+	outline: none;
+	border-bottom-style: solid;
+}
+.button {
+	border: none;
+	background: #ccc;
+	padding: 0.5em;
+}
 </style>
 
 <div ng-app>
@@ -41,13 +57,13 @@ description: Batshit bingo
 
 <aside class="control__panel">
 <input ng-model="test">
-<button ng-click="pushList()">Add possible square</button>
+<button ng-click="pushList()" class="button">Add possible square</button>
 	
 <ol class="instructions">
-	<li ng-repeat="item in array" ng-bind="item"></li>
+	<li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item"></li>
 </ul>
 
-<button ng-click="generateBoard()">Generate bingo board</button>
+<button ng-click="generateBoard()" class="button">Generate bingo board</button>
 </aside>
 
 </div>
