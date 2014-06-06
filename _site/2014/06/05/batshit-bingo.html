@@ -82,20 +82,18 @@
 <h1>Batshit Bingo</h1>
 
 <div class="bingo__board">
-    <div class="grid" ng-repeat="i in getNumber(board) track by $index"></div>
+    <div class="grid" ng-repeat="i in getNumber(board) track by $index" ng-bind="boardSort[$index]"></div>
 </div>
 
 <p><aside class="control__panel">
 <input ng-model="test">
-<button ng-click="pushList()">hi</button></p>
-
-<p><textarea ng-model="array">asdfasfdafsd</textarea></p>
-
-<p ng-bind="array"></p>
+<button ng-click="pushList()">Add possible square</button></p>
 
 <p><ol class="instructions">
     <li ng-repeat="item in array" ng-bind="item"></li>
-</ul>
+</ul></p>
+
+<p><button ng-click="generateBoard()">Generate bingo board</button>
 </aside></p>
 
 <p></div>

@@ -36,20 +36,18 @@ description: Batshit bingo
 <h1>Batshit Bingo</h1>
 
 <div class="bingo__board">
-	<div class="grid" ng-repeat="i in getNumber(board) track by $index"></div>
+	<div class="grid" ng-repeat="i in getNumber(board) track by $index" ng-bind="boardSort[$index]"></div>
 </div>
 
 <aside class="control__panel">
 <input ng-model="test">
-<button ng-click="pushList()">hi</button>
+<button ng-click="pushList()">Add possible square</button>
 	
-<textarea ng-model="array">asdfasfdafsd</textarea>
-
-<p ng-bind="array"></p>
-
 <ol class="instructions">
 	<li ng-repeat="item in array" ng-bind="item"></li>
 </ul>
+
+<button ng-click="generateBoard()">Generate bingo board</button>
 </aside>
 
 </div>
