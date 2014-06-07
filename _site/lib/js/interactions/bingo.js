@@ -65,65 +65,72 @@ function Bingo($scope) {
 			$scope.highlightedBoard.splice(getPop, 1);
 		}
 		
-		console.log(this.$index)
 		$scope.checkWins(this.$index);
 	}
 	
-	$scope.checkWins = function(current, move) {
-		function diagonal(number) {
-			var cacheCheck = [];
-			var cacheCheck2 = [];
-			
-			console.log(number + "#")
-			console.log(number % 6 + "!")
-
-			for (var i = 0; i < 5; i++) {
-				var check = $scope.highlightedBoard.indexOf(6 * i);
-				var check2 = $scope.highlightedBoard.indexOf(4 * (i+1));
-				cacheCheck.push(check);
-				cacheCheck2.push(check2);
-			}
-			if (number % 6 === 0 && cacheCheck.indexOf(-1) === -1) {
-				console.log("you win Left diagonal!")
-			}
-			if (number % 4 === 0 && cacheCheck2.indexOf(-1) === -1) {
-				console.log("you win Right diagonal!")
-			}
-			
-			if (cacheCheck.indexOf(-1) === -1 && cacheCheck2.indexOf(-1) === -1 && (number % 6 === 0 || number % 4 === 0)) {
-				console.log("you win X!");
-			}
-		}
+	$scope.checkWins = function(current) {
+		var fromStart = current % 5;
+		var row = (current - fromStart) / 5;
 		
-		function horizontal(number) {
-			var fromStart = number % 5;
-			var cacheCheck = [];
-			var startPoint = number - fromStart;
-			
-			for (var i = 0; i < 5; i++) {
-				var check = $scope.highlightedBoard.indexOf(startPoint + i);
-				cacheCheck.push(check);
+		var winConfig = [
+			{
+				"name" : "horizontal",
+				"startPoint" : (current - fromStart),
+				"win" : (row + 1)
+			},
+			{
+				"name" : "vertical",
+				"startPoint" : (current - (row * 5)),
+				"win" : (fromStart + 1)
+			},
+			{
+				"name" : "diagonal-1",
+				"multiplier" : 6
+			},
+			{
+				"name" : "diagonal-2",
+				"multiplier" : 4
 			}
-			
-			if (cacheCheck.indexOf(-1) === -1) {
-				console.log("you win horizontal! it is row " + ((number-fromStart)/5 + 1))
-			}
-		}
+		]
 		
-		function vertical(number) {
-			var fromStart = number % 5;
-			var row = ((number-fromStart)/5);
-			var startPoint = number - (row * 5);
-			var cacheCheck = [];
-			
-			for (var i = 0; i < 5; i++) {
-				var check = $scope.highlightedBoard.indexOf(startPoint + (i * 5));
-				cacheCheck.push(check);
-			}
-			
-			if (cacheCheck.indexOf(-1) === -1) {
-				console.log("you win vertical! it is column " + (fromStart + 1));
+		function checker() {
+			for (var j = 0; j < winConfig.length; j++) {
+				var cacheCheck = [];
+				var fixcheck;
 				
+				for (var i = 0; i < 5; i++) {
+					var sp = winConfig[j].startPoint ? winConfig[j].startPoint : 0;
+				
+					switch(winConfig[j].name) {
+						case "horizontal":
+							fixCheck = sp+i;
+							break;
+						case "vertical":
+							fixCheck = sp + (i * 5);
+							break;
+						case "diagonal-1":
+							fixCheck = winConfig[j].multiplier * i;
+							break;
+						case "diagonal-2":
+							fixCheck = winConfig[j].multiplier * (i+1);
+							break;
+						default:
+							break;
+					}
+					
+					var check = $scope.highlightedBoard.indexOf(fixCheck);
+					cacheCheck.push(check);
+				}
+			
+				if (cacheCheck.indexOf(-1) === -1) {
+					if (winConfig[j].win) {
+						console.log("you win " + winConfig[j].name + "! section " + winConfig[j].win)
+					} else {
+						if (current % winConfig[j].multiplier === 0) {
+							console.log("you win " + winConfig[j].name);
+						}
+					}
+				}
 			}
 		}
 		
@@ -134,9 +141,7 @@ function Bingo($scope) {
 		}
 		
 		if ($scope.highlightedBoard.length >= 5) {
-			diagonal(current);
-			horizontal(current);
-			vertical(current);
+			checker();
 			wholeBoard();
 		}
 	}

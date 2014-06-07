@@ -4,8 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.4.1
-image: 
+version: 0.5.0
 category: 
 customJS:
 - lib: angular
