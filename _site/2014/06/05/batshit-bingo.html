@@ -165,7 +165,7 @@ input:focus, .button:focus {
 <input ng-model="test" placeholder="add possible square" class="new__possible"><button ng-click="pushList()" class="button possible">+</button></p>
 
 <p><ol class="instructions">
-    <li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item"></li>
+    <li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item.feeling"></li>
 </ul></p>
 
 <p><button ng-click="generateBoard()" class="button">generate bingo board</button>

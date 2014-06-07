@@ -4,7 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.2.1
+version: 0.2.2
 image: 
 category: 
 customJS:
@@ -119,7 +119,7 @@ input:focus, .button:focus {
 <input ng-model="test" placeholder="add possible square" class="new__possible"><button ng-click="pushList()" class="button possible">+</button>
 	
 <ol class="instructions">
-	<li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item"></li>
+	<li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item.feeling"></li>
 </ul>
 
 <button ng-click="generateBoard()" class="button">generate bingo board</button>
