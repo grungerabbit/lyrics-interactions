@@ -4,7 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.5.0
+version: 0.6.0a
 category: 
 customJS:
 - lib: angular
@@ -78,7 +78,9 @@ input:focus, .button:focus {
 .bingo--active {
 	color: white;
 	background-color: black;
-	//background: url("http://a1star.com/images/shimmering-multistars.gif");
+}
+.bingo--winner {
+	background: url("http://a1star.com/images/shimmering-multistars.gif");
 }
 .new__possible {
 	border: 3px solid #ccc;
@@ -118,7 +120,7 @@ input:focus, .button:focus {
 <h1 class="title">Batshit Bingo</h1>
 
 <div class="bingo__board">
-	<div class="grid" ng-repeat="i in getNumber(board) track by $index" ng-click="highlightSpace()" ng-class="{'bingo--active' : boardSort[$index].selected == true, 'no-go' : boardSort.length == 0}"><p ng-bind="boardSort[$index].text"></p></div>
+	<div class="grid" ng-repeat="i in getNumber(board) track by $index" ng-click="highlightSpace()" ng-class="{'bingo--active' : boardSort[$index].selected == true, 'bingo--winner' : boardSort[$index].glittery == true, 'no-go' : boardSort.length == 0}"><p ng-bind="boardSort[$index].text"></p></div>
 </div>
 
 <aside class="control__panel">
