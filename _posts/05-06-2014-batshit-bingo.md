@@ -4,7 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.4.0
+version: 0.4.1
 image: 
 category: 
 customJS:
@@ -78,7 +78,8 @@ input:focus, .button:focus {
 }
 .bingo--active {
 	color: white;
-	background: url("http://a1star.com/images/shimmering-multistars.gif");
+	background-color: black;
+	//background: url("http://a1star.com/images/shimmering-multistars.gif");
 }
 .new__possible {
 	border: 3px solid #ccc;

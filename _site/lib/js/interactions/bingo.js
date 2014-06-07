@@ -71,7 +71,28 @@ function Bingo($scope) {
 	
 	$scope.checkWins = function(current, move) {
 		function diagonal(number) {
-			console.log(number - 6);
+			var cacheCheck = [];
+			var cacheCheck2 = [];
+			
+			console.log(number + "#")
+			console.log(number % 6 + "!")
+
+			for (var i = 0; i < 5; i++) {
+				var check = $scope.highlightedBoard.indexOf(6 * i);
+				var check2 = $scope.highlightedBoard.indexOf(4 * (i+1));
+				cacheCheck.push(check);
+				cacheCheck2.push(check2);
+			}
+			if (number % 6 === 0 && cacheCheck.indexOf(-1) === -1) {
+				console.log("you win Left diagonal!")
+			}
+			if (number % 4 === 0 && cacheCheck2.indexOf(-1) === -1) {
+				console.log("you win Right diagonal!")
+			}
+			
+			if (cacheCheck.indexOf(-1) === -1 && cacheCheck2.indexOf(-1) === -1 && (number % 6 === 0 || number % 4 === 0)) {
+				console.log("you win X!");
+			}
 		}
 		
 		function horizontal(number) {
@@ -101,13 +122,22 @@ function Bingo($scope) {
 			}
 			
 			if (cacheCheck.indexOf(-1) === -1) {
-				console.log("you win vertical! it is column " + (fromStart + 1))
+				console.log("you win vertical! it is column " + (fromStart + 1));
+				
+			}
+		}
+		
+		function wholeBoard() {
+			if ($scope.highlightedBoard.length === $scope.board) {
+				console.log("all the squares! wow!");
 			}
 		}
 		
 		if ($scope.highlightedBoard.length >= 5) {
-			horizontal(current)
-			vertical(current)
+			diagonal(current);
+			horizontal(current);
+			vertical(current);
+			wholeBoard();
 		}
 	}
 }
