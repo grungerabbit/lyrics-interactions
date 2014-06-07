@@ -4,7 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.2.0
+version: 0.2.1
 image: 
 category: 
 customJS:
@@ -21,11 +21,16 @@ body {
 .title {
 	text-align: center;
 }
+.grid, .button {
+	cursor: pointer;
+}
 .grid {
-	border: 1px solid #eee;
+	border: 1px solid #666;
 	width: 200px;
 	height: 200px;
 	float: left;
+	margin-left: -1px;
+	margin-top: -1px;
 }
 .grid ::selection {
 	background: none;
@@ -96,6 +101,9 @@ input:focus, .button:focus {
 .button:hover {
 	background-color: yellow;
 }
+.no-go {
+	cursor: not-allowed;
+}
 </style>
 
 <div ng-app>
@@ -104,7 +112,7 @@ input:focus, .button:focus {
 <h1 class="title">Batshit Bingo</h1>
 
 <div class="bingo__board">
-	<div class="grid" ng-repeat="i in getNumber(board) track by $index" ng-click="highlightSpace()" ng-class="{'bingo--active' : boardSort[$index].selected == true}"><p ng-bind="boardSort[$index].text"></p></div>
+	<div class="grid" ng-repeat="i in getNumber(board) track by $index" ng-click="highlightSpace()" ng-class="{'bingo--active' : boardSort[$index].selected == true, 'no-go' : boardSort.length == 0}"><p ng-bind="boardSort[$index].text"></p></div>
 </div>
 
 <aside class="control__panel">
