@@ -3,7 +3,7 @@ title: responsibility transfer
 subtitle: the charisma myth - olivia fox cabane
 layout: post
 design: raphael.js
-version: 0.7.0
+version: 0.7.1
 image: universe.png
 featured: true
 category: book
@@ -73,6 +73,7 @@ a:hover {
 }
 .worry__box h3 {
 	font-size: 5em;
+	margin: 1em 0;
 }
 .finished__worry {
 	font-size: 20em;
@@ -112,6 +113,7 @@ li {
 .resetter {
 	font-size: 0.75em;
 	position: absolute;
+	padding: 0.25em 0.5em;
 }
 .resetter:hover, .resetter:focus, .transfer:hover, .transfer:focus {
 	border-color: #cc00cc;
@@ -147,7 +149,7 @@ li {
 		
 		<a href="#" ng-if="worryText.length > 0" class="transfer" ng-click="addWorry()">transfer responsibility</a>
 		<li ng-repeat="text in worry">
-			<p ng-bind="text.text" ng-click="resetWorries()" class="finished__worry" style="font-size: 20em"></p>
+			<p ng-bind="text.text" ng-click="resetWorries()" class="finished__worry" style="font-size: 20em; opacity: 0"></p>
 		</li>
 		
 	</div>

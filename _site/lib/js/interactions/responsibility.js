@@ -1,5 +1,5 @@
-// transfer 0.7.0
-// last modified: 05/29/2014
+// transfer 0.7.1
+// last modified: 06/7/2014
 
 $(document).ready(function () {
 	var universe = 10000;
@@ -57,13 +57,9 @@ $(document).ready(function () {
 			var newTop = randomUniverse();
 			var newLeft = randomUniverse();
 			
-			$finished.css({"-webkit-transition": "font 7s cubic-bezier(0.190, 1.000, 0.220, 1.000)", "font-size": "2px", "position" : "absolute", "left": newLeft, "top": newTop});
-			$("body").animate({"delay" : 1000, "scrollLeft": newLeft, "scrollTop": newTop, "duration": 7000});	
+			$finished.css({"-webkit-transition": "font 7s cubic-bezier(0.190, 1.000, 0.220, 1.000)", "font-size": "2px", "position" : "absolute", "opacity": 1, "left": newLeft, "top": newTop});
+			$("body").animate({"delay" : 500, "scrollLeft": newLeft, "scrollTop": newTop, "duration": 7000});	
 		}, 1000);
-		
-		setTimeout(function() {
-			
-		}, 5000);
 		
 		function addDone() {
 			$finished.addClass("done").attr("title", cache);
