@@ -4,7 +4,7 @@ subtitle: a bingo board generator
 layout: post
 featured: false
 design: 
-version: 0.2.2
+version: 0.2.3
 image: 
 category: 
 customJS:
@@ -69,6 +69,8 @@ input:focus, .button:focus {
 	border: none;
 	background: #ccc;
 	padding: 0.5em;
+	margin-top: 0.25em;
+	display: inline-block;
 }
 .button, input {
 	font: 1.5em "Oswald";
@@ -87,12 +89,11 @@ input:focus, .button:focus {
 	border-color: black;
 }
 .possible {
-	position: relative;
 	top: 0px;
 	height: 3rem;
 	padding: 0.125em 0.5em;
 }
-.button:focus {
+.button:focus, .button.mini:hover {
 	background-color: black;
 }
 .new__possible:hover {
@@ -103,6 +104,11 @@ input:focus, .button:focus {
 }
 .no-go {
 	cursor: not-allowed;
+}
+.button.mini {
+	font-size: .95em;
+	background-color: transparent;
+	border: 1px solid #ccc;
 }
 </style>
 
@@ -116,13 +122,16 @@ input:focus, .button:focus {
 </div>
 
 <aside class="control__panel">
-<input ng-model="test" placeholder="add possible square" class="new__possible"><button ng-click="pushList()" class="button possible">+</button>
+<form ng-submit="pushList()">
+<input ng-model="test" placeholder="add possible square" class="new__possible"><button class="button possible">+</button>
+</form>
 	
 <ol class="instructions">
 	<li ng-repeat="item in instruct"><input class="instruction__item" ng-model="item.feeling"></li>
 </ul>
 
 <button ng-click="generateBoard()" class="button">generate bingo board</button>
+<a href="#" ng-if="instruct.length !== 0" ng-click="resetChoices()" class="button mini">delete current choice list</a>
 </aside>
 
 </div>

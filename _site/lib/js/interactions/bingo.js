@@ -10,7 +10,7 @@ function Bingo($scope) {
 	$scope.instruct = [{"feeling" : "sad"}, {"feeling" : "angry"}, {"feeling" : "panic"}, {"feeling" : "jealous"}, {"feeling" : "desperate"}, {"feeling" : "ashamed"}, {"feeling" : "stupid"}, {"feeling" : "embarassed"}, {"feeling" : "guilty"}, {"feeling" : "moody"}, {"feeling" : "hungry"}, {"feeling" : "crying"}, {"feeling" : "hopeless"}, {"feeling" : "tired"}, {"feeling" : "pessimistic"}, {"feeling" : "elated"}, {"feeling" : "nervous"}, {"feeling" : "worried"}, {"feeling" : "paranoid"}, {"feeling" : "worthless"}, {"feeling" : "overwhelmed"}, {"feeling" : "bored"}, {"feeling" : "confrontational"}, {"feeling" : "self-loathing"}, {"feeling" : "dismissive"}];
 
 	$scope.pushList = function() {
-		$scope.instruct.push({"feeling": $scope.test});
+		$scope.instruct.unshift({"feeling": $scope.test});
 		$scope.test = "";
 	}
 
@@ -32,15 +32,19 @@ function Bingo($scope) {
 			var currentRandom = random(cache);
 			var result;
 			
-			if ($scope.instruct.length > currentRandom) {
+			if (cacheArray.length > currentRandom) {
 				result = cacheArray[currentRandom].feeling;
-				cacheArray.splice(currentRandom, 1);	
+				cacheArray.splice(currentRandom, 1);
+				cache--;	
 			} else {
-				result = "Free";
+				result = "Free Space";
 			}
 			$scope.boardSort.push({'text' : result, 'selected' : false});
-			cache--;
 		}
+	}
+	
+	$scope.resetChoices = function() {
+		$scope.instruct.length = 0;
 	}
 	
 	$scope.highlightedBoard = [];
