@@ -57,8 +57,38 @@ function Bingo($scope) {
 		}
 		
 		thisSquare.selected = thisSquare.selected === false ? true : false;
-		$scope.highlightedBoard.push(this.$index);
 		
-		console.log(this.$index);
+		if (thisSquare.selected === true) {
+			$scope.highlightedBoard.push(this.$index);
+		} else {
+			var getPop = $scope.highlightedBoard.indexOf(this.$index);
+			$scope.highlightedBoard.splice(getPop, 1);
+		}
+		
+		$scope.checkWins(this.$index);
+	}
+	
+	$scope.checkWins = function(current, move) {
+		function diagonal(number) {
+			console.log(number - 6);
+		}
+		
+		function horizontal(number) {
+			var fromStart = number % 5;
+			var cacheCheck = [];
+			
+			for (var i = 0; i < 5; i++) {
+				var check = $scope.highlightedBoard.indexOf((number - fromStart) + i);
+				cacheCheck.push(check);
+			}
+			
+			if (cacheCheck.indexOf(-1) === -1) {
+				console.log("you win horizontal! it is row " + ((number-fromStart)/5 + 1))
+			}
+		}
+		
+		if ($scope.highlightedBoard.length >= 5) {
+			horizontal(current)
+		}
 	}
 }
