@@ -22,10 +22,10 @@ hr {
 	border: none;
 	background: #ccc;
 }
-.post-header.small {
+.project-header.small {
 	width: 60px;
 }
-.post-header {
+.project-header {
   position: fixed;
   z-index: 500000;
   top: 0px;
@@ -39,30 +39,30 @@ hr {
   box-shadow: 15px 15px black;
   width: 22.5rem;
 }
-.post-header p {
+.project-header p {
 	line-height: 1.5;
 }
-.post-header__question {
+.project-header__question {
   font-size: 1em;
   cursor: pointer;
   height: 1.5rem;
 }
-.post-header__title {
+.project-header__title {
   font-size: 25%;
   font-weight: normal !important;
   text-transform: uppercase !important;
   font-style: normal !important;
   font-family: helvetica !important;
 }
-.post__amazon {
+.project__amazon {
 	padding: 1em;
 	float: left;
 	width: 45%;
 }
-.post-info {
+.project-info {
 	margin-top: 1em;
 }
-.post__metadata--technology {
+.project__metadata--technology {
 	clear: both;
 	font-size: 90%;
 }

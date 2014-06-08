@@ -3,35 +3,16 @@ layout: default
 title: welcome
 ---
 
-<h1>Projects</h1>
+<div class="documentation">
+	<h1>Documentation</h1>
+	<ul>
+	{% for post in site.posts %}
+		<li><a href="{{post.url}}">{{post.title}}</a></li>
+	{% endfor %}
+	</ul>
+</div>
 
-<!--
-{% for project in site.projects %}
-<div class="project--album {% if project.featured == true %}featured{% endif %}" {% if project.image %}style="background: url(/lib/img/{{project.image}})"{% endif %}>
-<a href="{{project.url}}">
-			
-<h5>{{project.category}}</h5>
-			
-<div class="project--description">
-<h2>{{project.title}}</h2>
-<p>{{project.subtitle}}</p>
-				
-<ul class="libraries">
-{% for customJS in project.customJS %}
-{% if customJS.lib %}
-<li>{{customJS.lib}}</li>
-{% endif %}
-{% endfor %}
-</ul>
-					
-{% if project.featured == true && project.description.length > 0 %}<p class="description__content">{{project.description}}</p>{% endif %}
-</div>
-			
-		
-</ul>
-</a>
-</div>
-{% endfor %}-->
+<h1>Projects</h1>
 
 {% for post in site.posts %}
 {% for project in site.projects %}
@@ -40,30 +21,11 @@ title: welcome
 
 {% if post.reference == project.reference %}
 
-<div class="test">
-
-{{post.date | date_to_string }}
-
-<a href="{{project.url}}">{{post.title}}</a> &bull;
-<a href="{{post.url}}">docs</a>
-</div>
-
-{% endif %}
-
-
-{% endfor %}
-{% endfor %}
-
-
-<h1>Documentation</h1>
-
-{% for post in site.posts %}
-<div class="post--album {% if post.featured == true %}featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
-	
-			
+<div class="project--album{% if post.featured == true %} featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
+<a href="{{project.url}}">
 		<h5>{{post.category}}</h5>
 			
-		<div class="post--description">
+		<div class="project--description">
 			<h2>{{post.title}}</h2>
 			<p>{{post.subtitle}}</p>
 			<p>{{post.date | date_to_string }} <small>current {{post.version}}</small></p>
@@ -78,17 +40,17 @@ title: welcome
 					
 			{% if post.featured == true && post.description.length > 0 %}<p class="description__content">{{post.description}}</p>{% endif %}
 		</div>
-		
-		
-		<a href="{{post.url}}">docs</a>
 
-	</ul>
-
+</a>
 </div>
+
+
+{% endif %}
+
+
+{% endfor %}
 {% endfor %}
 
 
-
-<div class="big-overlay"></div>
 
 {% include footer.html %}

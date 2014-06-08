@@ -54,7 +54,7 @@ hr {
 .container > section {
 	font-size: @miniBump;
 }
-.posts {
+.projects {
 	li {
 		padding: 1em 0;
 	}
@@ -69,17 +69,27 @@ header {
 @sq4: @sq2 * 2;
 @sqSixth: @square / 6;
 
-.big-overlay {
-	width: 100%;
-	background: rgba(0,0,0,.5);
-	display: none;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 0;
+.uiuiu {
+	text-align: center;
+	.one-sixth, .two-thirds {
+		height: 3.5rem;
+		float: left;
+		border-bottom: 1px solid #eee;
+	}
+	.one-sixth {
+		color: #ccc;
+		width: 16%;
+		padding: 1em 0;
+	}
+	.two-thirds {
+		padding-top: 0.1em;
+		border-right: 1px solid #eee;
+		border-left: 1px solid #eee;
+		width: 68%;
+	}
 }
-.post--description {
+
+.project--description {
 	width: @square;
 	height: @square;
 	top: 0;
@@ -93,7 +103,7 @@ header {
 	padding: 0.5em;
 	color: black;
 }
-.featured .post--description {
+.featured .project--description {
 	width: @sq2;
 	height: @sq2;
 }
@@ -102,7 +112,7 @@ header {
 	width: 60%;
 	float: right;
 }
-.post--album {
+.project--album {
 	width: @square;
 	height: @square;
 	position: relative;
@@ -131,31 +141,12 @@ header {
 		}
 	}
 	&:hover {
-		.post--description, .big-overlay {
-		//	display: block;
+		.project--description, .big-overlay {
+			display: block;
 		}
 	}
 }
 
-.uiuiu {
-	text-align: center;
-	.one-sixth, .two-thirds {
-		height: 3.5rem;
-		float: left;
-		border-bottom: 1px solid #eee;
-	}
-	.one-sixth {
-		color: #ccc;
-		width: 16%;
-		padding: 1em 0;
-	}
-	.two-thirds {
-		padding-top: 0.1em;
-		border-right: 1px solid #eee;
-		border-left: 1px solid #eee;
-		width: 68%;
-	}
-}
 .taglines {
 	clear: both;
 }
@@ -185,6 +176,7 @@ header {
 	}
 }
 footer {	
+	.clearfix;
 	font-size: @miniBump;
 	background: @grayLight;
 	padding: .5em 0;
@@ -198,7 +190,6 @@ footer {
 	}
 }
 
-
-.test {
-	border: 10px solid black;
+.documentation {
+	.clearfix;
 }
