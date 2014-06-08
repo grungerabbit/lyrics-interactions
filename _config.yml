@@ -1,3 +1,6 @@
-name: lyricinteractions
+name: UIUIU
 markdown: redcarpet
-pygments: true
+
+collections:
+  projects:
+    output: true
