@@ -1,6 +1,7 @@
 ---
 title: ritual union
 subtitle: little dragon - ritual union
+reference: ritual
 layout: post
 featured: false
 design: cellular automata

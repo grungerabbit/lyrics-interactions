@@ -1,6 +1,7 @@
 ---
 title: modern guilt I
 subtitle: beck - modern guilt
+reference: triangles
 layout: post
 featured: true
 design: monotron + raphael.js

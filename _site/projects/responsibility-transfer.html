@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>responsibility transfer</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom CSS -->
+		<link rel="stylesheet" href="/lib/css/post.css">
+		<meta name="description" content="The universe is waiting for your worries." />
+		<meta name="keywords" content="cheryl wu new york city artist designer user interface interaction design experience portfolio experiment prototype dream playground techatnyu hackNY " />
+		
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+			
+				
+					<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+				
+			
+		
+			
+				
+					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+				
+			
+		
+			
+				
+					<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+				
+			
+		
+			
+		
+		
+			
+		
+			
+		
+			
+		
+			
+				<script src="/lib/js/interactions/responsibility.js"></script>
+			
+		
+    </head>
+    <body>
+		
+			   <header class="post-header small">
+	<a href="/">back</a><hr>
+	<i class="post-header__question ion-ios7-help" data-pack="ios7" data-tags="question, information, ?">info</i>
+	
+	<div class="post__metadata">
+		<div class="post-header__title">
+			<h1 class="title">responsibility transfer</h1>
+			<h3>the charisma myth - olivia fox cabane</h3>
+		</div>
+		
+		<hr>
+		
+		
+		<div class="post__amazon">
+			<h6>If you like, check out my inspiration!</h6>
+			
+			<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=ss_til&ad_type=product_link&tracking_id=main05-20&marketplace=amazon&region=US&placement=1591845947&asins=1591845947&linkId=CGJUWOBO2F3DEBDC&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
+			</iframe>
+		</div>
+		
+		<hr>
+		
+		
+		
+		<aside class="post-info">
+			<h6>Description</h6>
+			<p>The universe is waiting for your worries.</p>
+		</aside>
+		
+		
+	</div>
+</header>
+	
+	<div class="post">
+		<style>
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+* {
+    box-sizing: border-box;
+}
+body {
+    background: black;
+    color: white;
+    font: 1em 'Montserrat';
+    text-align: center;
+}
+h1 {
+    color: #999;
+}
+a:hover {
+    text-decoration: none;
+}
+#breathing__star {
+    position: fixed;
+    width: 200px;
+    top: 25px;
+    right: 80px;
+    z-index: 1000;
+}
+#breathing__star:hover {
+    cursor: pointer;
+}
+.breathe--annotate {
+    text-align: center;
+    color: #aaa;
+    margin-left: 30px;
+}
+.breathe--annotate em {
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: .85em;
+}
+.worry__box {
+    position: absolute;
+    z-index: 1000;
+    width: 50em;
+    left: 50%;
+    margin-left: -25em;
+}
+.worry__box input {
+    background: none;
+    border: none;
+    border-bottom: 3px solid white;
+    color: #ccc;
+    font: 1em "Montserrat";
+}
+.worry__box input:focus, select:focus, button:focus, .transfer:focus {
+    outline: none;
+    border-bottom-color: #cc00cc;
+}
+.worry__box h3 {
+    font-size: 5em;
+    margin: 1em 0;
+}
+.finished__worry {
+    font-size: 20em;
+}
+.transfer {
+    color: #cc00cc;
+}
+select {
+    background: none;
+    color: white;
+    font: 1em "Montserrat";
+    border: none;
+    border-bottom: 3px solid white;
+}
+.done:before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border: 1px solid #cc00cc;
+    border-radius: 100px;
+    position: absolute;
+    margin-top: -2px;
+}
+.done {
+    cursor: help;
+}
+li {
+    list-style: none;
+}
+.transfer, .resetter {
+    border: 3px solid #aaa;
+    border-radius: 100px;
+    background: none;
+    color: #aaa;
+    font: 1em "Montserrat";
+}
+.resetter {
+    font-size: 0.75em;
+    position: absolute;
+    padding: 0.25em 0.5em;
+}
+.resetter:hover, .resetter:focus, .transfer:hover, .transfer:focus {
+    border-color: #cc00cc;
+    color: #cc00cc;
+    box-shadow: 0 0 20px #cc00cc;
+}
+.transfer {
+    padding: 1em;
+    color: #cc00cc;
+    border-color: #cc00cc;
+    text-decoration: none;
+}
+</style>
+
+<h1>responsibility transfer</h1>
+
+<div id="breathing__star">
+<div class="breathe--annotate"><p><em>breathing star</em></p> <p>breathe after me</p> <small>in and out through your nose</small></div>
+</div>
+
+<div ng-app class="worry__box">
+    <div ng-controller="Transfer">
+        <span id="worry__instructions">Dear 
+        <select>
+            <option>Universe</option>
+            <option>Fate</option>
+            <option>God</option>
+        </select>, I am worried that
+            
+            <input ng-model="worryText" class="worry__input" /> <button class="resetter" ng-click="resetWorries()" ng-if="worryText.length > 0">x</button></span>
+        
+        <h3 ng-bind="worryText" id="big__worry"></h3>
+        
+        <a href="#" ng-if="worryText.length > 0" class="transfer" ng-click="addWorry()">transfer responsibility</a>
+        <li ng-repeat="text in worry">
+            <p ng-bind="text.text" ng-click="resetWorries()" class="finished__worry" style="font-size: 20em; opacity: 0"></p>
+        </li>
+        
+    </div>
+</div>
+
+	</div>
+			   
+			   
+		
+		
+		<script src="/lib/js/app.js"></script>
+    </body>
+</html>
