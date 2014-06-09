@@ -3,8 +3,6 @@ title: wave
 subtitle: a interaction for flipping pages
 reference: wave
 layout: project
-design: jquery
-version: 0.5.0
 customJS:
 - lib: jquery
 ---

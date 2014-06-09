@@ -1,26 +1,32 @@
 ---
 layout: default
 ---
+<a href="/">back</a>
+
 <div class="site">
 	<div class="post__main">
 		{% for project in site.projects %}
 		{% if project.reference == page.reference %}
 		<h1 class="project__name"><a href="{{project.url}}">{{project.title}}</a></h1>
     	
+		{% if page.image %}
 		<a href="{{project.url}}">
 			<img src="/lib/img/{{page.image}}">
 		</a>
+		{% endif %}
 		
 		{% endif %}
 		{% endfor %}
+		
+		{% if page.amazon %}
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
+		</iframe>
+		{% endif %}
 	</div>
 	
 	<div class="post__essay">
+		<blockquote>{{page.description}}</blockquote>
+		
 		{{ content }}
 	</div>
-	
-	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
-	</iframe>
-	
-	
 </div>

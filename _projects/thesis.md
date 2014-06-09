@@ -3,9 +3,6 @@ title: thesis writer
 subtitle: a thesis writer written instead of writing a thesis
 reference: thesis
 layout: project
-design: angular
-version: 0.6.0
-category: app
 customJS:
 - lib: angular
 - lib: moment

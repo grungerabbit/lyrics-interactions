@@ -3,11 +3,6 @@ title: compound interest
 subtitle: a calculator comparing interest
 reference: compound
 layout: project
-design: prata
-version: 1.0.0
-keywords: compound interest calculator knockoutjs knockout.js loan prata google webfont
-description: > 
-  An interest calculator comparing compound and simple interest.
 customJS:
 - lib: knockout
 - lib: moment

@@ -1,5 +1,5 @@
 ---
-title: modern guilt I
+title: modern guilt I documentation
 subtitle: beck - modern guilt
 reference: triangles
 layout: post

@@ -3,8 +3,6 @@ title: inhaler
 subtitle: foals - holy fire
 reference: inhaler
 layout: project
-design: old standard + raphael.js
-version: 0.5.0
 customJS:
 - lib: raphael
 - file: inhaler.js

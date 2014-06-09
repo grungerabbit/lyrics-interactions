@@ -3,9 +3,6 @@ title: ratings prototype
 subtitle: 
 reference: ratings
 layout: project
-design: mustache.js
-version: 1.0.0
-image: ratings1.png
 customJS:
 - lib: jquery
 - lib: mustache

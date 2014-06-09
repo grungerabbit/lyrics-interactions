@@ -3,10 +3,6 @@ title: batshit bingo
 reference: bingo
 subtitle: a bingo board generator
 layout: project
-featured: false
-design: 
-version: 0.6.0a
-category: 
 customJS:
 - lib: angular
 - file: bingo.js
