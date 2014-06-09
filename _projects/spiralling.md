@@ -1,21 +1,12 @@
 ---
 title: spiralling
 subtitle: antony and the johnsons - i am a bird now
-reference: sprial
+reference: spiral
 layout: project
-featured: true
-version: 1.0.0
-amazon: //ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=ss_til&ad_type=product_link&tracking_id=main05-20&marketplace=amazon&region=US&placement=B000777J2S&asins=B000777J2S&linkId=F5RYVQOJC2VOBEAA
-category: song
 customJS:
 - lib: raphael
 - file: spiral.js
-description: |
-  A cellular automaton inspired by the song Spiralling by Antony and the Johnsons. 
-  The parameters include growth, birth, and death states broadly modeled on biological selection.
-  As the circle lineages uncoil, their overlapping lines reveal the lyrics of Spiralling.
 ---
-
 <style>
 @import url(http://fonts.googleapis.com/css?family=Arbutus+Slab);
 

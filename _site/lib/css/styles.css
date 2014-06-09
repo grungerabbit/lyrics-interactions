@@ -225,7 +225,7 @@ header:after {
   padding: 0.5em;
   color: black;
 }
-.project-overview__name {
+.project__name {
   display: inline;
   border-bottom: 1px solid black;
 }
@@ -282,19 +282,10 @@ header:after {
 .taglines {
   clear: both;
 }
-.about {
-  display: none;
-  width: 10em;
-  text-align: justify;
-  float: right;
-  font-size: 0.75em;
-  position: absolute;
-  top: -3em;
-  right: 10em;
-  -webkit-transform: rotate(90deg);
-}
-.about p {
-  line-height: 1;
+.post__main,
+.post__essay {
+  width: 50%;
+  float: left;
 }
 footer {
   *zoom: 1;

@@ -3,6 +3,9 @@ layout: default
 title: welcome
 ---
 
+{% include header.html %}
+	
+
 <div class="documentation">
 	<h1>Documentation</h1>
 	<ul>
@@ -23,14 +26,14 @@ title: welcome
 
 <div class="project-overview{% if post.featured == true %} featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
 <a href="{{project.url}}">
-		<h2 class="project-overview__name">{{post.title}}</h2>
+		<h2 class="project__name">{{project.title}}</h2>
 		
 		<!--<h5>{{post.category}}</h5>-->
 			
 			
 		<div class="project-overview--description">
-			<h2 class="project-overview__name">{{post.title}}</h2>
-			<p>{{post.subtitle}}</p>
+			<h2 class="project__name">{{project.title}}</h2>
+			<p>{{project.subtitle}}</p>
 			<p>{{post.date | date_to_string }} <small>current {{post.version}}</small></p>
 					
 			<ul class="project-overview__libraries">

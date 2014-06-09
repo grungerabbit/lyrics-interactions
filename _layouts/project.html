@@ -3,7 +3,7 @@ layout: blank
 ---
 
 <header class="project-header small">
-	<a href="/">back</a><hr>
+	<a href="/">UIUIU</a>
 	{% for post in site.posts %}
 		{% if post.reference == page.reference %}
 		<a href="{{post.url}}">
@@ -22,33 +22,30 @@ layout: blank
 		
 		<hr>
 		
-		{% if page.amazon %}
-		<div class="project__amazon">
-			<h6>If you like, check out my inspiration!</h6>
-			
-			<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
-			</iframe>
-		</div>
-		
-		<hr>
-		{% endif %}
-		
-		
-		<aside class="project-info">
-			<h6>Description</h6>
-			<p>{{ page.description }}</p>
-		</aside>
-		
-		{% if page.tech %}
-		<div class="project__metadata--technology">
-			<h6>Technology</h6>
-			<p>{{ page.tech }}</p>
-		</div>
-		{% endif %}
-		
 		{% for post in site.posts %}
 			{% if post.reference == page.reference %}
-			<a href="{{post.url}}">Learn more &raquo;</a>
+		
+		
+				{% if post.amazon %}
+				<div class="project__amazon">
+					<h6>If you like, check out my inspiration!</h6>
+					
+					<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{post.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
+					</iframe>
+				</div>
+				
+				<hr>
+				{% endif %}
+				
+				
+				
+				
+				<aside class="project-info">
+					<p>{{ post.description }}</p>
+				</aside>
+		
+		
+			<a href="{{post.url}}">Learn more</a>
 			{% endif %}
 		{% endfor %}
 	</div>

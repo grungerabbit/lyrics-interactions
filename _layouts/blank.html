@@ -8,7 +8,12 @@
 
         <!-- Custom CSS -->
 		<link rel="stylesheet" href="/lib/css/project.css">
+		{% if page.layout == "project" %}
+		{% for post in site.posts %}{% if post.reference == page.reference %}<meta name="description" content="{{post.description}}" />{% endif %}{% endfor %}
+		{% else %}
 		<meta name="description" content="{{page.description}}" />
+		{% endif %}
+		
 		<meta name="keywords" content="cheryl wu new york city artist designer user interface interaction design experience portfolio experiment prototype dream playground techatnyu hackNY {{page.keywords}}" />
 		
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />

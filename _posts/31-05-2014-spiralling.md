@@ -1,7 +1,6 @@
 ---
-title: spiralling
-subtitle: antony and the johnsons - i am a bird now
-reference: sprial
+title: spiralling documentation
+reference: spiral
 layout: post
 featured: true
 design: cellular automata
