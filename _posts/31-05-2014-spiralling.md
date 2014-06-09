@@ -13,13 +13,9 @@ description: |
   A cellular automaton inspired by the song Spiralling by Antony and the Johnsons. 
   The parameters include growth, birth, and death states broadly modeled on biological selection.
   As the circle lineages uncoil, their overlapping lines reveal the lyrics of Spiralling.
-tech: |
-  Built with Javascript using the Raphael library. We start with 10 seeds that have the same settings.
-  These parameters include size, fitness, age. I used a mix of biological ideas including natural and kin selection.
-  In the growth stage, the next agent in the series is determined by a true/false condition chosen randomly from a list.
-  These conditions themselves are either random (random number, probability) or semi-random (size, fitness, "age")
 ---
 
-Content of spiralling documentation here
-
-
+Built with Javascript using the Raphael library. We start with 10 seeds that have the same settings.
+These parameters include size, fitness, age. I used a mix of biological ideas including natural and kin selection.
+In the growth stage, the next agent in the series is determined by a true/false condition chosen randomly from a list.
+These conditions themselves are either random (random number, probability) or semi-random (size, fitness, "age")

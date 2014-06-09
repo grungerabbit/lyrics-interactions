@@ -1,13 +1,24 @@
 ---
-layout: blank
+layout: default
 ---
+<div class="site">
+	
+	{% for project in site.projects %}
+	{% if project.reference == page.reference %}
+	<h1><a href="{{project.url}}">{{project.title}}</a></h1>
 
+	<a href="{{project.url}}">
+		<img src="/lib/img/{{page.image}}">
+	</a>
+	
+	{% endif %}
+	{% endfor %}
+	
+	
+	
 	<div class="post">
 		{{ content }}
 	</div>
 	
-	{% for project in site.projects %}
-	{% if project.reference == page.reference %}
-	<a href="{{project.url}}">{{project.title}}</a>
-	{% endif %}
-	{% endfor %}
+	
+</div>

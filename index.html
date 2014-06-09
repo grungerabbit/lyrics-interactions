@@ -21,24 +21,27 @@ title: welcome
 
 {% if post.reference == project.reference %}
 
-<div class="project--album{% if post.featured == true %} featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
+<div class="project-overview{% if post.featured == true %} featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
 <a href="{{project.url}}">
-		<h5>{{post.category}}</h5>
+		<h2 class="project-overview__name">{{post.title}}</h2>
+		
+		<!--<h5>{{post.category}}</h5>-->
 			
-		<div class="project--description">
-			<h2>{{post.title}}</h2>
+			
+		<div class="project-overview--description">
+			<h2 class="project-overview__name">{{post.title}}</h2>
 			<p>{{post.subtitle}}</p>
 			<p>{{post.date | date_to_string }} <small>current {{post.version}}</small></p>
 					
-			<ul class="libraries">
-				{% for customJS in post.customJS %}
+			<ul class="project-overview__libraries">
+				{% for customJS in project.customJS %}
 				{% if customJS.lib %}
 				<li>{{customJS.lib}}</li>
 				{% endif %}
 				{% endfor %}
 			</ul>
 					
-			{% if post.featured == true && post.description.length > 0 %}<p class="description__content">{{post.description}}</p>{% endif %}
+			<!--{% if post.featured == true && post.description.length > 0 %}<p class="description__content">{{post.description}}</p>{% endif %}-->
 		</div>
 
 </a>

@@ -168,7 +168,7 @@ hr {
 .container > section {
   font-size: 110%;
 }
-.projects li {
+.project-overviews li {
   padding: 1em 0;
 }
 header {
@@ -211,7 +211,7 @@ header:after {
   border-left: 1px solid #eee;
   width: 68%;
 }
-.project--description {
+.project-overview--description {
   width: 15rem;
   height: 15rem;
   top: 0;
@@ -225,7 +225,11 @@ header:after {
   padding: 0.5em;
   color: black;
 }
-.featured .project--description {
+.project-overview__name {
+  display: inline;
+  border-bottom: 1px solid black;
+}
+.featured .project-overview--description {
   width: 30rem;
   height: 30rem;
 }
@@ -234,7 +238,7 @@ header:after {
   width: 60%;
   float: right;
 }
-.project--album {
+.project-overview {
   width: 15rem;
   height: 15rem;
   position: relative;
@@ -242,7 +246,7 @@ header:after {
   background-size: cover;
   box-shadow: 2.5rem 2.5rem #000000;
 }
-.project--album a {
+.project-overview a {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -250,20 +254,30 @@ header:after {
   background-image: -webkit-linear-gradient(-45deg, #ffffff 25%, transparent 25%, transparent 50%, #ffffff 50%, #ffffff 75%, transparent 75%, transparent);
   -webkit-background-size: 30rem 30rem;
 }
-.project--album h2 {
+.project-overview h2 {
   line-height: 1.15;
 }
-.project--album.featured {
+.project-overview.featured {
   font-size: 150%;
   width: 30rem;
   height: 30rem;
 }
-.project--album.featured a {
+.project-overview.featured a {
   -webkit-background-size: 60rem 60rem;
 }
-.project--album:hover .project--description,
-.project--album:hover .big-overlay {
+.project-overview:hover .project-overview--description,
+.project-overview:hover .big-overlay {
   display: block;
+}
+.project-overview__libraries {
+  width: 40%;
+  float: left;
+}
+.project-overview__libraries li {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 0 0.5em;
+  box-shadow: 5px 5px 0px #cc00ff, 4px 4px 0px #cc00ff, 3px 3px 0px #cc00ff, 2px 2px 0px #cc00ff, 1px 1px 0px #cc00ff;
 }
 .taglines {
   clear: both;
@@ -281,16 +295,6 @@ header:after {
 }
 .about p {
   line-height: 1;
-}
-.libraries {
-  width: 40%;
-  float: left;
-}
-.libraries li {
-  border: 1px solid black;
-  display: inline-block;
-  padding: 0 0.5em;
-  box-shadow: 5px 5px 0px #cc00ff, 4px 4px 0px #cc00ff, 3px 3px 0px #cc00ff, 2px 2px 0px #cc00ff, 1px 1px 0px #cc00ff;
 }
 footer {
   *zoom: 1;

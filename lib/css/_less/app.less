@@ -54,7 +54,7 @@ hr {
 .container > section {
 	font-size: @miniBump;
 }
-.projects {
+.project-overviews {
 	li {
 		padding: 1em 0;
 	}
@@ -89,7 +89,7 @@ header {
 	}
 }
 
-.project--description {
+.project-overview--description {
 	width: @square;
 	height: @square;
 	top: 0;
@@ -103,7 +103,11 @@ header {
 	padding: 0.5em;
 	color: black;
 }
-.featured .project--description {
+.project-overview__name {
+	display: inline;
+	border-bottom: 1px solid black;
+}
+.featured .project-overview--description {
 	width: @sq2;
 	height: @sq2;
 }
@@ -112,7 +116,7 @@ header {
 	width: 60%;
 	float: right;
 }
-.project--album {
+.project-overview {
 	width: @square;
 	height: @square;
 	position: relative;
@@ -141,9 +145,20 @@ header {
 		}
 	}
 	&:hover {
-		.project--description, .big-overlay {
+		.project-overview--description, .big-overlay {
 			display: block;
 		}
+	}
+}
+
+.project-overview__libraries {
+	width: 40%;
+	float: left;
+	li {
+		border: 1px solid black;
+		display: inline-block;
+		padding: 0 0.5em;
+		box-shadow: @aggro;
 	}
 }
 
@@ -163,16 +178,6 @@ header {
 	-webkit-transform: rotate(90deg);
 	p {
 		line-height: 1;
-	}
-}
-.libraries {
-	width: 40%;
-	float: left;
-	li {
-		border: 1px solid black;
-		display: inline-block;
-		padding: 0 0.5em;
-		box-shadow: @aggro;
 	}
 }
 footer {	

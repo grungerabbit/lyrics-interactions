@@ -4,7 +4,15 @@ layout: blank
 
 <header class="project-header small">
 	<a href="/">back</a><hr>
+	{% for post in site.posts %}
+		{% if post.reference == page.reference %}
+		<a href="{{post.url}}">
+		{% endif %}
+	{% endfor %}
 	<i class="project-header__question ion-ios7-help" data-pack="ios7" data-tags="question, information, ?">info</i>
+	{% if page.reference %}
+	</a>
+	{% endif %}
 	
 	<div class="project__metadata">
 		<div class="project-header__title">
@@ -40,7 +48,7 @@ layout: blank
 		
 		{% for post in site.posts %}
 			{% if post.reference == page.reference %}
-			<a href="{{post.url}}">See more</a>
+			<a href="{{post.url}}">Learn more &raquo;</a>
 			{% endif %}
 		{% endfor %}
 	</div>
