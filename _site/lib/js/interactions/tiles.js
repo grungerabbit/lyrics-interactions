@@ -44,10 +44,10 @@ $(document).ready(function () {
 	Tile.prototype.drawSquare = function(size) {
 		this.size = size;
 		var ctL = currentTiles.length;
-		var row = (ctL - (ctL % breakpoint));
+		this.row = (ctL - (ctL % breakpoint));
 
-		if (row !== 0) {
-			this.originX = this.originX - (row * this.size);
+		if (this.row !== 0) {
+			this.originX = this.originX - (this.row * this.size);
 		}
 
 		paper.rect(this.originX, this.originY, size, size);
@@ -114,22 +114,53 @@ $(document).ready(function () {
 			return;
 		} else {
 			var possible = [];
-			
-			
-			
-			if (this.originX - this.size === last.originX) {
+	
+			if (this.originX - this.size === last.originX && this.originY === last.originY) {
 				// check last east and current west
 			
-				if (this.originY === last.originY) {
-					for (var j = 0; j < tileSet.length; j++) {
-						if (last.set && tileSet[j].w === last.set.e) {
-							possible.push(tileSet[j]);
-						}	
+
+				for (var j = 0; j < tileSet.length; j++) {
+					if (tileSet[j].w === last.set.e) {
+						possible.push(tileSet[j]);
+					}	
+				}
+			
+			
+				if (this.row !== 0) {
+					console.log("DOG!")
+					
+					for (var k = 0; k < currentTiles.length; k++) {
+						if (this.originX === currentTiles[k].originX && this.originY === (currentTiles[k].originY + this.size)) {
+							
+							console.log(currentTiles[k]);
+							
+							
+							
+							for (var m = 0; m < possible.length; m++) {
+								
+								console.log(currentTiles[k].set.s)
+								console.log("SOUTH")
+								console.log(possible[m].n)
+								
+								
+								if (currentTiles[k].set.s !== possible[m].n) {
+									possible.splice(m, 1);
+								}
+							}
+							
+							console.log(possible)
+							console.log("spliced")
+			
+							
+							
+						}
 					}
-				} 
+					
+				}
+			
 				
 				var pL = possible.length;
-				choice = this.rando(0, pL);
+				choice = pL > 1 ? this.rando(0, pL) : 0;
 				now = possible[choice];	
 			}
 		}
@@ -152,7 +183,7 @@ $(document).ready(function () {
 		this.chooseTile();
 		this.assignColors();
 		
-		console.log(currentTiles)
+		//console.log(currentTiles)
 		
 		square.triNorth(this.colorSet.n);
 		square.triEast(this.colorSet.e);
