@@ -6,6 +6,8 @@ $(document).ready(function () {
 	// 3: green
 	// 4: blue
 	// 5: grey
+	
+	var colors = ["red", "yellow", "green", "blue", "gray"];
 
 	var tileSet = [
 		{"n": 3, "e": 3, "s": 4, "w": 1},
@@ -23,11 +25,7 @@ $(document).ready(function () {
 		{"n": 3, "e": 2, "s": 3, "w": 5}
 	]
 	
-	var Tile = function(north, east, south, west, originX, originY) {
-		this.north = north;
-		this.east = east;
-		this.south = south;
-		this.west = west;
+	var Tile = function(originX, originY) {
 		this.originX = originX;
 		this.originY = originY;
 	}
@@ -37,22 +35,44 @@ $(document).ready(function () {
 		paper.rect(this.originX, this.originY, size, size);
 	}
 	
-	Tile.prototype.triangles = function() {
-		
-		console.log(this.size)
-		
+	Tile.prototype.triNorth = function() {
 		var arrange = "M" + this.originX + "," + this.originY + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX + this.size) + "," + (this.originY) + "Z";
-		console.log(arrange);
 		paper.path(arrange).attr({"fill":"green"});
 	}
 	
+	Tile.prototype.triEast = function() {
+		var arrange = "M" + (this.originX + this.size) + "," + this.originY + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX + this.size) + "," + (this.originY + this.size) + "Z";
+		paper.path(arrange).attr({"fill":"red"});
+	}
+	
+	Tile.prototype.triSouth = function() {
+		var arrange = "M" + (this.originX + this.size) + "," + (this.originY + this.size) + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX) + "," + (this.originY + this.size) + "Z";
+		paper.path(arrange).attr({"fill":"blue"});
+	}
+	
+	Tile.prototype.triWest = function() {
+		var arrange = "M" + (this.originX) + "," + (this.originY + this.size) + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX) + "," + (this.originY) + "Z";
+		paper.path(arrange).attr({"fill":"gray"});
+	}
+	
+	Tile.prototype.quadrants = function() {
+		square.triNorth();
+		square.triEast();
+		square.triSouth();
+		square.triWest();
+	}
 	
 	Tile.prototype.drawTile = function() {
 		square.drawSquare(100);
-		square.triangles();
+		square.quadrants();
 	}
 	
-	var square = new Tile("red", "red", "red", "red", 50, 50);
-	square.drawTile();
 
+	for (var i = 0; i < 4; i++) {
+		var startX = 100;
+		var startY = 100;
+		
+		var square = new Tile((i*startX), startY);
+		square.drawTile();
+	}
 });
