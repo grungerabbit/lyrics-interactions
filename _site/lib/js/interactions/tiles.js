@@ -9,7 +9,11 @@ $(document).ready(function () {
 	
 	var currentTiles = [];
 	
-	var colors = ["red", "yellow", "green", "blue", "gray"];
+	var originalX = 0;
+	
+	var breakpoint = 10;
+	
+	var colors = ["#000", "#444", "#888", "#ccc", "#fff"];
 
 	var tileSet = [
 		{"n": 3, "e": 3, "s": 4, "w": 1},
@@ -67,10 +71,23 @@ $(document).ready(function () {
 		if (ctL === 0) {
 			choice = this.rando(0, tileSet.length);
 			now = tileSet[choice];	
+		} else if (ctL % breakpoint === 0) {
+			this.originY += this.size;
+			this.originX = originalX;
+			
+			console.log(this);
+			
+			var possibilities = []
+			
+			// you need to check what's happening north too, in the regular else, with an exception thrown for the first row.
+			
+			
+			console.log("BREAKPOINT!!!");
+			return;
 		} else {
 			var last = currentTiles[ctL-1];
 			
-			if (this.originX - this.size === last.originX) {
+			if (this.originX - this.size === last.originX && this.originY === last.originY) {
 				// check last east and current west
 			
 				var possibilities = [];	
@@ -101,7 +118,6 @@ $(document).ready(function () {
 	
 	Tile.prototype.quadrants = function() {
 		this.chooseTile();
-		
 		this.assignColors();
 		
 		square.triNorth(this.colorSet.n);
@@ -116,7 +132,7 @@ $(document).ready(function () {
 	};
 	
 
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 20; i++) {
 		var startX = 100;
 		var startY = 100;
 		
