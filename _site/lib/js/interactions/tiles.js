@@ -43,6 +43,13 @@ $(document).ready(function () {
 	
 	Tile.prototype.drawSquare = function(size) {
 		this.size = size;
+		var ctL = currentTiles.length;
+		var row = (ctL - (ctL % breakpoint));
+
+		if (row !== 0) {
+			this.originX = this.originX - (row * this.size);
+		}
+
 		paper.rect(this.originX, this.originY, size, size);
 	};
 	
@@ -82,6 +89,7 @@ $(document).ready(function () {
 			this.originY += this.size;
 			this.originX = originalX;
 
+			//startX = this.originX;
 			startY = this.originY;
 			
 			var possible = [];
@@ -105,18 +113,20 @@ $(document).ready(function () {
 			
 			return;
 		} else {
-			
 			var possible = [];
+			
+			
+			
 			if (this.originX - this.size === last.originX) {
 				// check last east and current west
 			
 				if (this.originY === last.originY) {
 					for (var j = 0; j < tileSet.length; j++) {
-						if (tileSet[j].w === last.set.e) {
+						if (last.set && tileSet[j].w === last.set.e) {
 							possible.push(tileSet[j]);
-						}
+						}	
 					}
-				}
+				} 
 				
 				var pL = possible.length;
 				choice = this.rando(0, pL);
@@ -142,6 +152,8 @@ $(document).ready(function () {
 		this.chooseTile();
 		this.assignColors();
 		
+		console.log(currentTiles)
+		
 		square.triNorth(this.colorSet.n);
 		square.triEast(this.colorSet.e);
 		square.triSouth(this.colorSet.s);
@@ -153,7 +165,7 @@ $(document).ready(function () {
 		square.quadrants();
 	};
 	
-	for (var i = 0; i < 20; i++) {		
+	for (var i = 0; i < 25; i++) {		
 		var square = new Tile((i*startX), startY);
 		square.drawTile();
 	}
