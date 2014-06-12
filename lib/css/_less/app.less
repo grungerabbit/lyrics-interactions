@@ -161,6 +161,14 @@ header {
 		box-shadow: @aggro;
 	}
 }
+.documentation__listing {
+	li {
+		display: inline-block;
+		&:after {
+			content: " * ";
+		}
+	}
+}
 
 .taglines {
 	clear: both;

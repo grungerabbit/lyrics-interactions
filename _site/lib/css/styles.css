@@ -279,6 +279,12 @@ header:after {
   padding: 0 0.5em;
   box-shadow: 5px 5px 0px #cc00ff, 4px 4px 0px #cc00ff, 3px 3px 0px #cc00ff, 2px 2px 0px #cc00ff, 1px 1px 0px #cc00ff;
 }
+.documentation__listing li {
+  display: inline-block;
+}
+.documentation__listing li:after {
+  content: " * ";
+}
 .taglines {
   clear: both;
 }
