@@ -7,6 +7,8 @@ $(document).ready(function () {
 	// 4: blue
 	// 5: grey
 	
+	var currentTiles = [];
+	
 	var colors = ["red", "yellow", "green", "blue", "gray"];
 
 	var tileSet = [
@@ -28,44 +30,110 @@ $(document).ready(function () {
 	var Tile = function(originX, originY) {
 		this.originX = originX;
 		this.originY = originY;
-	}
+	};
 	
 	Tile.prototype.drawSquare = function(size) {
 		this.size = size;
 		paper.rect(this.originX, this.originY, size, size);
-	}
+	};
 	
-	Tile.prototype.triNorth = function() {
+	Tile.prototype.triNorth = function(color) {
 		var arrange = "M" + this.originX + "," + this.originY + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX + this.size) + "," + (this.originY) + "Z";
-		paper.path(arrange).attr({"fill":"green"});
-	}
+		paper.path(arrange).attr({"fill":color});
+	};
 	
-	Tile.prototype.triEast = function() {
+	Tile.prototype.triEast = function(color) {
 		var arrange = "M" + (this.originX + this.size) + "," + this.originY + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX + this.size) + "," + (this.originY + this.size) + "Z";
-		paper.path(arrange).attr({"fill":"red"});
-	}
+		paper.path(arrange).attr({"fill":color});
+	};
 	
-	Tile.prototype.triSouth = function() {
+	Tile.prototype.triSouth = function(color) {
 		var arrange = "M" + (this.originX + this.size) + "," + (this.originY + this.size) + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX) + "," + (this.originY + this.size) + "Z";
-		paper.path(arrange).attr({"fill":"blue"});
-	}
+		paper.path(arrange).attr({"fill":color});
+	};
 	
-	Tile.prototype.triWest = function() {
+	Tile.prototype.triWest = function(color) {
 		var arrange = "M" + (this.originX) + "," + (this.originY + this.size) + "L" + (this.originX + (this.size/2)) + "," + (this.originY + (this.size/2)) + "L" + (this.originX) + "," + (this.originY) + "Z";
-		paper.path(arrange).attr({"fill":"gray"});
+		paper.path(arrange).attr({"fill":color});
+	};
+	
+	Tile.prototype.rando = function(min, max) {
+		return Math.floor(Math.random() * max + min);
+	};
+	
+	Tile.prototype.chooseTile = function() {
+		var choice;
+		var ctL = currentTiles.length;
+		if (ctL === 0) {
+			choice = this.rando(0, tileSet.length);
+		} else {
+			var last = currentTiles[ctL-1];
+			
+			if (this.originX - this.size === last.originX) {
+				// check last east and current west
+			
+				var possibilities = [];	
+				for (var j = 0; j < tileSet.length; j++) {
+					if (tileSet[j].w === last.set.e) {
+						possibilities.push(tileSet[j]);
+					}
+				}
+				var pL = possibilities.length;
+				choice = this.rando(0, pL);
+			}
+		}
+		var now = tileSet[choice];	
+		this.set = now;
+		currentTiles.push(this);
+		
+		console.log(currentTiles);
+	};
+	
+	Tile.prototype.assignColors = function() {
+		console.log(colors.length);
+		
+		var obj = {};
+		
+		for (prop in this.set) {
+			//console.log();
+			
+			var num = parseInt(this.set[prop]) - 1;
+			
+			
+			
+			console.log(num)
+			
+			obj[prop] = colors[num];
+			
+			
+			//console.log(prop)
+			//
+			//console.log(colors[parseInt(prop)])
+			
+			//console.log(colors(prop + 1))
+			
+			//this.set = 
+		}
+		
+		console.log(obj);
+		this.colorSet = obj;
 	}
 	
 	Tile.prototype.quadrants = function() {
-		square.triNorth();
-		square.triEast();
-		square.triSouth();
-		square.triWest();
-	}
+		this.chooseTile();
+		
+		this.assignColors();
+		
+		square.triNorth(this.colorSet.n);
+		square.triEast(this.colorSet.e);
+		square.triSouth(this.colorSet.s);
+		square.triWest(this.colorSet.w);
+	};
 	
 	Tile.prototype.drawTile = function() {
 		square.drawSquare(100);
 		square.quadrants();
-	}
+	};
 	
 
 	for (var i = 0; i < 4; i++) {
