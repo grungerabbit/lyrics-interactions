@@ -62,10 +62,11 @@ $(document).ready(function () {
 	};
 	
 	Tile.prototype.chooseTile = function() {
-		var choice;
+		var choice, now;
 		var ctL = currentTiles.length;
 		if (ctL === 0) {
 			choice = this.rando(0, tileSet.length);
+			now = tileSet[choice];	
 		} else {
 			var last = currentTiles[ctL-1];
 			
@@ -80,42 +81,21 @@ $(document).ready(function () {
 				}
 				var pL = possibilities.length;
 				choice = this.rando(0, pL);
+				now = possibilities[choice];	
 			}
 		}
-		var now = tileSet[choice];	
+		
 		this.set = now;
 		currentTiles.push(this);
-		
-		console.log(currentTiles);
 	};
 	
 	Tile.prototype.assignColors = function() {
-		console.log(colors.length);
-		
 		var obj = {};
 		
 		for (prop in this.set) {
-			//console.log();
-			
 			var num = parseInt(this.set[prop]) - 1;
-			
-			
-			
-			console.log(num)
-			
 			obj[prop] = colors[num];
-			
-			
-			//console.log(prop)
-			//
-			//console.log(colors[parseInt(prop)])
-			
-			//console.log(colors(prop + 1))
-			
-			//this.set = 
 		}
-		
-		console.log(obj);
 		this.colorSet = obj;
 	}
 	
@@ -136,7 +116,7 @@ $(document).ready(function () {
 	};
 	
 
-	for (var i = 0; i < 4; i++) {
+	for (var i = 0; i < 10; i++) {
 		var startX = 100;
 		var startY = 100;
 		
