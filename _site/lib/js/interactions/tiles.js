@@ -9,6 +9,11 @@ $(document).ready(function () {
 	
 	var currentTiles = [];
 	
+	var side = 100;
+	
+	var startX = 100;
+	var startY = 100;
+	
 	var originalX = 0;
 	
 	var breakpoint = 10;
@@ -67,38 +72,55 @@ $(document).ready(function () {
 	
 	Tile.prototype.chooseTile = function() {
 		var choice, now;
+		
 		var ctL = currentTiles.length;
+		var last = currentTiles[ctL-1];
 		if (ctL === 0) {
 			choice = this.rando(0, tileSet.length);
 			now = tileSet[choice];	
 		} else if (ctL % breakpoint === 0) {
 			this.originY += this.size;
 			this.originX = originalX;
+
+			startY = this.originY;
 			
-			console.log(this);
-			
-			var possibilities = []
-			
-			// you need to check what's happening north too, in the regular else, with an exception thrown for the first row.
-			
-			
-			console.log("BREAKPOINT!!!");
-			return;
-		} else {
-			var last = currentTiles[ctL-1];
-			
-			if (this.originX - this.size === last.originX && this.originY === last.originY) {
-				// check last east and current west
-			
-				var possibilities = [];	
-				for (var j = 0; j < tileSet.length; j++) {
-					if (tileSet[j].w === last.set.e) {
-						possibilities.push(tileSet[j]);
+			var possible = [];
+
+			for (var k = 0; k < currentTiles.length; k++) {
+				if (this.originX === currentTiles[k].originX && this.originY === (currentTiles[k].originY + this.size)) {
+					for (var m = 0; m < tileSet.length; m++) {
+						if (currentTiles[k].set.s === tileSet[m].n) {
+							possible.push(tileSet[m]);
+						}
 					}
 				}
-				var pL = possibilities.length;
+			}
+			
+			var pL = possible.length;
+			choice = this.rando(0, pL);
+			now = possible[choice];
+			
+			this.set = now;
+			currentTiles.push(this);
+			
+			return;
+		} else {
+			
+			var possible = [];
+			if (this.originX - this.size === last.originX) {
+				// check last east and current west
+			
+				if (this.originY === last.originY) {
+					for (var j = 0; j < tileSet.length; j++) {
+						if (tileSet[j].w === last.set.e) {
+							possible.push(tileSet[j]);
+						}
+					}
+				}
+				
+				var pL = possible.length;
 				choice = this.rando(0, pL);
-				now = possibilities[choice];	
+				now = possible[choice];	
 			}
 		}
 		
@@ -127,15 +149,11 @@ $(document).ready(function () {
 	};
 	
 	Tile.prototype.drawTile = function() {
-		square.drawSquare(100);
+		square.drawSquare(side);
 		square.quadrants();
 	};
 	
-
-	for (var i = 0; i < 20; i++) {
-		var startX = 100;
-		var startY = 100;
-		
+	for (var i = 0; i < 20; i++) {		
 		var square = new Tile((i*startX), startY);
 		square.drawTile();
 	}
