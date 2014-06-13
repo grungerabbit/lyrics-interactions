@@ -6,6 +6,7 @@ $(document).ready(function () {
 	// 3: green
 	// 4: blue
 	// 5: grey
+	// 6: error
 	
 	var currentTiles = [];
 	
@@ -18,7 +19,7 @@ $(document).ready(function () {
 	
 	var breakpoint = 10;
 	
-	var colors = ["#000", "#444", "#888", "#ccc", "#fff"];
+	var colors = ["#000", "#444", "#888", "#ccc", "#fff", "#cc0000"];
 
 	var tileSet = [
 		{"n": 3, "e": 3, "s": 4, "w": 1},
@@ -35,6 +36,8 @@ $(document).ready(function () {
 		{"n": 4, "e": 5, "s": 3, "w": 5},
 		{"n": 3, "e": 2, "s": 3, "w": 5}
 	]
+	
+	var errorSet = {"n": 1, "e": 1, "s": 1, "w": 1};
 	
 	var Tile = function(originX, originY) {
 		this.originX = originX;
@@ -88,8 +91,6 @@ $(document).ready(function () {
 		} else if (ctL % breakpoint === 0) {
 			this.originY += this.size;
 			this.originX = originalX;
-
-			//startX = this.originX;
 			startY = this.originY;
 			
 			var possible = [];
@@ -112,56 +113,45 @@ $(document).ready(function () {
 			currentTiles.push(this);
 			
 			return;
+		} else if (this.row === 0 && ctL !== 0) {
+			var possible = [];
+			
+			for (var j = 0; j < tileSet.length; j++) {
+				if (tileSet[j].w === last.set.e) {
+					possible.push(tileSet[j]);
+				}	
+			}
+			var pL = possible.length;
+			choice = pL > 1 ? this.rando(0, pL) : 0;
+			now = possible[choice];	
+			
 		} else {
 			var possible = [];
 	
 			if (this.originX - this.size === last.originX && this.originY === last.originY) {
 				// check last east and current west
-			
-
-				for (var j = 0; j < tileSet.length; j++) {
-					if (tileSet[j].w === last.set.e) {
-						possible.push(tileSet[j]);
-					}	
-				}
-			
-			
-				if (this.row !== 0) {
-					console.log("DOG!")
-					
-					for (var k = 0; k < currentTiles.length; k++) {
-						if (this.originX === currentTiles[k].originX && this.originY === (currentTiles[k].originY + this.size)) {
-							
-							console.log(currentTiles[k]);
-							
-							
-							
-							for (var m = 0; m < possible.length; m++) {
-								
-								console.log(currentTiles[k].set.s)
-								console.log("SOUTH")
-								console.log(possible[m].n)
-								
-								
-								if (currentTiles[k].set.s !== possible[m].n) {
-									possible.splice(m, 1);
-								}
+				var set2 = [];
+				for (var k = 0; k < currentTiles.length; k++) {
+					if (this.originX === currentTiles[k].originX && this.originY === (currentTiles[k].originY + this.size)) {
+						for (var m = 0; m < tileSet.length; m++) {	
+							if (currentTiles[k].set.s === tileSet[m].n) {
+								possible.push(tileSet[m]);
 							}
-							
-							console.log(possible)
-							console.log("spliced")
-			
-							
-							
 						}
 					}
-					
 				}
-			
+				
+				for (var q = 0; q < possible.length; q++) {
+					if (possible[q].w == last.set.e) {
+						set2.push(possible[q]);
+					}
+				}
+				possible = set2;
 				
 				var pL = possible.length;
-				choice = pL > 1 ? this.rando(0, pL) : 0;
-				now = possible[choice];	
+				choice = this.rando(0, pL);
+				
+				now = pL !== 0 ? possible[choice] : errorSet;	
 			}
 		}
 		
@@ -182,8 +172,6 @@ $(document).ready(function () {
 	Tile.prototype.quadrants = function() {
 		this.chooseTile();
 		this.assignColors();
-		
-		//console.log(currentTiles)
 		
 		square.triNorth(this.colorSet.n);
 		square.triEast(this.colorSet.e);
