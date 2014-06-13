@@ -6,18 +6,12 @@ $(document).ready(function () {
 	// 3: green
 	// 4: blue
 	// 5: grey
-	// 6: error
 	
 	var currentTiles = [];
 	
-	var side = 100;
-	
 	var startX = 100;
 	var startY = 100;
-	
 	var originalX = 0;
-	
-	var breakpoint = 10;
 	
 	var colors = ["#000", "#444", "#888", "#ccc", "#fff", "#cc0000"];
 
@@ -39,15 +33,16 @@ $(document).ready(function () {
 	
 	var errorSet = {"n": 1, "e": 1, "s": 1, "w": 1};
 	
-	var Tile = function(originX, originY) {
+	var Tile = function(originX, originY, breakpoint) {
 		this.originX = originX;
 		this.originY = originY;
+		this.breakpoint = breakpoint;
 	};
 	
 	Tile.prototype.drawSquare = function(size) {
 		this.size = size;
 		var ctL = currentTiles.length;
-		this.row = (ctL - (ctL % breakpoint));
+		this.row = (ctL - (ctL % this.breakpoint));
 
 		if (this.row !== 0) {
 			this.originX = this.originX - (this.row * this.size);
@@ -88,7 +83,7 @@ $(document).ready(function () {
 		if (ctL === 0) {
 			choice = this.rando(0, tileSet.length);
 			now = tileSet[choice];	
-		} else if (ctL % breakpoint === 0) {
+		} else if (ctL % this.breakpoint === 0) {
 			this.originY += this.size;
 			this.originX = originalX;
 			startY = this.originY;
@@ -173,19 +168,23 @@ $(document).ready(function () {
 		this.chooseTile();
 		this.assignColors();
 		
-		square.triNorth(this.colorSet.n);
-		square.triEast(this.colorSet.e);
-		square.triSouth(this.colorSet.s);
-		square.triWest(this.colorSet.w);
+		this.triNorth(this.colorSet.n);
+		this.triEast(this.colorSet.e);
+		this.triSouth(this.colorSet.s);
+		this.triWest(this.colorSet.w);
 	};
 	
-	Tile.prototype.drawTile = function() {
-		square.drawSquare(side);
-		square.quadrants();
+	Tile.prototype.drawTile = function(size) {
+		this.drawSquare(size);
+		this.quadrants();
 	};
 	
-	for (var i = 0; i < 25; i++) {		
-		var square = new Tile((i*startX), startY);
-		square.drawTile();
+	function makeBoard(numberTiles, tileSize, breakpoint) {
+		for (var i = 0; i < numberTiles; i++) {		
+			var square = new Tile((i*startX), startY, breakpoint);
+			square.drawTile(tileSize);
+		}
 	}
+	
+	makeBoard(2000,100, 20)
 });
