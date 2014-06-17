@@ -42,6 +42,14 @@ label {
 .tinynumber {
 	width: 3em;
 }
+.loan__adder {
+	font: 1.5em "Cutive Mono";
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 0.5em;
+	display: inline-block;
+}
 </style>
 
 <!--
@@ -56,7 +64,13 @@ label {
 <div ng-app>
 <div ng-controller="Calculator">
 	
+	
+	
 <h1 class="title">Loan Calculator</h1>
+
+<p>All income figures inputted hourly</p>
+
+
 <div class="initial__settings">
 	
 	<label>Your name</label>
@@ -77,6 +91,21 @@ label {
 	<label><span ng-show="yourname" ng-bind="yourname"></span><span ng-hide="yourname">Person 1</span> Side Income</label>
 	<input type="text">
 </div>
+
+<button ng-click="addNewLoaner()" class="loan__adder">+ Loan</button>
+
+<ul>
+	<li ng-repeat="loaner in loaners">
+		<label>Name</label>
+		<input type="text">
+		<label><span ng-bind="loaners[index].name"></span> Main Income</label>
+		<input type="text">
+		<input type="text">
+		<p ng-bind="$index"></p>
+		
+		<p ng-bind="loaners[index]"></p>
+	</li>
+</ul>
 
 <div class="results">
 	<h3 ng-bind="principal"></h3>
