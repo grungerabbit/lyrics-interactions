@@ -59,6 +59,24 @@ label {
 .success {
 	color: #94e515;
 }
+.result__calc {
+	padding: 1em 0;
+}
+.result__calc div {
+	display: inline-block;
+}
+.result__calc div[class^='calc--'] {
+	position: relative;
+}
+.result__calc small {
+	position: absolute;
+	font-size: 40%;
+	color: #ccc;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	text-transform: uppercase;
+	text-align: center;
+}
 </style>
 
 <!--
@@ -88,7 +106,7 @@ label {
 	<label>Principal</label>
 	<input ng-model="principal" type="text" class="number">
 	
-	<label>Time</label>
+	<label>Months</label>
 	<input ng-model="monthsleft" type="text" class="tinynumber">
 	
 	<!--<label>Interest</label>
@@ -100,8 +118,14 @@ label {
 	<label><span ng-show="yourname" ng-bind="yourname"></span><span ng-hide="yourname">Person 1</span> Main Income</label>
 	<input type="text" ng-model="main">
 	
+	<label>Hr/wk</label>
+	<input type="text" ng-model="hoursWk" class="tinynumber">
+	
 	<label><span ng-show="yourname" ng-bind="yourname"></span><span ng-hide="yourname">Person 1</span> Side Income</label>
 	<input type="text" ng-model="side">
+	
+	<label>Hr/wk</label>
+	<input type="text" ng-model="shoursWk" class="tinynumber">
 </div>
 
 <button ng-click="addNewLoaner()" class="loan__adder">+ Loan</button>
@@ -120,10 +144,26 @@ label {
 <div class="results">
 	<p>Results</p>
 	
-	<h3>
-		<span ng-bind="principal"></span> <span ng-if="main > 0">- 
-		(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * 80)</span> <span ng-if="side > 0">-
-		(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * 80)</span>
+	<h3 class="result__calc">
+		<div class="calc--principal">
+			<span ng-bind="principal"></span> 
+			<small>principal</small>
+		</div>
+		
+		
+		
+		
+		<div ng-if="main > 0">- 
+		<div class="calc--main">
+			(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="hoursWk"></span> * <span>2</span>)
+		<small>main hr * mo * hr/wk * wks*mo/2</small></div>
+		</div>
+		
+		<div ng-if="side > 0">-
+		<div class="calc--side">
+			(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="shoursWk"></span> * <span>2</span>)
+			<small>side hr * mo * hr/wk * wks*mo/2</small></div>
+			</div>
 		
 		<span ng-if="loaners.length > 0">-</span> <span ng-if="loaners.length > 1">(</span>
 		<span ng-repeat="loaner in loaners">
