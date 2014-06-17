@@ -56,6 +56,9 @@ label {
 	top: 0;
 	right: 0;
 }
+.success {
+	color: #94e515;
+}
 </style>
 
 <!--
@@ -118,15 +121,27 @@ label {
 	<p>Results</p>
 	
 	<h3>
-		<span ng-bind="principal"></span> - 
-		(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * 160) -
-		(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * 160)
+		<span ng-bind="principal"></span> <span ng-if="main > 0">- 
+		(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * 80)</span> <span ng-if="side > 0">-
+		(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * 80)</span>
 		
-		<span ng-if="loaners.length > 0">- (</span><span ng-repeat="loaner in loaners"><span ng-if="$index !== 0"> + </span>(<span ng-bind="loaners[$index].loan"></span> + <span ng-bind="loaners[$index].interest"></span>)</span><span ng-if="loaners.length > 0">)</span>
+		<span ng-if="loaners.length > 0">-</span> <span ng-if="loaners.length > 1">(</span>
+		<span ng-repeat="loaner in loaners">
+			<span ng-if="$index !== 0"> + </span>
+			<span ng-bind="loaners[$index].loan"></span>
+		</span>
+		<span ng-if="loaners.length > 1">)</span>
+		
 		
 		= 
-		<span ng-bind="calculated()"></span>
+		<span ng-bind="calculated()" ng-class="{success: calculated() <= 0}"></span>
 	</h3>
+	
+	<p>Debt</p>
+	<h5><span ng-if="loaners.length > 1">(</span><span ng-repeat="loaner in loaners"><span ng-if="$index !== 0"> + </span>(<span ng-bind="loaners[$index].loan"></span> * <span ng-bind="percentage($index)"></span>)</span><span ng-if="loaners.length > 1">)</span> = 
+	
+	<span ng-bind="debt()"></span>
+	</h5>
 	
 </div>
 
