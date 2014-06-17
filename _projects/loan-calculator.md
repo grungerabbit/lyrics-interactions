@@ -23,6 +23,7 @@ input {
 	border: 1px solid #ccc;
 	padding: 0.75em 0.5em 0.25em;
 	font: 1.5em "Cutive Mono";
+	width: 33%;
 }
 div input {
 	margin-left: -1em;
@@ -82,14 +83,17 @@ label {
 	<label>Time</label>
 	<input ng-model="monthsleft" type="text" class="tinynumber">
 	
+	<label>Interest</label>
+	<input ng-model="interest" type="text" class="tinynumber">
+	
 </div>
 
 <div class="initial__income">
 	<label><span ng-show="yourname" ng-bind="yourname"></span><span ng-hide="yourname">Person 1</span> Main Income</label>
-	<input type="text">
+	<input type="text" ng-model="main">
 	
 	<label><span ng-show="yourname" ng-bind="yourname"></span><span ng-hide="yourname">Person 1</span> Side Income</label>
-	<input type="text">
+	<input type="text" ng-model="side">
 </div>
 
 <button ng-click="addNewLoaner()" class="loan__adder">+ Loan</button>
@@ -97,18 +101,21 @@ label {
 <ul>
 	<li ng-repeat="loaner in loaners">
 		<label>Name</label>
-		<input type="text">
-		<label><span ng-bind="loaners[index].name"></span> Main Income</label>
-		<input type="text">
-		<input type="text">
-		<p ng-bind="$index"></p>
-		
-		<p ng-bind="loaners[index]"></p>
+		<input type="text" ng-model="loaners[$index].name">
+		<label><span ng-bind="loaners[$index].name"></span> Loan</label>
+		<input type="text" ng-model="loaners[$index].loan">
+		<label><span ng-bind="loaners[$index].name"></span> Interest</label>
+		<input type="text" ng-model="loaners[$index].interest">
 	</li>
 </ul>
 
 <div class="results">
-	<h3 ng-bind="principal"></h3>
+	<h3>
+		<span ng-bind="principal"></span> - 
+		(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * 160) = 
+		<span ng-bind="calculated"></span>
+	</h3>
+	
 </div>
 
 </div>
