@@ -18,12 +18,14 @@ body {
 	width: 95%;
 	margin: auto;
 	font-size: 150%;
+	position: relative;
 }
 input {
 	border: 1px solid #ccc;
 	padding: 0.75em 0.5em 0.25em;
 	font: 1.5em "Cutive Mono";
 	width: 33%;
+	margin-top: -1px;
 }
 div input {
 	margin-left: -1em;
@@ -50,6 +52,9 @@ label {
 	border: none;
 	padding: 0.5em;
 	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 </style>
 
@@ -83,8 +88,8 @@ label {
 	<label>Time</label>
 	<input ng-model="monthsleft" type="text" class="tinynumber">
 	
-	<label>Interest</label>
-	<input ng-model="interest" type="text" class="tinynumber">
+	<!--<label>Interest</label>
+	<input ng-model="interest" type="text" class="tinynumber">-->
 	
 </div>
 
@@ -110,10 +115,17 @@ label {
 </ul>
 
 <div class="results">
+	<p>Results</p>
+	
 	<h3>
 		<span ng-bind="principal"></span> - 
-		(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * 160) = 
-		<span ng-bind="calculated"></span>
+		(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * 160) -
+		(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * 160)
+		
+		<span ng-if="loaners.length > 0">- (</span><span ng-repeat="loaner in loaners"><span ng-if="$index !== 0"> + </span>(<span ng-bind="loaners[$index].loan"></span> + <span ng-bind="loaners[$index].interest"></span>)</span><span ng-if="loaners.length > 0">)</span>
+		
+		= 
+		<span ng-bind="calculated()"></span>
 	</h3>
 	
 </div>
