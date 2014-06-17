@@ -155,12 +155,16 @@ label {
 		
 		<div ng-if="main > 0">- 
 		<div class="calc--main">
+			<span ng-bind="calcHourly(main)"></span>
+			
 			(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="hoursWk"></span> * <span>2</span>)
 		<small>main hr * mo * hr/wk * wks*mo/2</small></div>
 		</div>
 		
 		<div ng-if="side > 0">-
 		<div class="calc--side">
+			<span ng-bind="calcHourly(side)"></span>
+			
 			(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="shoursWk"></span> * <span>2</span>)
 			<small>side hr * mo * hr/wk * wks*mo/2</small></div>
 			</div>
