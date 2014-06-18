@@ -77,6 +77,9 @@ label {
 	text-transform: uppercase;
 	text-align: center;
 }
+.show-work {
+	color: #ccc;
+}
 </style>
 
 <!--
@@ -94,8 +97,6 @@ label {
 	
 	
 <h1 class="title">Loan Calculator</h1>
-
-<p>All income figures inputted hourly</p>
 
 
 <div class="initial__settings">
@@ -157,22 +158,25 @@ label {
 		<div class="calc--main">
 			<span ng-bind="calcHourly(main)"></span>
 			
-			(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="hoursWk"></span> * <span>2</span>)
-		<small>main hr * mo * hr/wk * wks*mo/2</small></div>
+			<em class="show-work">(<span ng-bind="main"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="hoursWk"></span> * <span>2</span>)</em>
+		<small><span ng-show="yourname" ng-bind="yourname"></span> main hr * mo * hr/wk * wks*mo/2</small></div>
 		</div>
 		
 		<div ng-if="side > 0">-
 		<div class="calc--side">
 			<span ng-bind="calcHourly(side)"></span>
 			
-			(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="shoursWk"></span> * <span>2</span>)
-			<small>side hr * mo * hr/wk * wks*mo/2</small></div>
+			<em class="show-work">(<span ng-bind="side"></span> * <span ng-bind="monthsleft"></span> * <span ng-bind="shoursWk"></span> * <span>2</span>)</em>
+			<small><span ng-show="yourname" ng-bind="yourname"></span> side hr * mo * hr/wk * wks*mo/2</small></div>
 			</div>
 		
 		<span ng-if="loaners.length > 0">-</span> <span ng-if="loaners.length > 1">(</span>
 		<span ng-repeat="loaner in loaners">
 			<span ng-if="$index !== 0"> + </span>
-			<span ng-bind="loaners[$index].loan"></span>
+			<div class="calc--debt">
+				<span ng-bind="loaners[$index].loan"></span>
+				<small ng-bind="loaners[$index].name"></small>
+			</div>
 		</span>
 		<span ng-if="loaners.length > 1">)</span>
 		
@@ -182,7 +186,10 @@ label {
 	</h3>
 	
 	<p>Debt</p>
-	<h5><span ng-if="loaners.length > 1">(</span><span ng-repeat="loaner in loaners"><span ng-if="$index !== 0"> + </span>(<span ng-bind="loaners[$index].loan"></span> * <span ng-bind="percentage($index)"></span>)</span><span ng-if="loaners.length > 1">)</span> = 
+	<h5 class="result__calc"><span ng-if="loaners.length > 1">(</span>
+		<div class="calc--debt" ng-repeat="loaner in loaners">
+			<span ng-if="$index !== 0"> +</span>(<span ng-bind="loaners[$index].loan"></span> * <span ng-bind="percentage($index)"></span>)
+		<small><span ng-bind="loaners[$index].name"></span> loan * int</small></div> <span ng-if="loaners.length > 1">)</span> = 
 	
 	<span ng-bind="debt()"></span>
 	</h5>
