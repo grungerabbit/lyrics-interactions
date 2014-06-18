@@ -1,6 +1,8 @@
 name: UIUIU
 markdown: redcarpet
 
+exclude: ["README.md", "Gruntfile.js", "package.json", "node_modules"]
+
 collections:
   projects:
     output: true

@@ -61,7 +61,7 @@ label {
 </style>
 
 <section>
-<h1>Loan is $<input id="test" data-bind="value: amount, valueUpdate: 'afterkeydown'" /></h1>
+<h2>Loan is $<input id="test" data-bind="value: amount, valueUpdate: 'afterkeydown'" /></h2>
 
 <input class="date month" data-bind="value: chooseMonth, valueUpdate: 'afterkeydown'" />
 <input class="date day" data-bind="value: chooseDay, valueUpdate: 'afterkeydown'" />
