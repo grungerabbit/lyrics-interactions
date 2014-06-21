@@ -99,11 +99,12 @@ input:focus, textarea:focus {
 	border: 1px solid red;
 }
 .finished {
-	width: 60%;
-	float: right;
+	width: 55%;
+	position: absolute;
+	right: 0;
 	border-left: 1px solid #eee;
 	min-height: 100em;
-	padding: 2em;
+	padding: 1em 10% 2em 2em;
 	font-size: 125%;
 	color: #222;
 }
@@ -112,7 +113,9 @@ input:focus, textarea:focus {
 }
 .fixed {
 	position: fixed;
-	width: 15em;
+	width: 33%;
+	left: 12%;
+	padding: 0 2em;
 }
 .exported {
 	font-family: "Crimson Text";
@@ -125,7 +128,7 @@ input:focus, textarea:focus {
 	position: fixed;
 	left: 0;
 	top: 0px;
-	width: 8em;
+	width: 12%;
 	background-color: #eee;
 	color: #ccc;
 	white-space: pre-wrap;
@@ -165,13 +168,12 @@ input:focus, textarea:focus {
 <input type="text" placeholder="the question to answer" ng-model="question" />
 <textarea class="exporter" ng-model="export" placeholder="main draft. one step, one bird at a time...">
 </textarea>
-<textarea class="picture-frame" placeholder="timestamped notes and drafts. saves when you click out of this box.">
+<textarea class="picture-frame" placeholder="timestamped notes and drafts.">
 </textarea>
 <!--<button id="clear">clear!</button>-->
-<em>remember: calm down! breathe! you will be fine!</em>
-<ul>
-	<li>You are doing this because you can and you want to</li>
-</ul>
+<em ng-click="setReminder()">remember: calm down! breathe! you got this!</em>
+
+	
 </div>
 
 
@@ -187,3 +189,9 @@ input:focus, textarea:focus {
 </div>
 </div>
 
+
+<!--<input type="text" ng-model="gogo" /><button ng-click="addMotivation()">add</button>
+
+<ul>
+	<li ng-repeat="item in motivation"><span ng-bind="item"></span></li>
+</ul>-->
