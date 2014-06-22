@@ -68,6 +68,17 @@ div.regen {
 	right: 0;
 	bottom: 0;
 }
+.premade {
+	float: left;
+	width: 33%;
+}
+.color__chip {
+	width: 20px;
+	height: 20px;
+	float: left;
+	display: block;
+	border: 1px solid #222;
+}
 </style>
 
 <div ng-app="tiles" ng-controller="tileSettings">
@@ -100,6 +111,13 @@ div.regen {
 	
 	<div class="design__palettes">
 		<h5>or try a palette</h5>
+		<ul>
+			<li class="premade" ng-repeat="palette in designPalettes"><p ng-bind="palette.name"></p>
+				<ul>
+					<li ng-repeat="color in palette.shades"><div class="color__chip" ng-style="{'background-color': color.color}">&nbsp;</div></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 	
 	<div class="regen">

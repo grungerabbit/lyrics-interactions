@@ -5,7 +5,7 @@ subtitle: aperiodic tiles
 layout: post
 featured: false
 design: 
-version: 2.1.1
+version: 2.2.0
 category: 
 description: Tiles
 ---
