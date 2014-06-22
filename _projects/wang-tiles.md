@@ -112,7 +112,7 @@ div.regen {
 	<div class="design__palettes">
 		<h5>or try a palette</h5>
 		<ul>
-			<li class="premade" ng-repeat="palette in designPalettes"><p ng-bind="palette.name"></p>
+			<li class="premade" ng-repeat="palette in designPalettes" ng-click="choosePalette($index)"><p ng-bind="palette.name"></p>
 				<ul>
 					<li ng-repeat="color in palette.shades"><div class="color__chip" ng-style="{'background-color': color.color}">&nbsp;</div></li>
 				</ul>
