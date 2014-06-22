@@ -71,6 +71,7 @@ div.regen {
 .premade {
 	float: left;
 	width: 33%;
+	cursor: pointer;
 }
 .color__chip {
 	width: 20px;
@@ -78,6 +79,14 @@ div.regen {
 	float: left;
 	display: block;
 	border: 1px solid #222;
+}
+.color__row {
+	position: relative;
+}
+.color__row .color__chip {
+	position: absolute;
+	top: 5px;
+	right: 26px;
 }
 </style>
 
@@ -105,8 +114,10 @@ div.regen {
 	<div class="change__colors">
 		<h5>color changer</h5>
 		<ul>
-			<li ng-repeat="colors in palette"><input ng-model="colors.color"></li>
+			<li ng-repeat="colors in palette" class="color__row"><input ng-model="colors.color"> <div class="color__chip" ng-style="{'background-color': colors.color}">&nbsp;</div>
+			</li>
 		</ul>
+		<button ng-click="devExport()">dev export</button>
 	</div>
 	
 	<div class="design__palettes">
