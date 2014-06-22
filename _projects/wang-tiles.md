@@ -94,16 +94,17 @@ div.regen {
 
 <div class="control__panel">
 	<div class="size__settings">
-		<h5>size settings</h5>
+		<h5>general settings</h5>
 		<ul>
 			<li>
 				<label># Tiles</label>
 				<input type="text" ng-model="numberTiles">
 			</li>
+			<!--
 			<li>
 				<label>Square Size (px)</label>
 				<input type="text" ng-model="sizeTiles">
-			</li>
+			</li>-->
 			<li>
 				<label>Breakpoint</label>
 				<input type="text" ng-model="breakpoint">
@@ -117,7 +118,9 @@ div.regen {
 			<li ng-repeat="colors in palette" class="color__row"><input ng-model="colors.color"> <div class="color__chip" ng-style="{'background-color': colors.color}">&nbsp;</div>
 			</li>
 		</ul>
+		<!--
 		<button ng-click="devExport()">dev export</button>
+		-->
 	</div>
 	
 	<div class="design__palettes">
