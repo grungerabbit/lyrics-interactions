@@ -57,7 +57,7 @@ body {
 div.regen {
 	position: relative;
 	width: 16%;
-	height: 6.75em;
+	height: 8em;
 }
 .regen button {
 	padding: 0.25em 0.5em;
