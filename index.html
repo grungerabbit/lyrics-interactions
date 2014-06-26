@@ -5,18 +5,8 @@ title: welcome
 
 {% include header.html %}
 	
-
-<div class="documentation">
-	<h1>Documentation</h1>
-	<ul class="documentation__listing">
-	{% for post in site.posts %}
-		<li><a href="{{post.url}}">{{post.title}}</a></li>
-	{% endfor %}
-	</ul>
-</div>
-
 <h1>Projects</h1>
-
+<div class="projects">
 {% for post in site.posts %}
 {% for project in site.projects %}
 {% if post.reference == project.reference %}
@@ -53,7 +43,37 @@ title: welcome
 
 {% endfor %}
 {% endfor %}
+</div>
 
+<div class="documentation">
+	<h1>Documentation</h1>
+	<ul class="documentation__list">
+	{% for post in site.posts %}
+		<li class="doc__post">
+			<article class="post__content">
+				<h2><a href="{{post.url}}">{{post.title}}</a></h2>
+				{{post.content}}
+			</article>
+			<aside class="post__notes">
+				{% for project in site.projects %}
+				{% if post.reference == project.reference %}
+					<a href="{{project.url}}">see project</a>
+				{% endif %}
+				{% endfor %}
+				
+				
+				{% if post.notes.length > 0 %}
+				<ol>
+					{% for note in post.notes %}
+					<li>{{note.content}}</li>
+					{% endfor %}
+				</ol>
+				{% endif %}
+			</aside>
+		</li>
+	{% endfor %}
+	</ul>
+</div>
 
 
 {% include footer.html %}

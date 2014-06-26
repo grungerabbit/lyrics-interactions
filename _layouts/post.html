@@ -35,5 +35,17 @@ layout: default
 		<blockquote>{{page.description}}</blockquote>
 		
 		{{ content }}
+		
+		{% for project in site.projects %}
+		{% if project.reference == page.reference %}
+			{% for file in project.customJS %}
+				{% if file.file %}
+					<a href="http://github.com/grungerabbit/uiuiu/tree/master/lib/js/interactions/{{ file.file }}">github github!!!</a>
+			
+					<a href="https://raw.githubusercontent.com/grungerabbit/uiuiu/master/lib/js/interactions/{{ file.file }}">raw raw!!!</a>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% endfor %}
 	</div>
 </div>
