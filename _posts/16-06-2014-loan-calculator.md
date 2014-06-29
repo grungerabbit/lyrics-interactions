@@ -5,6 +5,7 @@ subtitle: loan calculator
 layout: post
 featured: false
 design: 
+image: loan.png
 version: 0.0.0
 category: 
 description: loan calc
