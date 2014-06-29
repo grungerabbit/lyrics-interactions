@@ -390,6 +390,10 @@ footer .colophon {
   width: 25%;
   float: left;
 }
+.code {
+  clear: both;
+  font-size: 75%;
+}
 @media only screen and (min-width: 40em) {
   header.main {
     background-position: center bottom;
