@@ -32,9 +32,24 @@ layout: default
 	</div>
 	
 	<div class="post__essay">
+		<header class="post__metadata">
+			<ul class="post__dates">
+				<li>First published: {{ page.date | date: "%d/%m/%Y" }}</li>
+				{% if page.lastmod %}<li>Last modified: {{ page.lastmod }}</li>{% endif %}
+			</ul>
+			
+			<h6>Status</h6>
+			{% if page.image %}
+				Beta - {{ page.version }}
+			{% else %}
+				Alpha - {{ page.version }}
+			{% endif %}
+		</header>
+		
 		<blockquote>{{page.description}}</blockquote>
 		
 		{{ content }}
+	
 		
 	</div>
 	
