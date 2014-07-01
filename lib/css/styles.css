@@ -331,8 +331,33 @@ footer .colophon {
   clear: both;
   text-align: right;
 }
-.documentation {
+.projects {
   *zoom: 1;
+  background-color: #cccccc;
+  margin-bottom: 4em;
+}
+.projects:before,
+.projects:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.projects:after {
+  clear: both;
+}
+.projects:before,
+.projects:after {
+  content: " ";
+  display: table;
+}
+.projects:after {
+  clear: both;
+}
+.documentation {
+  width: 70%;
+  padding: 0 1em;
+  *zoom: 1;
+  margin: auto;
 }
 .documentation:before,
 .documentation:after {
@@ -350,6 +375,27 @@ footer .colophon {
 }
 .documentation:after {
   clear: both;
+}
+.doc__post {
+  padding: 1em 0;
+  list-style: none;
+}
+.post__metadata {
+  background: #eee;
+}
+.post__content {
+  width: 75%;
+  float: left;
+  border-bottom: 1px solid #cccccc;
+  font-size: 1.25em;
+}
+.post__notes {
+  width: 25%;
+  float: left;
+}
+.code {
+  clear: both;
+  font-size: 75%;
 }
 @media only screen and (min-width: 40em) {
   header.main {
