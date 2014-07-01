@@ -66,12 +66,56 @@ header {
 	font-style: italic;
 	padding: 2em 0;
 }
+.progress__bar {
+	width: 1.5rem;
+	position: fixed;
+	right: 0;
+	top: 40%;
+	margin: 0 2rem;
+}
+.progress__bar li {
+	list-style: none;
+	height: 1.5rem;
+}
+.progress__bar li, .marker {
+	border: 2px solid white;
+	color: white;
+	border-radius: 100px;
+	display: block;
+	margin-bottom: 0.5em;
+	font-size: 1rem;
+}
+.marker {
+	height: 1.5rem;
+	width: 1.5rem;
+	text-align: center;
+	margin: 0 auto;
+}
+.progress__bar li.active {
+	color: #08F7C9;
+	border-color: #08F7C9;
+}
+.analysis p {
+	padding: 0.5rem 0;
+}
 </style>
 
 <div ng-app ng-controller="Why">
 	<header>
 		<h1>The Five Whys</h1>
 	</header>
+	
+	<nav class="progress__bar">
+		<ol>
+			<li class="active">?</li>
+			<li ng-class="{'active' : first}">1</li>
+			<li ng-class="{'active' : second}">2</li>
+			<li ng-class="{'active' : third}">3</li>
+			<li ng-class="{'active' : fourth}">4</li>
+			<li ng-class="{'active' : fifth}">5</li>
+			<li ng-class="{'active' : analysis}">!</li>
+		</ol>
+	</nav>
 	
 	<div class="meditation">
 		<section class="first query">
@@ -106,13 +150,26 @@ header {
 			<input type="text" ng-model="fifth">
 		</section>
 		
-		<article ng-show="fifth">
-			<p class="answer--1" ng-bind="feeling"></p> <em>because...</em>
-			<p class="answer--2" ng-bind="first"></p> <em>because...</em>
-			<p class="answer--3" ng-bind="second"></p> <em>because...</em>
-			<p class="answer--4" ng-bind="third"></p> <em>because...</em>
-			<p class="answer--5" ng-bind="fourth"></p> <em>because...</em>
-			<p class="answer--6" ng-bind="fifth"></p>!
+		<article ng-show="fifth" class="analysis">
+			<span class="marker">?</span>
+			<p class="answer--1" ng-bind="feeling"></p> 
+			
+			<span class="marker">1</span>
+			<p class="answer--2" ng-bind="first"></p> 
+			
+			<span class="marker">2</span>
+			<p class="answer--3" ng-bind="second"></p>
+			
+			<span class="marker">3</span>
+			<p class="answer--4" ng-bind="third"></p> 
+			
+			<span class="marker">4</span>
+			<p class="answer--5" ng-bind="fourth"></p>
+			
+			<span class="marker">5</span>
+			<p class="answer--6" ng-bind="fifth"></p>
+			
+			<span class="marker">!</span>
 			
 			<h4 class="conclusion">Examine yourself. What comes next?</h4>
 		</article>
