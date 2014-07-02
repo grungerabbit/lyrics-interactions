@@ -136,7 +136,7 @@ header {
 	
 	<div class="meditation">
 		<section class="first query">
-			<h3 class="zen">What do you feel?</h3>
+			<h3 class="zen">What is it?</h3>
 			<form ng-submit="simpleScroll('first')">
 			<input type="text" ng-model="feeling">
 			<button class="next__trigger">next</button>
