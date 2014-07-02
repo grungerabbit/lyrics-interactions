@@ -101,10 +101,23 @@ header {
 .next__trigger {
 	display: none;
 }
+.reset {
+	border: 2px dashed white;
+	background: none;
+	padding: 0.25em 0.5em;
+	font: 1rem "Lora", serif;
+}
+.reset:hover {
+	border-style: solid;
+}
+.reset:focus {
+	border-color: #08f7c9;
+	outline: none;
+}
 </style>
 
 <div ng-app="why">
-	<div ng-controller="whyControl">
+	<div ng-controller="whyControl" id="top">
 	<header>
 		<h1>The Five Whys</h1>
 	</header>
@@ -130,8 +143,6 @@ header {
 			</form>
 		</section>
 		<section class="first why" ng-show="feeling" id="first">
-			<!--<h3 class="zen"><em ng-class="{'huge' : feeling}">Why</em><p ng-if="feeling"> are you <span ng-bind="feeling"></span></p>?</h3>-->
-			
 			<h3 class="zen"><em>Why</em>?</h3>
 			<form ng-submit="simpleScroll('second')">
 			<input type="text" ng-model="first" sync-focus-with="focus[0]">
@@ -188,7 +199,7 @@ header {
 			
 			<span class="marker">!</span>
 			
-			<h4 class="conclusion">Examine yourself. What comes next?</h4>
+			<h4 class="conclusion">Examine yourself. What comes next? <button class="reset" ng-click="reset('top')">or ask again</button></h4>
 		</article>
 	</div>
 </div>
