@@ -26,7 +26,7 @@ header {
 	font-size: 2em;
 }
 .query, .why {
-	padding: 6em 0;
+	padding: 3em 0 9em;
 }
 .meditation input {
 	font-family: "Lora", serif;
@@ -134,35 +134,35 @@ header {
 			
 			<h3 class="zen"><em>Why</em>?</h3>
 			<form ng-submit="simpleScroll('second')">
-			<input type="text" ng-model="first">
+			<input type="text" ng-model="first" sync-focus-with="focus[0]">
 			<button class="next__trigger">next</button>
 			</form>
 		</section>
 		<section class="second why" ng-show="first" id="second">
 			<h3 class="zen"><em>Why</em>?</h3>
 			<form ng-submit="simpleScroll('third')">
-			<input type="text" ng-model="second">
+			<input type="text" ng-model="second" sync-focus-with="focus[1]">
 			<button class="next__trigger">next</button>
 			</form>
 		</section>
 		<section class="third why" ng-show="second" id="third">
 			<h3 class="zen"><em>Why</em>?</h3>
 			<form ng-submit="simpleScroll('fourth')">
-			<input type="text" ng-model="third">
+			<input type="text" ng-model="third" sync-focus-with="focus[2]">
 			<button class="next__trigger">next</button>
 			</form>
 		</section>
 		<section class="fourth why" ng-show="third" id="fourth">
 			<h3 class="zen"><em>Why</em>?</h3>
 			<form ng-submit="simpleScroll('fifth')">
-			<input type="text" ng-model="fourth">
+			<input type="text" ng-model="fourth" sync-focus-with="focus[3]">
 			<button class="next__trigger">next</button>
 			</form>
 		</section>
 		<section class="fifth why" ng-show="fourth" id="fifth">
 			<h3 class="zen"><em>Why</em>?</h3>
 			<form ng-submit="simpleScroll('analysis')">
-			<input type="text" ng-model="fifth">
+			<input type="text" ng-model="fifth" sync-focus-with="focus[4]">
 			<button class="next__trigger">next</button>
 			</form>
 		</section>
