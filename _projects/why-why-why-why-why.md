@@ -98,9 +98,13 @@ header {
 .analysis p {
 	padding: 0.5rem 0;
 }
+.next__trigger {
+	display: none;
+}
 </style>
 
-<div ng-app ng-controller="Why">
+<div ng-app="why">
+	<div ng-controller="whyControl">
 	<header>
 		<h1>The Five Whys</h1>
 	</header>
@@ -120,37 +124,50 @@ header {
 	<div class="meditation">
 		<section class="first query">
 			<h3 class="zen">What do you feel?</h3>
-			
+			<form ng-submit="simpleScroll('first')">
 			<input type="text" ng-model="feeling">
+			<button class="next__trigger">next</button>
+			</form>
 		</section>
-		<section class="first why" ng-show="feeling">
+		<section class="first why" ng-show="feeling" id="first">
 			<!--<h3 class="zen"><em ng-class="{'huge' : feeling}">Why</em><p ng-if="feeling"> are you <span ng-bind="feeling"></span></p>?</h3>-->
 			
 			<h3 class="zen"><em>Why</em>?</h3>
+			<form ng-submit="simpleScroll('second')">
 			<input type="text" ng-model="first">
+			<button class="next__trigger">next</button>
+			</form>
 		</section>
-		<section class="second why" ng-show="first">
+		<section class="second why" ng-show="first" id="second">
 			<h3 class="zen"><em>Why</em>?</h3>
-			
+			<form ng-submit="simpleScroll('third')">
 			<input type="text" ng-model="second">
+			<button class="next__trigger">next</button>
+			</form>
 		</section>
-		<section class="third why" ng-show="second">
+		<section class="third why" ng-show="second" id="third">
 			<h3 class="zen"><em>Why</em>?</h3>
-			
+			<form ng-submit="simpleScroll('fourth')">
 			<input type="text" ng-model="third">
+			<button class="next__trigger">next</button>
+			</form>
 		</section>
-		<section class="fourth why" ng-show="third">
+		<section class="fourth why" ng-show="third" id="fourth">
 			<h3 class="zen"><em>Why</em>?</h3>
-			
+			<form ng-submit="simpleScroll('fifth')">
 			<input type="text" ng-model="fourth">
+			<button class="next__trigger">next</button>
+			</form>
 		</section>
-		<section class="fifth why" ng-show="fourth">
+		<section class="fifth why" ng-show="fourth" id="fifth">
 			<h3 class="zen"><em>Why</em>?</h3>
-			
+			<form ng-submit="simpleScroll('analysis')">
 			<input type="text" ng-model="fifth">
+			<button class="next__trigger">next</button>
+			</form>
 		</section>
 		
-		<article ng-show="fifth" class="analysis">
+		<article ng-show="fifth" class="analysis" id="analysis">
 			<span class="marker">?</span>
 			<p class="answer--1" ng-bind="feeling"></p> 
 			
@@ -174,4 +191,5 @@ header {
 			<h4 class="conclusion">Examine yourself. What comes next?</h4>
 		</article>
 	</div>
+</div>
 </div>
