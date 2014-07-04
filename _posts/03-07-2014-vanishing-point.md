@@ -6,7 +6,7 @@ layout: post
 featured: false
 design: 
 image: 
-version: 0.7.0
+version: 0.8.0
 category: 
 description: 
 ---
@@ -20,7 +20,7 @@ description:
 		Results? How long did it take you? How done is it? Are you satisfied, what parts are you looking to improve?
 -->
 
-Vanishing Point is a 3-point perspective viewer that allows you to algorithmically define prisms. It is built in Javascript and Raphael.js. As of version 0.5.0, you can:
+Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space. It is built in Javascript and Raphael.js. As of version 0.5.0, you can:
 
 * Define 3 vanishing points
 * Draw a basic rectangular prism in perspective with 4/8 of the vertices defined
@@ -32,9 +32,11 @@ Vanishing Point is a 3-point perspective viewer that allows you to algorithmical
 
 I am currently working on the last 4 vertices. I hope to not only be able to generate this prism, but a visual treatment which simulates hatching lines also leading to the vanishing points. I may later build a control panel like in the [Wang Tiles](/projects/wang-tiles.html) I made earlier.
 
-This project applies two concepts first learned in middle school art and math class. The two pedagogic methods had vastly different results: almost a decade later, I still have a clear concept of what vanishing points are, as well as how to notice and draw realistic perspective. Slope, however, not so much, even though the concept is just as foundational. I remember learning about slope, slope intercept, and triangle concepts in the sequential order of pre-algebra, geometry, and trigonometry from middle school and early high school, but I had no idea of their practical application at that time. I had only the dimmest memory of slope intercept form when I started building Vanishing Point.
+This project applies two concepts first learned in middle school art and math class. The two pedagogic methods had vastly different results: almost a decade later, I still have a clear concept of what vanishing points are, as well as how to notice it in real life and apply it to draw realistic perspective. 
 
-I am lucky I can search the internet for this forgotten information! Math is art, and math is life. Helpful posts:
+Slope, however, not so much, even though the concept is just as foundational. I remember learning about slope, finding intersections and endpoints, and triangle concepts in the sequential order of pre-algebra, geometry, and trigonometry from middle school and early high school, but I had no idea of their practical application at that time. As a result, I had only the dimmest memory of slope when I started building Vanishing Point.
+
+I am lucky I can search the internet for this forgotten information! Helpful posts:
 
 * [Slope](http://www.purplemath.com/modules/slope.htm)
 * [Slope Intercept Form](http://www.purplemath.com/modules/strtlneq.htm)
@@ -45,3 +47,5 @@ I am lucky I can search the internet for this forgotten information! Math is art
 * [Endpoint of a line knowing slope, start and distance](http://math.stackexchange.com/questions/9365/endpoint-of-a-line-knowing-slope-start-and-distance)
 
 ![3-point](http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/3-point_perspective_1-px-line.svg/1000px-3-point_perspective_1-px-line.svg.png)
+
+Math is art, and math is life. 
