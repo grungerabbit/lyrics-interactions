@@ -9,7 +9,7 @@ image: vp.png
 version: 0.8.0
 status: In active development
 category: 
-description: Generates a 2D line drawing of a 3D prism in three-point linear perspective. The user defines seed locations for initial vanishing points and vertices, then the program uses slope to calculate a horizon line and Cartesian coordinates for other vertices.
+description: Generates a 2D line drawing of a 3D prism in three-point graphical perspective. The user defines initial locations and dimensions, then the program uses slope to calculate a horizon line and Cartesian coordinates for other vertices.
 todo: 
 - Build hatching
 - Allow additional objects
@@ -25,15 +25,21 @@ annotations:
 
 Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space.<sup></sup> It is built in Javascript using the [Raphael.js](http://raphaeljs.com/) SVG library. As of version 0.8.0, you can:
 
-* Define 3 vanishing points
-* Draw a basic rectangular prism in perspective with all 8 of the vertices defined
+* Draw a basic rectangular prism in perspective
 * Draw dashed guidelines from vanishing points to vertices
+* Define 3 vanishing points
 * Choose a seed point, which becomes vertex 1 (the closest vertex to the viewer)
 * Use distances from the seed point<sup></sup> to draw the 3 next closest vertices
 * Use vertices 2-4 and the vanishing points to define the last 4 vertices
 * Draw solid edges of the prism
 
 I hope to next add a visual treatment which simulates hatching lines leading to the vanishing points. I may later build a control panel<sup></sup> like in the [Wang Tiles](/projects/wang-tiles.html) project I made earlier.
+
+###Why
+
+I was inspired to build vanishing point off of a doodle: I drew a chair with the surfaces composed of stacked perspective lines. It occurred to me vanishing points and hatching lines could be calculated, with the image generated from the math... slope? Using Raphael for the graphics was a natural choice, and I started reviewing middle school and high school math to write the algorithms for plotting.
+
+###How
 
 This project applies two concepts first learned in middle school art and math class. The two pedagogic methods had vastly different results:<sup></sup> almost a decade later, I still have a clear concept of what vanishing points and horizon lines are, as well as how to notice these in real life and apply them to draw realistic perspective. 
 
