@@ -6,7 +6,7 @@ permalink: /about/
 
 #UIUIU
 
-UIUIU.me is my experimental Internet art and design portfolio. 
+UIUIU.me is the experimental Internet art and design portfolio of Cheryl Wu. 
 
 Mostly Javascript and CSS based art pieces and/or interfaces, often based on other people's works such as music or books. Geometry and math too. Expect to see projects in various states of development! 
 

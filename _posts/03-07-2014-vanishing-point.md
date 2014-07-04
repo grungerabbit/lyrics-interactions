@@ -5,11 +5,11 @@ subtitle: 3-point perspective
 layout: post
 featured: true
 design: 
-image: 
+image: vp.png
 version: 0.8.0
 status: In active development
 category: 
-description: 
+description: Generates a 2D line drawing of a 3D prism in three-point linear perspective. The user defines seed locations for initial vanishing points and vertices, then the program uses slope to calculate a horizon line and Cartesian coordinates for other vertices.
 todo: 
 - Build hatching
 - Allow additional objects
@@ -31,9 +31,9 @@ Vanishing Point is a 3-point perspective viewer that allows you to plot and calc
 * Choose a seed point, which becomes vertex 1 (the closest vertex to the viewer)
 * Use distances from the seed point<sup></sup> to draw the 3 next closest vertices
 * Use vertices 2-4 and the vanishing points to define the last 4 vertices
-* Draw solid edges between the defined vertices
+* Draw solid edges of the prism
 
-I hope to not only be able to generate this prism, but also a visual treatment which simulates hatching lines leading to the vanishing points. I may later build a control panel<sup></sup> like in the [Wang Tiles](/projects/wang-tiles.html) project I made earlier.
+I hope to next add a visual treatment which simulates hatching lines leading to the vanishing points. I may later build a control panel<sup></sup> like in the [Wang Tiles](/projects/wang-tiles.html) project I made earlier.
 
 This project applies two concepts first learned in middle school art and math class. The two pedagogic methods had vastly different results:<sup></sup> almost a decade later, I still have a clear concept of what vanishing points and horizon lines are, as well as how to notice these in real life and apply them to draw realistic perspective. 
 
