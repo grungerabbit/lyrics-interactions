@@ -282,7 +282,7 @@ footer .colophon {
   width: 40%;
   float: left;
 }
-.project-overview__libraries li {
+.project__library {
   border: 1px solid black;
   display: inline-block;
   padding: 0 0.5em;
@@ -374,6 +374,7 @@ footer .colophon {
 .post__image ul,
 .post__description ul {
   margin: 1em;
+  list-style: circle;
 }
 .post__banner {
   width: 100%;
@@ -402,15 +403,17 @@ footer .colophon {
 .post__banner .post__image img {
   width: 100%;
 }
-.post__metadata {
-  color: #777;
-  border-right: 1px solid #eee;
-}
 .post__data {
+  border-right: 1px solid #eee;
   width: 40%;
+  color: #777;
+}
+.post__data .NTS {
+  font-size: 75%;
 }
 .post__essay {
   width: 50%;
+  min-height: 30em;
   padding: 0 3rem;
 }
 .post__sidebar {

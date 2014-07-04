@@ -9,16 +9,12 @@ image:
 version: 0.8.0
 category: 
 description: 
+todo: 
+- test
+- test2
+- test3
+annotations:
 ---
-
-
-
-<!-- 	What is it and why is it important? What were you inspired by? What were you interested in exploring?
-
-		How does it work? How did you build it? What libraries do you use and why? Methodology? What kind of skills did you have at the time?
-
-		Results? How long did it take you? How done is it? Are you satisfied, what parts are you looking to improve?
--->
 
 Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space. It is built in Javascript and Raphael.js. As of version 0.8.0, you can:
 

@@ -28,7 +28,7 @@ title: welcome
 			<ul class="project-overview__libraries">
 				{% for customJS in project.customJS %}
 				{% if customJS.lib %}
-				<li>{{customJS.lib}}</li>
+				<li class="project__library">{{customJS.lib}}</li>
 				{% endif %}
 				{% endfor %}
 			</ul>

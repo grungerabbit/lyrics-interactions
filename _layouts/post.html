@@ -42,8 +42,10 @@ layout: default
 	<div class="site">
 		<div class="post__data">
 			<header class="post__metadata">
+				
+				<h6>Dates</h6>
 				<ul class="post__dates">
-					<li>First published: {{ page.date | date: "%d/%m/%Y" }}</li>
+					<li>First published: {{ page.date | date: "%m/%d/%Y" }}</li>
 					{% if page.lastmod %}<li>Last modified: {{ page.lastmod }}</li>{% endif %}
 				</ul>
 				
@@ -53,22 +55,49 @@ layout: default
 				{% else %}
 					Alpha - {{ page.version }}
 				{% endif %}
+				
+				{{ page.category }}
+				
+				{{ page.design }}
+				
+				<h6>TODO</h6>
+				<ul>
+				{% for do in page.todo %}	
+				<li>{{do}}</li>
+				{% endfor %}
+				</ul>
+						
+				<h6>Libraries</h6>
+						
+				{% for project in site.projects %}
+					{% if project.reference == page.reference %}
+					{% for file in project.customJS %}
+					<ul>
+						{% if file.lib %}
+						<li class="project__library">{{file.lib}}</li>
+						{% endif %}
+					</ul>
+					{% endfor %}
+					{% endif %}
+				{% endfor %}
 			</header>
 			
 			{% if page.amazon %}
 			<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
 			</iframe>
 			{% endif %}
+			
+			<blockquote class="NTS">
+				What is it and why is it important? What were you inspired by? What were you interested in exploring?
+
+				How does it work? How did you build it? What libraries do you use and why? Methodology? What kind of skills did you have at the time?
+
+				Results? How long did it take you? How done is it? Are you satisfied, what parts are you looking to improve?
+			</blockquote>
 		</div>
 		
 		<div class="post__essay">
-			
-			
-			
-			
 			{{ content }}
-		
-			
 		</div>
 		
 		<aside class="post__sidebar">
