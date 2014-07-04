@@ -10,60 +10,86 @@ layout: default
 	</ul>
 </div>
 
-<div class="site">
-	<div class="post__main">
+
+	
+	<div class="post__banner">
+		<div class="site">
+			{% for project in site.projects %}
+			{% if project.reference == page.reference %}
+			<h1 class="project__name"><a href="{{project.url}}">{{project.title}}</a></h1>
+    		
+			<div class="post__image">
+			{% if page.image %}
+			<a href="{{project.url}}" title="a still image of {{project.title}}. Click through to the actual project.">
+				<img src="/lib/img/{{page.image}}">
+			</a>
+			{% endif %}
+			</div>
+			
+			{% endif %}
+			{% endfor %}
+			
+			<blockquote>{{page.description}}</blockquote>
+		</div>
+	</div>
+	
+	<div class="site">
+		<div class="post__main">
+			{% for project in site.projects %}
+			{% if project.reference == page.reference %}
+			{% if page.image %}
+			<a href="{{project.url}}" title="a still image of {{project.title}}. Click through to the actual project.">
+				<img src="/lib/img/{{page.image}}">
+			</a>
+			{% endif %}
+			{% endif %}
+			{% endfor %}
+			
+			{% if page.amazon %}
+			<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
+			</iframe>
+			{% endif %}
+		</div>
+		
+		<div class="post__essay">
+			<header class="post__metadata">
+				<ul class="post__dates">
+					<li>First published: {{ page.date | date: "%d/%m/%Y" }}</li>
+					{% if page.lastmod %}<li>Last modified: {{ page.lastmod }}</li>{% endif %}
+				</ul>
+				
+				<h6>Status</h6>
+				{% if page.image %}
+					Beta - {{ page.version }}
+				{% else %}
+					Alpha - {{ page.version }}
+				{% endif %}
+			</header>
+			
+			
+			
+			{{ content }}
+		
+			
+		</div>
+		
+		<aside class="post__sidebar">
+			chemicals don't strangle my pen
+		</aside>
+		
+		
+		<div class="code">
+			<h3>Code</h3>
+			
 		{% for project in site.projects %}
 		{% if project.reference == page.reference %}
-		<h1 class="project__name"><a href="{{project.url}}">{{project.title}}</a></h1>
-    	
-		{% if page.image %}
-		<a href="{{project.url}}" title="a still image of {{project.title}}. Click through to the actual project.">
-			<img src="/lib/img/{{page.image}}">
-		</a>
-		{% endif %}
-		
+			{% for file in project.customJS %}
+				{% if file.file %}
+					<script src="http://gist-it.appspot.com/https://github.com/grungerabbit/uiuiu/blob/master/lib/js/interactions/{{file.file}}"></script>
+				{% endif %}
+			{% endfor %}
 		{% endif %}
 		{% endfor %}
-		
-		{% if page.amazon %}
-		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
-		</iframe>
-		{% endif %}
-	</div>
-	
-	<div class="post__essay">
-		<header class="post__metadata">
-			<ul class="post__dates">
-				<li>First published: {{ page.date | date: "%d/%m/%Y" }}</li>
-				{% if page.lastmod %}<li>Last modified: {{ page.lastmod }}</li>{% endif %}
-			</ul>
-			
-			<h6>Status</h6>
-			{% if page.image %}
-				Beta - {{ page.version }}
-			{% else %}
-				Alpha - {{ page.version }}
-			{% endif %}
-		</header>
-		
-		<blockquote>{{page.description}}</blockquote>
-		
-		{{ content }}
-	
-		
-	</div>
-	
-	<div class="code">
-		<h3>Code</h3>
-		
-	{% for project in site.projects %}
-	{% if project.reference == page.reference %}
-		{% for file in project.customJS %}
-			{% if file.file %}
-				<script src="http://gist-it.appspot.com/https://github.com/grungerabbit/uiuiu/blob/master/lib/js/interactions/{{file.file}}"></script>
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-	{% endfor %}
+		</div>
 	</div>
 </div>

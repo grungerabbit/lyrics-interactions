@@ -356,18 +356,40 @@ footer .colophon {
 .documentation__listing li:after {
   content: " * ";
 }
+.post__banner {
+  width: 100%;
+  background-size: cover;
+}
 .post__main,
-.post__essay {
-  width: 50%;
+.post__essay,
+.post__sidebar {
   float: left;
+  padding: 0 0.5rem;
 }
 .post__main img,
-.post__essay img {
+.post__essay img,
+.post__sidebar img {
   width: 100%;
 }
 .post__main ul,
-.post__essay ul {
+.post__essay ul,
+.post__sidebar ul {
   margin: 1em;
+}
+.post__image {
+  width: 40%;
+}
+.post__image img {
+  width: 100%;
+}
+.post__main {
+  width: 30%;
+}
+.post__essay {
+  width: 50%;
+}
+.post__sidebar {
+  width: 20%;
 }
 .post__essay blockquote {
   font-size: 75%;
@@ -381,12 +403,6 @@ footer .colophon {
   font-size: 75%;
 }
 @media only screen and (min-width: 40em) {
-  header.main {
-    background-position: center bottom;
-  }
-  header.main .logo {
-    padding: 1em 0 0;
-  }
   .container > section {
     padding: 2em 0;
   }
@@ -397,7 +413,7 @@ footer .colophon {
 @media only screen and (min-width: 70em) {
   .site {
     max-width: 60em;
-    width: 75%;
+    width: 85%;
     font-size: 125%;
   }
 }
@@ -433,12 +449,6 @@ footer .colophon {
     padding: 1em;
     width: 100%;
     font-size: .85em;
-  }
-  header.main {
-    font-size: .75em;
-  }
-  header.main .overlay {
-    padding: 1.5em 0 4em;
   }
   .projects {
     display: none;
