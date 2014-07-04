@@ -23,7 +23,7 @@ title: welcome
 		<div class="project-overview--description">
 			<h2 class="project__name">{{project.title}}</h2>
 			<p>{{project.subtitle}}</p>
-			<p>{{post.date | date_to_string }} <small>current {{post.version}}</small></p>
+			<p><small>current {{post.version}}</small></p>
 					
 			<ul class="project-overview__libraries">
 				{% for customJS in project.customJS %}
@@ -63,6 +63,7 @@ title: welcome
 				{% endif %}
 				{% endfor %}
 				
+				{{post.date | date_to_string }}
 				
 				{% if post.notes.length > 0 %}
 				<ol>

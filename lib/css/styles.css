@@ -415,11 +415,20 @@ footer .colophon {
 .post__essay {
   width: 50%;
   min-height: 30em;
-  padding: 0 3rem;
+  padding-left: 3rem;
+}
+.post__essay sup {
+  font-size: 75%;
 }
 .post__sidebar {
   width: 10%;
   font-size: 75%;
+  padding-left: 1rem;
+}
+.post__sidebar .post__annotate li {
+  position: absolute;
+  width: 10%;
+  color: #aaa;
 }
 .code {
   clear: both;
