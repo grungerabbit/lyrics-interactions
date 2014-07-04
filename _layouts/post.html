@@ -44,31 +44,12 @@ layout: default
 			<header class="post__metadata">
 				
 				<h6>Dates</h6>
-				<ul class="post__dates">
-					<li>First published: {{ page.date | date: "%m/%d/%Y" }}</li>
-					{% if page.lastmod %}<li>Last modified: {{ page.lastmod }}</li>{% endif %}
-				</ul>
+				<small class="post__dates">First published: {{ page.date | date: "%m/%d/%Y" }}</small>
+				{% if page.lastmod %}<p>Last modified: {{ page.lastmod }}</p>{% endif %}
 				
-				<h6>Status</h6>
-				{% if page.image %}
-					Beta - {{ page.version }}
-				{% else %}
-					Alpha - {{ page.version }}
-				{% endif %}
+				<hr>
 				
-				{{ page.category }}
-				
-				{{ page.design }}
-				
-				<h6>TODO</h6>
-				<ul>
-				{% for do in page.todo %}	
-				<li>{{do}}</li>
-				{% endfor %}
-				</ul>
-						
-				<h6>Libraries</h6>
-						
+				<h6>Libraries</h6>		
 				{% for project in site.projects %}
 					{% if project.reference == page.reference %}
 					{% for file in project.customJS %}
@@ -80,6 +61,30 @@ layout: default
 					{% endfor %}
 					{% endif %}
 				{% endfor %}
+				<hr>
+				
+				
+				<h6>Status</h6>
+				<small>
+				{% if page.image %}
+					Beta - {{ page.version }}
+				{% else %}
+					Alpha - {{ page.version }}
+				{% endif %}
+				</small>
+				{% if page.status %}<p>{{ page.status }}</p>{% endif %}	
+				<hr>
+
+				{% if page.todo %}
+					<h6>TODO</h6>
+					<ul>
+					{% for do in page.todo %}	
+					<li>{{do}}</li>
+					{% endfor %}
+					</ul>
+				
+				<hr>
+				{% endif %}
 			</header>
 			
 			{% if page.amazon %}
@@ -87,6 +92,8 @@ layout: default
 			
 			<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="{{page.amazon}}&show_border=false&link_opens_in_new_window=true&price_color=333333&title_color=CC00FF&bg_color=FFFFFF">
 			</iframe>
+			
+			<hr>
 			{% endif %}
 			
 			<blockquote class="NTS">

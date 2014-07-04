@@ -138,7 +138,8 @@ body {
 hr {
   height: .05em;
   border: none;
-  background: #ccc;
+  background: #eee;
+  margin: 0 0 1em;
 }
 .grid img,
 .site img {
@@ -411,6 +412,8 @@ footer .colophon {
 }
 .post__data .NTS {
   font-size: 75%;
+  margin-top: 2rem;
+  color: #aaa;
 }
 .post__essay {
   width: 50%;
