@@ -49,10 +49,8 @@
 	  margin-bottom: 5%;
 	}
 }
+// iphone
 @media only screen and (max-width: 40em) {
-	header.main {
-		background-position: center bottom;
-	}
 	.site {
 		padding: 1em;
 		width: 100%;
@@ -64,9 +62,12 @@
 			padding: 1.5em 0 4em;
 		}
 	}	
-	.container > section {
+	.projects {
+		display: none;
 	}
-	
+	.documentation, .post__content, .post__notes {
+		width: 100%;
+	}
 }
 @media print {
 	@page { margin: 0.5in; }
