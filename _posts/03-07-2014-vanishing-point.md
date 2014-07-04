@@ -6,7 +6,7 @@ layout: post
 featured: false
 design: 
 image: 
-version: 0.6.1
+version: 0.7.0
 category: 
 description: 
 ---
