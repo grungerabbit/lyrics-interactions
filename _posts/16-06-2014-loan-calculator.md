@@ -22,6 +22,12 @@ Changes are instantly reflected and calculated. I wanted to make the calculation
 
 Conversely, it also shows that if you can somehow bring in more money and pay off more of the principal yourself, without resorting to loans, it might hurt more now but it will be better in the long run since you will pay less (or avoid paying) interest.<sup></sup> Especially since many institutional loans have compound interest, which is the whipped cream of obscure constructed pain on top. 
 
+###Why
+
 I built this because personal finance used to be inscrutable to me, and I think this is the case for many of my fellow young adults and college students. If you don't already have real-world experience handling your own money, it doesn't occur to you that you have to account for every dollar. And even if you've worked small jobs, your parents may have supported you, shielding you from living expenses, or taxes, or withholding.<sup></sup> 
 
 After a bad experience with trust and money,<sup></sup> I have become much more responsible and aware about my finances. Other factors include a concurrent (but not causative) tenure in a full-time job,<sup></sup> living independently in NYC, starting to use [Mint](http://mint.com), and a strange couple of months when it was soothing to read [personal finance](http://thebillfold.com) blogs every day.
+
+###How
+
+Loan Calculator is built with Angular and took a few hours to build.
