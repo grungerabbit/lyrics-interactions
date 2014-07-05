@@ -188,34 +188,34 @@ header:after {
   border-left: 1px solid #eee;
   width: 68%;
 }
-footer {
+.main__footer {
   *zoom: 1;
   font-size: 110%;
   background: #cccccc;
   padding: .5em 0;
 }
-footer:before,
-footer:after {
+.main__footer:before,
+.main__footer:after {
   display: table;
   content: "";
   line-height: 0;
 }
-footer:after {
+.main__footer:after {
   clear: both;
 }
-footer:before,
-footer:after {
+.main__footer:before,
+.main__footer:after {
   content: " ";
   display: table;
 }
-footer:after {
+.main__footer:after {
   clear: both;
 }
-footer .info {
+.main__footer .info {
   font-size: 75%;
   line-height: 1;
 }
-footer .colophon {
+.main__footer .colophon {
   clear: both;
   text-align: right;
 }
