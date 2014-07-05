@@ -12,7 +12,7 @@
 	left: 0;
 	position: absolute;
 	background: rgba(255,255,255,.85);
-	box-shadow: @sqSixth @sqSixth @accent;
+	.box-shadow(@sqSixth @sqSixth @accent);
 	z-index: 100;
 	display: none;
 	overflow: hidden;
@@ -38,7 +38,7 @@
 	position: relative;
 	float: left;
 	background-size: cover;
-	box-shadow: @sqSixth @sqSixth black;
+	.box-shadow(@sqSixth @sqSixth black);
 	a {
 		display: inline-block;
 		width: 100%;
@@ -76,7 +76,7 @@
 	border: 1px solid black;
 	display: inline-block;
 	padding: 0 0.5em;
-	box-shadow: @aggro;
+	.box-shadow(@aggro);
 }
 
 
@@ -119,7 +119,7 @@
 		float: left;
 		img {
 			max-width: 75%;
-			box-shadow: @sqTwelfth @sqTwelfth black;
+			.box-shadow(@sqTwelfth @sqTwelfth black);
 		}
 	
 	}

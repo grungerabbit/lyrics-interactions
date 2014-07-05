@@ -45,17 +45,13 @@ p {
 a {
 	font-weight: normal;
 	text-decoration: none;
-    -webkit-transition: color 0.5s ease-in-out;
-    -moz-transition: color 0.5s ease-in-out;
-    -ms-transition: color 0.5s ease-in-out;
-    -o-transition: color 0.5s ease-in-out;
-    transition: color 0.5s ease-in-out;
+    .transition(color, 0.5s);
 }
 a:link, a:visited, a:active {
 	color: @accent;
 }
 a:hover {
-	color: lighten(@accent, 20%);
+	color: black;
 }
 h3 + ul {
 	margin-bottom: 1em;

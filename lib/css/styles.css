@@ -96,7 +96,7 @@ a:active {
   color: #cc00ff;
 }
 a:hover {
-  color: #e066ff;
+  color: black;
 }
 h3 + ul {
   margin-bottom: 1em;
@@ -229,6 +229,8 @@ header:after {
   left: 0;
   position: absolute;
   background: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: 2.5rem 2.5rem #cc00ff;
+  -moz-box-shadow: 2.5rem 2.5rem #cc00ff;
   box-shadow: 2.5rem 2.5rem #cc00ff;
   z-index: 100;
   display: none;
@@ -255,6 +257,8 @@ header:after {
   position: relative;
   float: left;
   background-size: cover;
+  -webkit-box-shadow: 2.5rem 2.5rem #000000;
+  -moz-box-shadow: 2.5rem 2.5rem #000000;
   box-shadow: 2.5rem 2.5rem #000000;
 }
 .project-overview a {
@@ -288,6 +292,8 @@ header:after {
   border: 1px solid black;
   display: inline-block;
   padding: 0 0.5em;
+  -webkit-box-shadow: 5px 5px 0px #cc00ff, 4px 4px 0px #cc00ff, 3px 3px 0px #cc00ff, 2px 2px 0px #cc00ff, 1px 1px 0px #cc00ff;
+  -moz-box-shadow: 5px 5px 0px #cc00ff, 4px 4px 0px #cc00ff, 3px 3px 0px #cc00ff, 2px 2px 0px #cc00ff, 1px 1px 0px #cc00ff;
   box-shadow: 5px 5px 0px #cc00ff, 4px 4px 0px #cc00ff, 3px 3px 0px #cc00ff, 2px 2px 0px #cc00ff, 1px 1px 0px #cc00ff;
 }
 .projects {
@@ -380,6 +386,8 @@ header:after {
 }
 .documentation .post__notes img {
   max-width: 75%;
+  -webkit-box-shadow: 1.25rem 1.25rem #000000;
+  -moz-box-shadow: 1.25rem 1.25rem #000000;
   box-shadow: 1.25rem 1.25rem #000000;
 }
 .documentation__listing li {
@@ -437,6 +445,8 @@ header:after {
 }
 .post__banner .post__image img {
   width: 100%;
+  -webkit-box-shadow: 1.25rem 1.25rem #000000;
+  -moz-box-shadow: 1.25rem 1.25rem #000000;
   box-shadow: 1.25rem 1.25rem #000000;
 }
 .post__data {
@@ -471,6 +481,14 @@ header:after {
   clear: both;
   font-size: 75%;
   opacity: 0.1;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.code:hover {
+  opacity: 1;
 }
 @media only screen and (min-width: 40em) {
   .container > section {
