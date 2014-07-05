@@ -7,7 +7,7 @@ featured: true
 image: vp.png
 version: 0.8.0
 status: In active development
-description: Generates a 2D line drawing of a 3D prism in three-point graphical perspective. The user defines initial locations and dimensions, then the program uses slope to calculate a horizon line and Cartesian coordinates for other vertices.
+description: Generate a 2D line drawing of a 3D prism in three-point graphical perspective. With user defined initial locations and dimensions, the program calculates a horizon line, vertices, and guide lines.
 todo: 
 - Build hatching
 - Allow additional objects
@@ -17,6 +17,7 @@ annotations:
 - Not a properly "3D" object. It's an illusion, Michael
 - AKA height, width, depth
 - Or some other kind of control
+- Due to my comfort with the Raphael library
 - Caveat * In later high school, I did not take "AP" calculus, while I did take "AP" studio art. This may have contributed to the disparity. However, I believe the retention differences may be useful for comparing art vs. math secondary education in the No Child Left Behind era. The difference is alarming even in a relatively privileged public school district such as the one I attended. (My example is obviously anecdotal, but I would like to explore the question in further quantitative research.)
 - Those word problems with the building and angle of the sun did not seem real enough to count as practical applications.
 ---
@@ -35,7 +36,7 @@ I hope to next add a visual treatment which simulates hatching lines leading to 
 
 ###Why
 
-I was inspired to build vanishing point off of a doodle: I drew a chair with the surfaces composed of stacked perspective lines. It occurred to me vanishing points and hatching lines could be calculated, with the image generated from the math... slope? Using Raphael for the graphics was a natural choice, and I started reviewing middle school and high school math to write the algorithms for plotting.
+I was inspired to build vanishing point off of a doodle: I drew a chair with the surfaces composed of stacked perspective lines. It occurred to me vanishing points and hatching lines could be calculated, with the image generated from the math... slope? Using Raphael for the graphics was a natural choice,<sup></sup> and I started reviewing middle school and high school math to write the algorithms for plotting.
 
 ###How
 
