@@ -12,6 +12,7 @@ annotations:
 - The calculator halves the money you make to account for taxes and living expenses.
 - Simple interest, although I have an earlier project that calculates compound interest
 - I am not an expert in personal finance, but this seems a good rule of thumb. You may want to factor in liquidity and interest rates in making this decision. Consult your certifed business professional &#35;bidness
+- THANK THEM.
 - To be documented elsewhere...
 - In the financial services sector too
 ---
@@ -19,6 +20,8 @@ Loan Calculator lets you enter a goal amount and time in months to this goal. Yo
 
 Changes are instantly reflected and calculated. I wanted to make the calculations transparent and allow easy visual understanding of changes. It is sometimes difficult to practically think about money and the effect that subtle shifts can make. For example, an increase of one dollar or one percent may not sound significant, but it can add up quickly. Or you could imagine your hourly wage and forget about taxes and other expenses.
 
-Conversely, it also shows that if you can somehow bring in more money and pay off more of the principal yourself, without resorting to loans, it might hurt more now but it will be better in the long run since you will pay less (or avoid paying) interest.<sup></sup> Especially since many institutional loans have compound interest, which is the whipped cream of obscured pain on top. 
+Conversely, it also shows that if you can somehow bring in more money and pay off more of the principal yourself, without resorting to loans, it might hurt more now but it will be better in the long run since you will pay less (or avoid paying) interest.<sup></sup> Especially since many institutional loans have compound interest, which is the whipped cream of obscure constructed pain on top. 
 
-I built this because personal finance used to be inscrutable to me, and I think this is the case for many young adults. It doesn't occur to you that you might have to account for living expenses, or taxes, or withholding. After a bad experience with trust and money,<sup></sup> I have become much more responsible and aware about my finances. Other factors include a concurrent (but not causative) tenure in a full-time job,<sup></sup> starting to use [Mint](http://mint.com), and a weird period where it was soothing to read [personal finance](http://thebillfold.com) blogs every day.
+I built this because personal finance used to be inscrutable to me, and I think this is the case for many of my fellow young adults and college students. If you don't already have real-world experience handling your own money, it doesn't occur to you that you have to account for every dollar. And even if you've worked small jobs, your parents may have supported you, shielding you from living expenses, or taxes, or withholding.<sup></sup> 
+
+After a bad experience with trust and money,<sup></sup> I have become much more responsible and aware about my finances. Other factors include a concurrent (but not causative) tenure in a full-time job,<sup></sup> living independently in NYC, starting to use [Mint](http://mint.com), and a strange couple of months when it was soothing to read [personal finance](http://thebillfold.com) blogs every day.
