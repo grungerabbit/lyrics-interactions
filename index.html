@@ -52,27 +52,27 @@ title: welcome
 	<ul class="documentation__list">
 	{% for post in site.posts %}
 		<li class="doc__post">
+			<aside class="post__notes">
+				<p class="post__date">{{post.date | date_to_string }}</p>
+				
+				{% for project in site.projects %}
+				{% if post.reference == project.reference %}
+					<a href="{{project.url}}">
+						{% if post.image %}<img src="/lib/img/{{post.image}}">
+						{% else %}
+						<p>see project</p>
+						{% endif %}
+					</a>
+					
+				{% endif %}
+				{% endfor %}
+				
+				
+			</aside>
 			<article class="post__content">
 				<h2 class="project__name"><a href="{{post.url}}">{{post.title}}</a></h2>
 				{{post.content}}
 			</article>
-			<aside class="post__notes">
-				{% for project in site.projects %}
-				{% if post.reference == project.reference %}
-					<a href="{{project.url}}">see project</a>
-				{% endif %}
-				{% endfor %}
-				
-				{{post.date | date_to_string }}
-				
-				{% if post.notes.length > 0 %}
-				<ol>
-					{% for note in post.notes %}
-					<li>{{note.content}}</li>
-					{% endfor %}
-				</ol>
-				{% endif %}
-			</aside>
 		</li>
 	{% endfor %}
 	</ul>

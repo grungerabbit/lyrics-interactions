@@ -168,6 +168,26 @@ header:after {
 header:after {
   clear: both;
 }
+.uiuiu {
+  text-align: center;
+}
+.uiuiu .one-sixth,
+.uiuiu .two-thirds {
+  height: 3.5rem;
+  float: left;
+  border-bottom: 1px solid #eee;
+}
+.uiuiu .one-sixth {
+  color: #ccc;
+  width: 16%;
+  padding: 1em 0;
+}
+.uiuiu .two-thirds {
+  padding-top: 0.1em;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+  width: 68%;
+}
 footer {
   *zoom: 1;
   font-size: 110%;
@@ -201,26 +221,6 @@ footer .colophon {
 }
 .project-overviews li {
   padding: 1em 0;
-}
-.uiuiu {
-  text-align: center;
-}
-.uiuiu .one-sixth,
-.uiuiu .two-thirds {
-  height: 3.5rem;
-  float: left;
-  border-bottom: 1px solid #eee;
-}
-.uiuiu .one-sixth {
-  color: #ccc;
-  width: 16%;
-  padding: 1em 0;
-}
-.uiuiu .two-thirds {
-  padding-top: 0.1em;
-  border-right: 1px solid #eee;
-  border-left: 1px solid #eee;
-  width: 68%;
 }
 .project-overview--description {
   width: 15rem;
@@ -335,19 +335,52 @@ footer .colophon {
 .documentation:after {
   clear: both;
 }
-.doc__post {
+.documentation .doc__post {
+  *zoom: 1;
   padding: 1em 0;
   list-style: none;
+  border-bottom: 1px solid #cccccc;
 }
-.post__content {
+.documentation .doc__post:before,
+.documentation .doc__post:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.documentation .doc__post:after {
+  clear: both;
+}
+.documentation .doc__post:before,
+.documentation .doc__post:after {
+  content: " ";
+  display: table;
+}
+.documentation .doc__post:after {
+  clear: both;
+}
+.documentation .post__date {
+  padding: 1em 0;
+}
+.documentation .post__content {
   width: 75%;
   float: left;
-  border-bottom: 1px solid #cccccc;
   font-size: 1.25em;
+  min-height: 15em;
 }
-.post__notes {
+.documentation .post__content ul {
+  margin: 1em;
+  list-style: circle;
+}
+.documentation .post__content img {
+  max-width: 100%;
+}
+.documentation .post__notes {
   width: 25%;
   float: left;
+}
+.documentation .post__notes img {
+  max-width: 75%;
+  box-shadow: 1.25rem 1.25rem #000000;
 }
 .documentation__listing li {
   display: inline-block;
@@ -404,6 +437,7 @@ footer .colophon {
 }
 .post__banner .post__image img {
   width: 100%;
+  box-shadow: 1.25rem 1.25rem #000000;
 }
 .post__data {
   border-right: 1px solid #eee;

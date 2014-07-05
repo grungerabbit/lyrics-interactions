@@ -4,31 +4,6 @@
 		padding: 1em 0;
 	}
 }
-// 240px
-@square: 15rem;
-@sq2: @square * 2;
-@sq4: @sq2 * 2;
-@sqSixth: @square / 6;
-
-.uiuiu {
-	text-align: center;
-	.one-sixth, .two-thirds {
-		height: 3.5rem;
-		float: left;
-		border-bottom: 1px solid #eee;
-	}
-	.one-sixth {
-		color: #ccc;
-		width: 16%;
-		padding: 1em 0;
-	}
-	.two-thirds {
-		padding-top: 0.1em;
-		border-right: 1px solid #eee;
-		border-left: 1px solid #eee;
-		width: 68%;
-	}
-}
 
 .project-overview--description {
 	width: @square;
@@ -115,19 +90,37 @@
 	padding: 0 1em;
 	.clearfix;
 	margin: auto;
-}
-.doc__post {
-	padding: 1em 0;
-	list-style: none;
-}
+	
+	.doc__post {
+		.clearfix;
+		padding: 1em 0;
+		list-style: none;
+		border-bottom: 1px solid @grayLight;
+	}
+	.post__date {
+		padding: 1em 0;
+	}
 
-.post__content {
-	width: 75%;
-	float: left;
-	border-bottom: 1px solid @grayLight;
-	font-size: 1.25em;
-}
-.post__notes {
-	width: 25%;
-	float: left;
+	.post__content {
+		width: 75%;
+		float: left;
+		font-size: 1.25em;
+		min-height: 15em;
+		ul {
+			margin: 1em;
+			list-style: circle;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+	.post__notes {
+		width: 25%;
+		float: left;
+		img {
+			max-width: 75%;
+			box-shadow: @sqTwelfth @sqTwelfth black;
+		}
+	
+	}
 }
