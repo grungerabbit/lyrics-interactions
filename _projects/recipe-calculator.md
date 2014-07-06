@@ -143,9 +143,17 @@ label {
 	clear: both;
 	border-top: 5px solid purple;
 	text-align: center;
+	overflow: auto;
 }
 .final {
 	font-size: 200%;
+}
+.analysis__details .third {
+	width: 33%;
+	float: left;
+}
+.winner {
+	color: green;
 }
 </style>
 
@@ -188,8 +196,9 @@ label {
 			
 			<h5 class="final" ng-bind="storeFinal()"></h2>
 			
-			(<span ng-bind="store.price"></span> / <span ng-bind="store.servings"></span>) * <span ng-bind="store.starHandicap"></span> + 
-			<span ng-bind="store.special"></span>
+			<p>(<span ng-bind="store.price"></span> / <span ng-bind="store.servings"></span>) * <span ng-bind="home.timeHandicap"></span> * <span ng-bind="store.starHandicap"></span> + 
+			<span ng-bind="store.special"></span></p>
+			<p><small>(price / servings) * timeHandcap * starHandicap + special</small></p>
 		</section>
 	</div>
 </div>
@@ -240,14 +249,30 @@ label {
 			
 			<h5 class="final" ng-bind="homeFinal()"></h5>
 			
-			(<span ng-bind="home.price"></span> / <span ng-bind="home.servings"></span>) * <span ng-bind="home.timeHandicap"></span> * <span ng-bind="home.starHandicap"></span> + 
-			<span ng-bind="home.special"></span>
+			<p>(<span ng-bind="home.price"></span> / <span ng-bind="home.servings"></span>) * <span ng-bind="home.timeHandicap"></span> * <span ng-bind="home.starHandicap"></span> + 
+			<span ng-bind="home.special"></span></p>
+			<p><small>(price / servings) * timeHandcap * starHandicap + special</small></p>
 		</section>
 	</div>
 </div>
 
 <div class="final__analysis">
-	<h1><span ng-bind="name"></span> cost(s) $<span ng-bind="storeFinal()"></span> from <span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="!storeName">the store</span> and $<span ng-bind="homeFinal()"></span> made at home.</h1>
+	<h1><span ng-bind="name"></span> cost(s) <span ng-class="{'winner' : storeFinal() < homeFinal()}">$<span ng-bind="storeFinal()"></span></span> from <span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="!storeName">the store</span> and <span ng-class="{'winner' : homeFinal() < storeFinal()}">$<span ng-bind="homeFinal()"></span></span> made at home.</h1>
+	
+	<section class="analysis__details">
+		
+		<div class="third">
+			<p>The meal takes [time].</p>
+		</div>
+		
+		<div class="third">
+			<p>You save <span class="winner">$<span ng-bind="savings()"></span></span> if you eat at <span ng-bind="winner()"></span>.</p>
+		</div>
+		
+		<div class="third">
+			<p>Homemade <span ng-bind="name"></span> requires <span ng-bind="ingredients.length"></span> ingredient<span ng-if="ingredients.length !== 1">s</span>.</p>
+		</div>
+	</section>
 </div>
 
 
