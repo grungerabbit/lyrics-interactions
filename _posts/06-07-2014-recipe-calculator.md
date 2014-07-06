@@ -6,10 +6,11 @@ layout: post
 featured: false
 status:
 image: 
-version: 0.6.1
+version: 0.6.2
 description: What does it cost to buy food at a restaurant vs. make it at home?
 annotations:
 - or at least a lot more, but let's think on it
+- or $5 is what you expect to pay for coffee. What if you were a country mouse and expect to pay $1 for a coffee, and you came to NYC... hmmm...
 ---
 
 ###Notes
@@ -37,12 +38,16 @@ In the equation, we can use literally make the prices correspond to the feelings
 
 * 0 stars = 10
 * 1 stars = 5
-* 2 stars = 2.5
+* 2 stars = 2
 * 3 stars = 1
 * 4 stars = .5
-* 5 stars = .25
+* 5 stars = .2
 
-We will examine these handicaps. It may be a diff, as with time. It probably also relates to the stated price; if in our example, we had paid $1000 for both coffees, the 5 star one might still be worth $1000 but might not.
+We will examine these handicaps. It may be a diff, as with time. It probably also relates to the stated price; if in our example, we had paid $1000 for both coffees, the 5-star one might still be worth $1000 but most likely not.
+
+Another way to think about it is whether or not the price is appropriate for the rating. So a "meets expectations" coffee is perfectly priced. If you would pay $5 for an average coffee,<sup></sup> then it's a 3-star coffee. But if you would pay $10 for a great coffee, a 5-star coffee at $5 is a 3-star coffee at $10. And a great coffee worth $10 but priced at $100 is a 0-star coffee, because it's a rip off. Is this too complex? (And, related, can someone teach me economics?)
+
+Hmm but subjectively best? Like "best coffee in the world who cares about price" shouldn't be compared to a "greatly surpasses expectations because dirt cheap coffee." This must be the problem with rating sites.
 
 #####Time
 Needs to be compared with
