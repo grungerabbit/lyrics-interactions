@@ -70,6 +70,7 @@ label {
 }
 .half input {
 	width: 100%;
+	border-bottom-width: 1px;
 }
 .store input {
 	border-bottom-color: blue;
@@ -83,6 +84,10 @@ label {
 }
 .recipe__header {
 	padding: 2em 0;
+}
+.half h4 {
+	padding: 1em 0;
+	text-align: right;
 }
 .item__name {
 	text-align: center;
@@ -102,10 +107,9 @@ label {
 	<div class="recipe__info">
 		<header class="recipe__header">
 			<h2>Store Bought</h2>
-			price, servings, taxes, time, quality
 		</header>
 		
-	
+		<h4>Cost</h4>
 		
 		<ul ng-repeat="field in fields">
 			<li>
@@ -114,6 +118,7 @@ label {
 			</li>
 		</ul>
 		
+		<h4>Analysis</h4>
 		
 		<p ng-bind="store.price"></p>
 		<p ng-bind="store.servings"></p>
@@ -129,11 +134,21 @@ label {
 	<div class="recipe__info">
 		<header class="recipe__header">
 			<h2>Homemade</h2>
-			price, servings, equipment, time, quality
 		</header>
 		
-		<h5>add ingredient!</h5>
-		name, price, fraction used in recipe
+		<h4>Ingredients</h4>
+		
+		<form ng-submit="addIngredient()">
+			<label>name</label>
+			<input ng-model="ingName" />
+			
+			<label>price</label>
+			<input ng-model="ingPrice" />
+			
+			<label>portion used in recipe</label>
+			<input ng-model="ingUse" />
+		<button ng-if="ingName.length > 0">Add ingredient</button>
+		</form>
 		
 		<ul ng-repeat="ing in ingredients">
 		<li>
@@ -143,7 +158,8 @@ label {
 		</li>
 		</ul>
 		
-		<button ng-click="addIngredient()">add</button>
+		
+		<h4>Cost</h4>
 		
 		<ul ng-repeat="field in fields">
 			<li>
@@ -151,6 +167,8 @@ label {
 				<input ng-model="home[field]" />
 			</li>
 		</ul>
+		
+		<h4>Analysis</h4>
 		
 		<p ng-bind="home.price"></p>
 		<p ng-bind="home.servings"></p>
