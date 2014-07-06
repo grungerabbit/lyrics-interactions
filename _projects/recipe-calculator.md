@@ -202,7 +202,7 @@ label {
 		</section>
 		
 		<section class="card">
-			<h4>Cost</h4>
+			<h4>Cost of Order</h4>
 			<ul ng-repeat="field in fields">
 				<li>
 					<label ng-bind="field"></label>
@@ -255,7 +255,7 @@ label {
 		</section>
 		
 		<section class="card">
-			<h4>Cost</h4>
+			<h4>Cost of Recipe</h4>
 			<ul ng-repeat="field in fields">
 				<li>
 					<label ng-bind="field"></label>
