@@ -71,6 +71,7 @@ label {
 .half input {
 	width: 100%;
 	border-bottom-width: 1px;
+	margin-bottom: 0.5em;
 }
 .store input {
 	border-bottom-color: blue;
@@ -88,9 +89,28 @@ label {
 .half h4 {
 	padding: 1em 0;
 	text-align: right;
+	clear: both;
 }
 .item__name {
 	text-align: center;
+}
+.add__ingredient {
+	padding: 1em;
+	font: 1em "Cabin";
+	float: right;
+	border-radius: 100px;
+	background-color: red;
+	border: none;
+}
+.ingredient__label {
+	display: inline-block;
+	float: left;
+	border: 1px solid red;
+	padding: 0.25em 0.5em;
+	font-size: 75%;
+}
+.ingredient__math {
+	font-size: 75%;
 }
 </style>
 
@@ -147,14 +167,15 @@ label {
 			
 			<label>portion used in recipe</label>
 			<input ng-model="ingUse" />
-		<button ng-if="ingName.length > 0">Add ingredient</button>
+		<button class="add__ingredient" ng-class="{'active' : ingName.length > 0}">Add ingredient</button>
 		</form>
 		
 		<ul ng-repeat="ing in ingredients">
-		<li>
+		<li class="ingredient__label">
 			<p ng-bind="ing.name"></p>
-			<p ng-bind="ing.price"></p>
-			<p ng-bind="ing.use"></p>
+			<p class="ingredient__math">
+				<span ng-bind="ing.price"></span> * <span ng-bind="ing.use"></span>
+			</p>
 		</li>
 		</ul>
 		
