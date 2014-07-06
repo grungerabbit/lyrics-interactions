@@ -150,7 +150,7 @@ label {
 			
 			<p ng-bind="storeFinal()"></p>
 			
-			(<span ng-bind="store.price"></span> / <span ng-bind="store.servings"></span>) * <span ng-bind="store.time"></span> * <span ng-bind="store.quality"></span> + 
+			(<span ng-bind="store.price"></span> / <span ng-bind="store.servings"></span>) * <span ng-bind="store.starHandicap"></span> + 
 			<span ng-bind="store.special"></span>
 		</section>
 	</div>
@@ -204,7 +204,7 @@ label {
 			
 			<p ng-bind="homeFinal()"></p>
 			
-			(<span ng-bind="home.price"></span> / <span ng-bind="home.servings"></span>) * <span ng-bind="home.time"></span> * <span ng-bind="home.quality"></span> + 
+			(<span ng-bind="home.price"></span> / <span ng-bind="home.servings"></span>) * <span ng-bind="home.timeHandicap"></span> * <span ng-bind="home.starHandicap"></span> + 
 			<span ng-bind="home.special"></span>
 		</section>
 	</div>
