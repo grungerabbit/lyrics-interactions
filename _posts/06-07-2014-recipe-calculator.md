@@ -6,7 +6,7 @@ layout: post
 featured: false
 status:
 image: 
-version: 0.6.2
+version: 0.6.3
 description: What does it cost to buy food at a restaurant vs. make it at home?
 annotations:
 - or at least a lot more, but let's think on it
@@ -52,3 +52,29 @@ Hmm but subjectively best? Like "best coffee in the world who cares about price"
 #####Time
 Needs to be compared with
 the store bought time, I think.
+
+If something takes forever to make, that's annoying and possibly untenable. Some foods do not have this problem: tea will take 5 minutes at home and at a store, and may even take longer commercially prepared.
+
+Diffs:
+
+* 0 - 10 - no handicap - 1
+* 10 - 30 - some handicap - 1.25
+* 30 - 60 - some more handicap - 1.5
+* 60 - 120 - quite a bit of handicap - 2
+* 120+ - lots of handicap - 4
+
+Again, these need to be validated.
+
+#####Special
+
+These may be too difficult to quantify...
+
+Store:
+
+* Taxes
+* Environmental impact
+
+Home:
+
+* Washing dishes/cleanup
+* Investment in equipment

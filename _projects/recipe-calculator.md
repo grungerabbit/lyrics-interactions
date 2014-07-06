@@ -202,10 +202,9 @@ label {
 		<section class="card">
 			<h4>Analysis</h4>
 	
-			(See docs for methodology)
+			<p>(See docs for methodology)</p>
 			
-			<p ng-bind="home.price"></p>
-			<p ng-bind="home.servings"></p>
+			(<span ng-bind="home.price"></span> * <span ng-bind="home.servings"></span>) 
 			<p ng-bind="home.time"></p>
 			<p ng-bind="home.quality"></p>
 			<p ng-bind="home.special"></p>
