@@ -5,7 +5,7 @@ subtitle: loan calculator
 layout: project
 customJS:
 - lib: angular
-- file: calc.js
+- file: loan.js
 ---
 
 <style>
