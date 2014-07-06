@@ -201,6 +201,8 @@ label {
 		
 		<section class="card">
 			<h4>Analysis</h4>
+	
+			(See docs for methodology)
 			
 			<p ng-bind="home.price"></p>
 			<p ng-bind="home.servings"></p>
