@@ -137,21 +137,18 @@ label {
 		
 		<section class="card">
 			<h4>Cost</h4>
-			<form ng-submit="calcCosts('store')">
 			<ul ng-repeat="field in fields">
 				<li>
 					<label ng-bind="field"></label>
 					<input ng-model="store[field]" />
 				</li>
 			</ul>
-			<button class="hidden__button">submit</button>
-			</form>
 		</section>
 		
 		<section class="card">
 			<h4>Analysis</h4>
 			
-			<p ng-bind="storeFinal"></p>
+			<p ng-bind="storeFinal()"></p>
 			
 			(<span ng-bind="store.price"></span> / <span ng-bind="store.servings"></span>) * <span ng-bind="store.time"></span> * <span ng-bind="store.quality"></span> + 
 			<span ng-bind="store.special"></span>
@@ -192,15 +189,12 @@ label {
 		
 		<section class="card">
 			<h4>Cost</h4>
-			<form ng-submit="calcCosts('home')">
 			<ul ng-repeat="field in fields">
 				<li>
 					<label ng-bind="field"></label>
 					<input ng-model="home[field]" />
 				</li>
 			</ul>
-			<button class="hidden__button">submit</button>
-			</form>
 		</section>
 		
 		<section class="card">
@@ -208,7 +202,7 @@ label {
 	
 			<p>See docs for methodology</p>
 			
-			<p ng-bind="homeFinal"></p>
+			<p ng-bind="homeFinal()"></p>
 			
 			(<span ng-bind="home.price"></span> / <span ng-bind="home.servings"></span>) * <span ng-bind="home.time"></span> * <span ng-bind="home.quality"></span> + 
 			<span ng-bind="home.special"></span>
