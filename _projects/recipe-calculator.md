@@ -23,7 +23,7 @@ body {
 	position: relative;
 }
 input {
-	background-color: #FAD48C;
+	background-color: transparent;
 	border: none;
 	border-bottom: 5px solid purple;
 	padding: 0.75em 0.5em 0.25em;
@@ -35,22 +35,22 @@ ul {
 }
 input:focus {
 	outline: none;
-	border-bottom-color: white;
+	background-color: #FAD48C;
 }
 label {
 	position: absolute;
 	margin-left: 0.5rem;
 	font-size: 75%;
-	color: #ADB2B2;
+	color: #BFA06D;
 }
 .intro {
 	text-align: center;
-	padding: 2em 0;
+	padding: 0.5em 0;
 }
 .half {
 	width: 50%;
 	float: left;
-	padding: 1em;
+	padding: 0 1em;
 	min-height: 30em;
 }
 .notes {
@@ -68,12 +68,21 @@ label {
 .store {
 	border-right: 5px solid blue;
 }
+.half input {
+	width: 100%;
+}
+.store input {
+	border-bottom-color: blue;
+}
+.homemade input {
+	border-bottom-color: red;
+}
 .recipe__info {
 	width: 80%;
 	float: left;
 }
 .recipe__header {
-	border-bottom: 3px solid #FAD48C;
+	padding: 2em 0;
 }
 .item__name {
 	text-align: center;
@@ -96,6 +105,8 @@ label {
 			price, servings, taxes, time, quality
 		</header>
 		
+	
+		
 		<ul ng-repeat="field in fields">
 			<li>
 				<label ng-bind="field"></label>
@@ -105,11 +116,9 @@ label {
 		
 		
 		<p ng-bind="store.price"></p>
+		<p ng-bind="store.servings"></p>
 		<p ng-bind="store.time"></p>
 		<p ng-bind="store.quality"></p>
-
-		<p ng-bind="store.time"></p>
-
 		<p ng-bind="store.special"></p>
 	</div>
 </div>
@@ -122,6 +131,20 @@ label {
 			<h2>Homemade</h2>
 			price, servings, equipment, time, quality
 		</header>
+		
+		<h5>add ingredient!</h5>
+		name, price, fraction used in recipe
+		
+		<ul ng-repeat="ing in ingredients">
+		<li>
+			<p ng-bind="ing.name"></p>
+			<p ng-bind="ing.price"></p>
+			<p ng-bind="ing.use"></p>
+		</li>
+		</ul>
+		
+		<button ng-click="addIngredient()">add</button>
+		
 		<ul ng-repeat="field in fields">
 			<li>
 				<label ng-bind="field"></label>
@@ -130,6 +153,10 @@ label {
 		</ul>
 		
 		<p ng-bind="home.price"></p>
+		<p ng-bind="home.servings"></p>
+		<p ng-bind="home.time"></p>
+		<p ng-bind="home.quality"></p>
+		<p ng-bind="home.special"></p>
 	</div>
 </div>
 
