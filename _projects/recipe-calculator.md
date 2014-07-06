@@ -51,7 +51,8 @@ label {
 	width: 50%;
 	float: left;
 	padding: 0 1em;
-	min-height: 30em;
+	min-height: 60em;
+	overflow: auto;
 }
 .card {
 	margin-bottom: 1em;
@@ -97,6 +98,9 @@ label {
 	padding: 1em;
 	text-align: right;
 }
+.card.start {
+	min-height: 20em;
+}
 .item__name {
 	text-align: center;
 }
@@ -118,6 +122,12 @@ label {
 .ingredient__math {
 	font-size: 75%;
 }
+.final__analysis {
+	padding: 2em;
+	clear: both;
+	border-top: 5px solid purple;
+	text-align: center;
+}
 </style>
 
 <div ng-app ng-controller="Recipe">
@@ -134,6 +144,15 @@ label {
 		<header class="recipe__header">
 			<h2>Store Bought</h2>
 		</header>
+		
+		<section class="card start">
+			<h4>Location Info</h4>
+			<label>store name</label>
+			<input ng-model="storeName" />
+			
+			<label>minutes from home</label>
+			<input ng-model="storeMinutes" />
+		</section>
 		
 		<section class="card">
 			<h4>Cost</h4>
@@ -163,7 +182,7 @@ label {
 		<header class="recipe__header">
 			<h2>Homemade</h2>
 		</header>
-		<section class="card">
+		<section class="card start">
 			<h4>Ingredients</h4>
 			<form ng-submit="addIngredient()">
 				<label>name</label>
@@ -209,5 +228,10 @@ label {
 		</section>
 	</div>
 </div>
+
+<div class="final__analysis">
+	<h1><span ng-bind="name"></span> costs $<span ng-bind="storeFinal()"></span> from <span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="!storeName">the store</span> and $<span ng-bind="homeFinal()"></span> made at home.</h1>
+</div>
+
 
 </div>
