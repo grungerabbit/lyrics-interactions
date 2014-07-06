@@ -155,6 +155,26 @@ label {
 .winner {
 	color: green;
 }
+.shopping__list {
+	text-align: left;
+	padding: 1em;
+	width: 80%;
+	margin: auto;
+}
+.shopping__list li {
+	overflow: auto;
+}
+.shopping__list li > p {
+	float: left;
+}
+.list__ing {
+	width: 75%;
+}
+.list__price {
+	width: 25%;
+	border-left: 1px solid #BFA06D;
+	text-align: right;
+}
 </style>
 
 <div ng-app ng-controller="Recipe">
@@ -257,6 +277,7 @@ label {
 </div>
 
 <div class="final__analysis">
+	<p>Per serving,</p>
 	<h1><span ng-bind="name"></span> cost(s) <span ng-class="{'winner' : storeFinal() < homeFinal()}">$<span ng-bind="storeFinal()"></span></span> from <span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="!storeName">the store</span> and <span ng-class="{'winner' : homeFinal() < storeFinal()}">$<span ng-bind="homeFinal()"></span></span> made at home.</h1>
 	
 	<section class="analysis__details">
@@ -271,6 +292,14 @@ label {
 		
 		<div class="third">
 			<p>Homemade <span ng-bind="name"></span> requires <span ng-bind="ingredients.length"></span> ingredient<span ng-if="ingredients.length !== 1">s</span>.</p>
+			
+			<div ng-show="ingredients.length > 0">
+				<p>They originally cost $<span ng-bind="ingTotal()"></span>.</p>
+				
+				<ul class="shopping__list">
+					<li ng-repeat="ing in ingredients"><p ng-bind="ing.name" class="list__ing"></p> <p ng-bind="ing.price" class="list__price"></p></li>
+				</ul>
+			</div>
 		</div>
 	</section>
 </div>

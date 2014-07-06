@@ -1,12 +1,12 @@
 ---
 title: recipe calculator
 reference: recipe
-subtitle: loan calculator
+subtitle: recipe calculator
 layout: post
 featured: false
 status: active development
 image: 
-version: 0.11.0
+version: 0.12.0
 description: What does it cost to buy food at a restaurant vs. make it at home?
 annotations:
 - or at least a lot more, but let's think on it
