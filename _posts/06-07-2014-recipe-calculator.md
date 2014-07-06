@@ -6,6 +6,6 @@ layout: post
 featured: false
 status:
 image: 
-version: 0.0.0
+version: 0.1.0
 description: What does it cost to buy food at a restaurant vs. make it at home?
 ---

@@ -96,17 +96,21 @@ label {
 			price, servings, taxes, time, quality
 		</header>
 		
-		<button ng-click="test()">aaa</button>
-		
-		<ul ng-repeat="(quality, input) in store">
+		<ul ng-repeat="field in fields">
 			<li>
-				<label ng-bind="quality"></label>
-				<input ng-model="input" />
+				<label ng-bind="field"></label>
+				<input ng-model="store[field]" />
 			</li>
 		</ul>
 		
 		
-		
+		<p ng-bind="store.price"></p>
+		<p ng-bind="store.time"></p>
+		<p ng-bind="store.quality"></p>
+
+		<p ng-bind="store.time"></p>
+
+		<p ng-bind="store.special"></p>
 	</div>
 </div>
 <div class="half homemade">
@@ -118,6 +122,14 @@ label {
 			<h2>Homemade</h2>
 			price, servings, equipment, time, quality
 		</header>
+		<ul ng-repeat="field in fields">
+			<li>
+				<label ng-bind="field"></label>
+				<input ng-model="home[field]" />
+			</li>
+		</ul>
+		
+		<p ng-bind="home.price"></p>
 	</div>
 </div>
 
