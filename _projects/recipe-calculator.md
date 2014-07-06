@@ -191,7 +191,6 @@ label {
 		
 		<section class="card">
 			<h4>Cost</h4>
-			
 			<ul ng-repeat="field in fields">
 				<li>
 					<label ng-bind="field"></label>
