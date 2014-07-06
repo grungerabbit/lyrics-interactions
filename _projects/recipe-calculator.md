@@ -11,6 +11,18 @@ customJS:
 <style>
 @import url(http://fonts.googleapis.com/css?family=Cabin:500,500italic);
 
+::-webkit-input-placeholder {
+   color: #BFA06D;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #BFA06D;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #BFA06D;  
+}
+:-ms-input-placeholder {  
+   color: #BFA06D;  
+}
 body {
 	font-family: "Cabin", sans-serif;
 	box-sizing: border-box;
@@ -43,9 +55,11 @@ label {
 	font-size: 75%;
 	color: #BFA06D;
 }
-.intro {
+.item__name {
 	text-align: center;
-	padding: 0.5em 0;
+	width: 100%;
+	padding: 1em 0;
+	font-size: 200%;
 }
 .half {
 	width: 50%;
@@ -94,15 +108,17 @@ label {
 .recipe__header {
 	padding: 2em 0;
 }
+.recipe__header h2 {
+	min-height: 4em;
+	width: 100%;
+	text-align: center;
+}
 .half h4 {
 	padding: 1em;
 	text-align: right;
 }
 .card.start {
 	min-height: 20em;
-}
-.item__name {
-	text-align: center;
 }
 .add__ingredient {
 	padding: 1em;
@@ -128,12 +144,15 @@ label {
 	border-top: 5px solid purple;
 	text-align: center;
 }
+.final {
+	font-size: 200%;
+}
 </style>
 
 <div ng-app ng-controller="Recipe">
 
 <header class="intro">
-	<input class="item__name" ng-model="name" />
+	<input class="item__name" ng-model="name" placeholder="food name..." />
 </header>
 
 <div class="half store">
@@ -142,7 +161,7 @@ label {
 	</div>
 	<div class="recipe__info">
 		<header class="recipe__header">
-			<h2>Store Bought</h2>
+			<h2><span ng-if="!storeName">Store Bought</span><span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="name" ng-bind="name"></span></h2>
 		</header>
 		
 		<section class="card start">
@@ -167,7 +186,7 @@ label {
 		<section class="card">
 			<h4>Analysis</h4>
 			
-			<p ng-bind="storeFinal()"></p>
+			<h5 class="final" ng-bind="storeFinal()"></h2>
 			
 			(<span ng-bind="store.price"></span> / <span ng-bind="store.servings"></span>) * <span ng-bind="store.starHandicap"></span> + 
 			<span ng-bind="store.special"></span>
@@ -180,7 +199,7 @@ label {
 	</div>
 	<div class="recipe__info">
 		<header class="recipe__header">
-			<h2>Homemade</h2>
+			<h2>Homemade <span ng-if="name" ng-bind="name"></span></h2>
 		</header>
 		<section class="card start">
 			<h4>Ingredients</h4>
@@ -218,10 +237,8 @@ label {
 		
 		<section class="card">
 			<h4>Analysis</h4>
-	
-			<p>See docs for methodology</p>
 			
-			<p ng-bind="homeFinal()"></p>
+			<h5 class="final" ng-bind="homeFinal()"></h5>
 			
 			(<span ng-bind="home.price"></span> / <span ng-bind="home.servings"></span>) * <span ng-bind="home.timeHandicap"></span> * <span ng-bind="home.starHandicap"></span> + 
 			<span ng-bind="home.special"></span>
@@ -230,7 +247,7 @@ label {
 </div>
 
 <div class="final__analysis">
-	<h1><span ng-bind="name"></span> costs $<span ng-bind="storeFinal()"></span> from <span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="!storeName">the store</span> and $<span ng-bind="homeFinal()"></span> made at home.</h1>
+	<h1><span ng-bind="name"></span> cost(s) $<span ng-bind="storeFinal()"></span> from <span ng-if="storeName" ng-bind="storeName"></span> <span ng-if="!storeName">the store</span> and $<span ng-bind="homeFinal()"></span> made at home.</h1>
 </div>
 
 
