@@ -53,6 +53,11 @@ label {
 	padding: 0 1em;
 	min-height: 30em;
 }
+.card {
+	margin-bottom: 1em;
+	padding: 0.25rem 0;
+	overflow: auto;
+}
 .notes {
 	width: 20%;
 }
@@ -71,12 +76,14 @@ label {
 .half input {
 	width: 100%;
 	border-bottom-width: 1px;
-	margin-bottom: 0.5em;
 }
-.store input {
+.half input:focus {
+	background-color: rgba(255,255,255,.8);
+}
+.store input, .store h4 {
 	border-bottom-color: blue;
 }
-.homemade input {
+.homemade input, .homemade h4 {
 	border-bottom-color: red;
 }
 .recipe__info {
@@ -87,9 +94,8 @@ label {
 	padding: 2em 0;
 }
 .half h4 {
-	padding: 1em 0;
+	padding: 1em;
 	text-align: right;
-	clear: both;
 }
 .item__name {
 	text-align: center;
@@ -129,22 +135,26 @@ label {
 			<h2>Store Bought</h2>
 		</header>
 		
-		<h4>Cost</h4>
+		<section class="card">
+			<h4>Cost</h4>
+			
+			<ul ng-repeat="field in fields">
+				<li>
+					<label ng-bind="field"></label>
+					<input ng-model="store[field]" />
+				</li>
+			</ul>
+		</section>
 		
-		<ul ng-repeat="field in fields">
-			<li>
-				<label ng-bind="field"></label>
-				<input ng-model="store[field]" />
-			</li>
-		</ul>
-		
-		<h4>Analysis</h4>
-		
-		<p ng-bind="store.price"></p>
-		<p ng-bind="store.servings"></p>
-		<p ng-bind="store.time"></p>
-		<p ng-bind="store.quality"></p>
-		<p ng-bind="store.special"></p>
+		<section class="card">
+			<h4>Analysis</h4>
+			
+			<p ng-bind="store.price"></p>
+			<p ng-bind="store.servings"></p>
+			<p ng-bind="store.time"></p>
+			<p ng-bind="store.quality"></p>
+			<p ng-bind="store.special"></p>
+		</section>
 	</div>
 </div>
 <div class="half homemade">
@@ -155,47 +165,50 @@ label {
 		<header class="recipe__header">
 			<h2>Homemade</h2>
 		</header>
-		
-		<h4>Ingredients</h4>
-		
-		<form ng-submit="addIngredient()">
-			<label>name</label>
-			<input ng-model="ingName" />
+		<section class="card">
+			<h4>Ingredients</h4>
+			<form ng-submit="addIngredient()">
+				<label>name</label>
+				<input ng-model="ingName" />
+				
+				<label>price</label>
+				<input ng-model="ingPrice" />
+				
+				<label>portion used in recipe</label>
+				<input ng-model="ingUse" />
+			<button class="add__ingredient" ng-class="{'active' : ingName.length > 0}">Add ingredient</button>
+			</form>
 			
-			<label>price</label>
-			<input ng-model="ingPrice" />
-			
-			<label>portion used in recipe</label>
-			<input ng-model="ingUse" />
-		<button class="add__ingredient" ng-class="{'active' : ingName.length > 0}">Add ingredient</button>
-		</form>
-		
-		<ul ng-repeat="ing in ingredients">
-		<li class="ingredient__label">
-			<p ng-bind="ing.name"></p>
-			<p class="ingredient__math">
-				<span ng-bind="ing.price"></span> * <span ng-bind="ing.use"></span>
-			</p>
-		</li>
-		</ul>
-		
-		
-		<h4>Cost</h4>
-		
-		<ul ng-repeat="field in fields">
-			<li>
-				<label ng-bind="field"></label>
-				<input ng-model="home[field]" />
+			<ul ng-repeat="ing in ingredients">
+			<li class="ingredient__label">
+				<p ng-bind="ing.name"></p> $<span ng-bind="ing.calc"></span> 
+				<p class="ingredient__math">
+					<small class="show__work">= <span ng-bind="ing.price"></span> * <span ng-bind="ing.use"></span></small> 
+				</p>
 			</li>
-		</ul>
+			</ul>
+		</section>
 		
-		<h4>Analysis</h4>
+		<section class="card">
+			<h4>Cost</h4>
+			
+			<ul ng-repeat="field in fields">
+				<li>
+					<label ng-bind="field"></label>
+					<input ng-model="home[field]" />
+				</li>
+			</ul>
+		</section>
 		
-		<p ng-bind="home.price"></p>
-		<p ng-bind="home.servings"></p>
-		<p ng-bind="home.time"></p>
-		<p ng-bind="home.quality"></p>
-		<p ng-bind="home.special"></p>
+		<section class="card">
+			<h4>Analysis</h4>
+			
+			<p ng-bind="home.price"></p>
+			<p ng-bind="home.servings"></p>
+			<p ng-bind="home.time"></p>
+			<p ng-bind="home.quality"></p>
+			<p ng-bind="home.special"></p>
+		</section>
 	</div>
 </div>
 
