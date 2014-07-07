@@ -6,7 +6,7 @@ layout: post
 featured: false
 status: active development
 image: 
-version: 0.12.1
+version: 0.13.0
 description: What does it cost to buy food at a restaurant vs. make it at home?
 annotations:
 - or at least a lot more, but let's think on it
