@@ -121,19 +121,23 @@ label {
 	min-height: 20em;
 }
 .add__ingredient {
-	padding: 1em;
-	font: 1em "Cabin";
+	margin-top: 0.5em;
+	padding: 0.5em 1em;
+	font: 0.75em "Cabin";
 	float: right;
 	border-radius: 100px;
 	background-color: red;
 	border: none;
 }
+.ingredients {
+	clear: both;
+}
 .ingredient__label {
 	display: inline-block;
-	float: left;
 	border: 1px solid red;
 	padding: 0.25em 0.5em;
-	font-size: 75%;
+	font-size: 50%;
+	margin: 0.25em;
 }
 .ingredient__math {
 	font-size: 75%;
@@ -224,7 +228,8 @@ ul[class^="cons__"] {
 
 <div class="half store">
 	<div class="notes">
-	aaa
+		&nbsp;
+	<!--aaa-->
 	</div>
 	<div class="recipe__info">
 		<header class="recipe__header">
@@ -262,7 +267,8 @@ ul[class^="cons__"] {
 </div>
 <div class="half homemade">
 	<div class="notes">
-	aaa
+		&nbsp;
+	<!--aaa-->
 	</div>
 	<div class="recipe__info">
 		<header class="recipe__header">
@@ -282,8 +288,8 @@ ul[class^="cons__"] {
 			<button class="add__ingredient" ng-class="{'active' : ingName.length > 0}">Add ingredient</button>
 			</form>
 			
-			<ul ng-repeat="ing in ingredients">
-			<li class="ingredient__label">
+			<ul class="ingredients">
+			<li class="ingredient__label" ng-repeat="ing in ingredients" ng-click="removeIngredient($index)">
 				<p ng-bind="ing.name"></p> $<span ng-bind="ing.calc"></span> 
 				<p class="ingredient__math">
 					<small class="show__work">= <span ng-bind="ing.price"></span> * <span ng-bind="ing.use"></span></small> 
