@@ -148,6 +148,9 @@ label {
 .final {
 	font-size: 200%;
 }
+.analysis__details {
+	margin-top: 2rem;
+}
 .analysis__details .third {
 	width: 33%;
 	float: left;
@@ -174,6 +177,42 @@ label {
 	width: 25%;
 	border-left: 1px solid #BFA06D;
 	text-align: right;
+}
+ul[class^="pros__"], ul[class^="cons__"] {
+	width: 50%;
+	float: left;
+	font-size: 75%;
+}
+ul[class^="pros__"] li:first-child {
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	border-bottom: 1px solid #BFA06D;
+}
+ul[class^="pros__"] {
+	padding: 0.5rem 0;
+}
+ul[class^="cons__"] {
+	padding-top: 0.5rem;
+	border-top: 1px solid #BFA06D;
+}
+.pros__store, .cons__store {
+	border-right: 1px solid #BFA06D;
+}
+.pros, .qual {
+	margin-top: 1rem;
+}
+.qual__store, .qual__home {
+	width: 50%;
+	float: left;
+	padding: 1em;
+}
+.quality {
+	text-transform: uppercase;
+	font-size: 75%;
+}
+.disclaimer {
+	margin-top: 1rem;
+	font-size: 75%;
 }
 </style>
 
@@ -281,11 +320,50 @@ label {
 	<section class="analysis__details">
 		
 		<div class="third">
-			<p>It takes you <span ng-bind="timeToTable"></span> minutes to obtain <span ng-bind="name"></span> from <span ng-if="storeName" ng-bind="storeName"></span><span ng-if="!storeName"> the store</span>, and <span ng-bind="home.time"></span> minutes to cook at home.</p>
+			<p>You save <span class="winner">$<span ng-bind="savings()"></span></span> if you eat at <span ng-bind="winner()"></span>.</p>
+			
+			<section class="qual">
+				<p>You rated the quality of <span ng-bind="name"></span>:</p>
+				<div class="qual__store">
+					<p class="quality" ng-bind="processQuality(store.quality)" ng-class="{'winner' : store.quality > home.quality}"></p>
+					<p>from <span ng-if="storeName" ng-bind="storeName"></span><span ng-if="!storeName"> the store</span></p>
+				</div>
+				<div class="qual__home">
+					<p class="quality" ng-bind="processQuality(home.quality)" ng-class="{'winner' : home.quality > store.quality}"></p>
+					<p>homemade</p>
+				</div>
+			</section>
 		</div>
 		
 		<div class="third">
-			<p>You save <span class="winner">$<span ng-bind="savings()"></span></span> if you eat at <span ng-bind="winner()"></span>.</p>
+			<p>It takes you <span ng-bind="timeToTable" ng-class="{'winner' : timeToTable < home.time}"></span> minutes to obtain <span ng-bind="name"></span> from <span ng-if="storeName" ng-bind="storeName"></span><span ng-if="!storeName"> the store</span>, and <span ng-bind="home.time" ng-class="{'winner' : timeToTable > home.time}"></span> minutes to cook at home.</p>
+			
+			<section class="pros">
+				<ul class="pros__store">
+					<li>Eating at <span ng-if="storeName" ng-bind="storeName"></span><span ng-if="!storeName"> the store</span></li>
+					<li>Social contact</li>
+					<li>Ambience</li>
+					<li>Service</li>
+				</ul>
+				<ul class="pros__home">
+					<li>Eating at home</li>
+					<li>Wearing jammies</li>
+					<li>No travel</li>
+					<li>Netflix</li>
+				</ul>
+			</section>
+			<section class="cons">
+				<ul class="cons__store">
+					<li>Social contact</li>
+					<li>Outside world</li>
+					<li>Hygiene</li>
+				</ul>
+				<ul class="cons__home">
+					<li>Washing dishes</li>
+					<li>Cabin fever</li>
+					<li>Sad?</li>
+				</ul>
+			</section>
 		</div>
 		
 		<div class="third">
@@ -298,6 +376,8 @@ label {
 					<li ng-repeat="ing in ingredients"><p ng-bind="ing.name" class="list__ing"></p> <p ng-bind="ing.price" class="list__price"></p></li>
 				</ul>
 			</div>
+			
+			<p class="disclaimer">Remember to factor in the cost and time of getting ingredients and kitchen supplies.</p>
 		</div>
 	</section>
 </div>
