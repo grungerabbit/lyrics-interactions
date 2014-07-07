@@ -283,7 +283,7 @@ label {
 	<section class="analysis__details">
 		
 		<div class="third">
-			<p>The meal takes [time].</p>
+			<p>It takes you <span ng-bind="timeToTable"></span> minutes to obtain <span ng-bind="name"></span> from <span ng-if="storeName" ng-bind="storeName"></span><span ng-if="!storeName"> the store</span>, and <span ng-bind="home.time"></span> minutes to cook at home.</p>
 		</div>
 		
 		<div class="third">
