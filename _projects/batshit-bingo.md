@@ -6,7 +6,6 @@ layout: project
 customJS:
 - lib: angular
 - file: bingo.js
-description: Batshit bingo
 ---
 <style>
 @import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
