@@ -5,13 +5,12 @@ subtitle: 3-point perspective
 layout: post
 featured: true
 image: vp.png
-version: 0.9.3
+version: 1.0.0
 status: In active development.
-lastmod: 7/26/2014
+lastmod: 07/28/2014
 description: Generate a 2D line drawing of a 3D prism in three-point graphical perspective. With user defined initial locations and dimensions, the program calculates a horizon line, vertices, and guide lines.
 todo: 
 - Build hatching
-- Allow additional objects
 - Control Panel
 - Draggable?
 annotations:
@@ -23,15 +22,16 @@ annotations:
 - Those word problems with the building and angle of the sun did not seem real enough to count as practical applications.
 ---
 
-Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space.<sup></sup> It is built in Javascript using the [Raphael.js](http://raphaeljs.com/) SVG library. As of version 0.8.0, you can:
+Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space.<sup></sup> It is built in Javascript using the [Raphael.js](http://raphaeljs.com/) SVG library. As of version 1.0.0, you can:
 
-* Draw a basic rectangular prism in perspective
+* Draw many basic rectangular prisms in perspective
 * Draw dashed guidelines from vanishing points to vertices
-* Define 3 vanishing points
-* Choose a seed point, which becomes vertex 1 (the closest vertex to the viewer)
-* Use distances from the seed point<sup></sup> to draw the 3 next closest vertices
-* Use vertices 2-4 and the vanishing points to define the last 4 vertices
-* Draw solid edges of the prism
+* Define 3 global vanishing points
+* For each prism:
+	* Choose a seed point, which becomes vertex 1 (the closest vertex to the viewer)
+	* Use distances from the seed point<sup></sup> to draw the 3 next closest vertices
+	* Use vertices 2-4 and the vanishing points to define the last 4 vertices
+	* Draw solid edges of the prism
 
 I hope to next add a visual treatment which simulates hatching lines leading to the vanishing points. I may later build a control panel<sup></sup> like in the [Wang Tiles](/projects/wang-tiles.html) project I made earlier.
 

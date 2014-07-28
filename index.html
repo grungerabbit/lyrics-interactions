@@ -53,20 +53,30 @@ title: welcome
 	{% for post in site.posts %}
 		<li class="doc__post">
 			<aside class="post__notes">
-				<p class="post__date">{{post.date | date: "%m/%d/%Y" }}</p>
 				
-				{% for project in site.projects %}
-				{% if post.reference == project.reference %}
-					<a href="{{project.url}}">
-						{% if post.image %}<img src="/lib/img/{{post.image}}">
-						{% else %}
-						<p>see project</p>
-						{% endif %}
-					</a>
+				<div class="post__imagelink">
+					{% for project in site.projects %}
+					{% if post.reference == project.reference %}
+						<a href="{{project.url}}">
+							{% if post.image %}<img src="/lib/img/{{post.image}}">
+							{% else %}
+							<p>see project</p>
+							{% endif %}
+						</a>
+						
+					{% endif %}
+					{% endfor %}
+				</div>
 					
-				{% endif %}
-				{% endfor %}
+				<div class="post__published">
+					{% if post.lastmod %}
+					<small>Last modified:</small>
+					<p>{{post.lastmod}}</p>
+					{% endif %}
 				
+					<small>First published:</small>
+					<p>{{post.date | date: "%m/%d/%Y" }}</p>
+				</div>	
 				
 			</aside>
 			<article class="post__content">

@@ -364,8 +364,29 @@ header:after {
 .documentation .doc__post:after {
   clear: both;
 }
-.documentation .post__date {
-  padding: 1em 0;
+.documentation .post__imagelink {
+  *zoom: 1;
+  margin: 1.5em 0;
+}
+.documentation .post__imagelink:before,
+.documentation .post__imagelink:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.documentation .post__imagelink:after {
+  clear: both;
+}
+.documentation .post__imagelink:before,
+.documentation .post__imagelink:after {
+  content: " ";
+  display: table;
+}
+.documentation .post__imagelink:after {
+  clear: both;
+}
+.documentation .post__published {
+  margin-top: 1em;
 }
 .documentation .post__content {
   width: 75%;
