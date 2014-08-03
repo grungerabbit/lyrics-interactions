@@ -5,11 +5,15 @@ subtitle: color combination matchup tool
 layout: post
 featured: false
 image: 
-version: 0.0.0
+version: 0.0.1
 status: In active development.
 lastmod: 08/2/2014
 description: A color palette combination viewing tool.
 todo: 
+- Add color palettes
+- Modify color palettes
+- Randomize + show all color palettes
+- boxboxboxboxbox.com
 annotations:
 ---
 
