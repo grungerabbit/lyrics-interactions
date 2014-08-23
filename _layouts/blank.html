@@ -30,6 +30,9 @@
 					<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
 				{% elsif customJS.lib == "moment" %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+				{% elsif customJS.lib == "ember" %}
+					<script src="/lib/js/handlebars-1.1.2.js"></script>
+					<script src="/lib/js/ember-1.7.0.js"></script>
 				{% endif %}
 			{% endif %}
 		{% endfor %}
