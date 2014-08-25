@@ -11,6 +11,9 @@ customJS:
 {% raw %}
 
 <style>
+body {
+	font-family: "WhitneyLight", helvetica, arial, sans-serif;
+}
 .control-toggle {
 	position: fixed;
 	right: 0;
@@ -19,8 +22,11 @@ customJS:
 }
 .vp__control-panel {
 	position: fixed;
+	height: 100%;
 	z-index: 500;
+	top: 20px;
 	right: 0;
+	width: 50%;
 	background-color: rgba(255,255,255,0.5);
 }
 
@@ -29,38 +35,74 @@ customJS:
 <div ng-app="vanish" ng-controller="vanishingSettings">
 	<button class="control-toggle" ng-click="toggleCtrlPanel()">Toggle Control Panel</button>
 	
-	<div class="vp__control-panel" ng-if="openControl">
-		show vertices
+	<div class="vp__control-panel" ng-show="openControl">
+		<label>
 		<input type="checkbox" ng-model="showVertices">
+		show vertices
+		</label>
 		
-		show horizons
+		<label>
+		
 		<input type="checkbox" ng-model="showGrid">
+		show horizons
+		</label>
 		
-		show sightlines
+		<label>
 		<input type="checkbox" ng-model="showSightlines">
+
+		show sightlines
+		</label>
 		
-		show scanlines
+		<label>
 		<input type="checkbox" ng-model="scanlines">
+		show scanlines
+		</label>
 		
+		<label>
+		<input type="checkbox" ng-model="showEdges">
+		show edges
+		</label>
 		
-		{{scanlines}}
+		<label>
+			<input type="checkbox" ng-model="scanlineUniform">
+			uniform scanline
+			</label>
 		
 		<button ng-click="deselectAll()">Deselect All</button>
 		
 		<input ng-model="horizon">
 		
-		{{horizon}}
 		
-		<ul>
-			<li ng-repeat="prism in dataset">
-				<input type="text" ng-model="prism.width" />
-				<input type="text" ng-model="prism.height" />
-				<input type="text" ng-model="prism.depth" />
-				<input type="text" ng-model="prism.seedX" />
-				<input type="text" ng-model="prism.seedY" />
-				
-			</li>
-		</ul>
+		<table>
+			<thead>
+				<tr>
+					<td>Width (rel)</td>
+					<td>Height (rel)</td>
+					<td>Depth (rel)</td>
+					<td>Seed X (abs)</td>
+					<td>Seed Y (abs)</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="prism in dataset">
+					<td>
+						<input type="text" ng-model="prism.width" />
+					</td>
+					<td>
+						<input type="text" ng-model="prism.height" />
+					</td>
+					<td>
+						<input type="text" ng-model="prism.depth" />
+					</td>
+					<td>
+						<input type="text" ng-model="prism.seedX" />
+					</td>
+					<td>
+						<input type="text" ng-model="prism.seedY" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
 		
 		<button ng-click="redraw()">Redraw</button>
 	</div>
