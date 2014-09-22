@@ -35,9 +35,10 @@ body {
 }
 input {
 	padding: 0.25em;
+	font-size: 1.5em;
 }
 input, textarea {
-	font: 2em "Old Standard TT", serif;
+	font-family: "Old Standard TT", serif;
 	width: 100%;
 	border: none;
 	border-left: 1rem solid #eee;
@@ -51,6 +52,7 @@ input:focus, textarea:focus {
 }
 .selfless textarea {
 	min-height: 5em;
+	font-size: 2em;
 }
 .add__person {
 	display: none;
@@ -78,16 +80,16 @@ input:focus, textarea:focus {
 	
 		<div class="egocentric">
 			<section class="question">
-				<h1>What do you want?</h1>
+				<h3>What do you want?</h3>
 				<input type="text" ng-model="wanted" placeholder="to..." />
 			</section>
 			<section class="question" ng-show="wanted.length > 0">
-				<h1>Why do you want {{wanted}}?</h1>
+				<h3>Why do you want {{wanted}}?</h3>
 				<input type="text" ng-model="why" placeholder="because..." />
 			</section>
 			<section class="question">
 				<div ng-show="why.length > 0">
-					<h1>Who else does wanting {{wanted}} affect?</h1>
+					<h3>Who else does wanting {{wanted}} affect?</h3>
 					<form ng-submit="addAffected()">
 						<input type="text" ng-model="namePerson" />
 						<button class="add__person">+</button>
@@ -106,7 +108,7 @@ input:focus, textarea:focus {
 			</section>
 			
 			<section class="question">
-				<em ng-if="affected.length > 0">See if you can reconcile your wish {{wanted}} with these {{affected.length}} other wishes.</em>
+				<p ng-if="affected.length > 0"><em>See if you can reconcile your wish {{wanted}} with these {{affected.length}} other wishes.</em> They will be more likely to agree because they feel appreciated!</p>
 			</section>
 		</div>
 			
