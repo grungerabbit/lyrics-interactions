@@ -28,9 +28,10 @@ body {
 	width: 67%;
 }
 .question {
-	margin: 2.5em 0;
+	margin: 3em 0 1em;
 	padding: 1em;
 	border-top: 2px solid #eee;
+	position: relative;
 }
 input {
 	padding: 0.25em;
@@ -51,7 +52,25 @@ input:focus, textarea:focus {
 .selfless textarea {
 	min-height: 5em;
 }
-
+.add__person {
+	display: none;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	border: none;
+	background-color: rgba(230,200,230,0.95);
+}
+.add__person:focus {
+	outline: none;
+	background: rgba(210,190,210,0.95);
+}
+.question:hover .add__person {
+	display: block;
+	position: absolute;
+	font: 1.5em "Old Standard TT", serif;
+	right: 1em;
+	margin-top: -2.25em;
+}
 </style>
 
 <div ng-app="reframe">
@@ -60,14 +79,14 @@ input:focus, textarea:focus {
 		<div class="egocentric">
 			<section class="question">
 				<h1>What do you want?</h1>
-				<input type="text" ng-model="wanted" />
+				<input type="text" ng-model="wanted" placeholder="to..." />
 			</section>
 			<section class="question">
 				<div ng-show="wanted.length > 0">
 					<h1>Who else does wanting {{wanted}} affect?</h1>
 					<form ng-submit="addAffected()">
 						<input type="text" ng-model="namePerson" />
-						<button>+</button>
+						<button class="add__person">+</button>
 					</form>
 					
 					<em ng-if="affected.length == 1">That's {{affected.length}} other person.</em>
