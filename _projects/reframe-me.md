@@ -81,8 +81,12 @@ input:focus, textarea:focus {
 				<h1>What do you want?</h1>
 				<input type="text" ng-model="wanted" placeholder="to..." />
 			</section>
+			<section class="question" ng-show="wanted.length > 0">
+				<h1>Why do you want {{wanted}}?</h1>
+				<input type="text" ng-model="why" placeholder="because..." />
+			</section>
 			<section class="question">
-				<div ng-show="wanted.length > 0">
+				<div ng-show="why.length > 0">
 					<h1>Who else does wanting {{wanted}} affect?</h1>
 					<form ng-submit="addAffected()">
 						<input type="text" ng-model="namePerson" />
@@ -96,9 +100,13 @@ input:focus, textarea:focus {
 		</div>
 		<div class="selfless">
 			<section class="question" ng-repeat="person in affected">
-				<h1>Why would {{person}} want to help you {{wanted}}?</h1>
-				<em>What does {{person}} get in return?</em>
+				<h1>Why would {{person.name}} want to help you {{wanted}}?</h1>
+				<em>What does {{person.name}} get in return?</em>
 				<textarea></textarea>
+			</section>
+			
+			<section class="question">
+				<em ng-if="affected.length > 0">See if you can reconcile your wish {{wanted}} with these {{affected.length}} other wishes.</em>
 			</section>
 		</div>
 			
