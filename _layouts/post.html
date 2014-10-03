@@ -1,6 +1,20 @@
 ---
 layout: default
 ---
+<nav class="documentation__toc">
+	<ul>
+	{% for post in site.posts %}
+		<li class="toc__tinythumb"><a href="{{post.url}}">
+			{% if post.image %}
+				<img src="/lib/img/{{post.image}}">
+			{% else %}
+				<img src="http://placekitten.com/g/300/300">
+			{% endif %}</a></li>
+	{% endfor %}
+	</ul>
+</nav>
+
+
 <div class="temp">
 <a href="/">back</a>
 	<ul class="documentation__listing">

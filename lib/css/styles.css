@@ -417,6 +417,19 @@ header:after {
 .documentation__listing li:after {
   content: " * ";
 }
+.documentation__toc {
+  height: 50px;
+}
+.toc__tinythumb {
+  width: 30px;
+  height: 30px;
+  float: left;
+  overflow: hidden;
+}
+.toc__tinythumb img {
+  width: 100%;
+  height: 100%;
+}
 .post__data,
 .post__essay,
 .post__sidebar,
