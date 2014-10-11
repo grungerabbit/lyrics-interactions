@@ -17,22 +17,46 @@
 		<meta name="keywords" content="cheryl wu new york city artist designer user interface interaction design experience portfolio experiment prototype dream playground techatnyu hackNY {{page.keywords}}" />
 		
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
+		{% if site.dev == true %}
+		<script src="/lib/js/libs/jquery.js"></script>
+		{% else %}
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		{% endif %}
 		{% for customJS in page.customJS %}
 			{% if customJS.lib %}
 				{% if customJS.lib == "angular" %}
+					{% if site.dev == true %}
+					<script src="/lib/js/libs/angular.min.js"></script>
+					{% else %}
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+					{% endif %}
 				{% elsif customJS.lib == "knockout" %}
+					{% if site.dev == true %}
+					<script src="/lib/js/libs/knockout-3.0.0.js"></script>
+					{% else %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+					{% endif %}
 				{% elsif customJS.lib == "raphael" %}
+					{% if site.dev == true %}
+					<script src="/lib/js/libs/raphael-min.js"></script>
+					{% else %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+					{% endif %}
 				{% elsif customJS.lib == "mustache" %}
+					{% if site.dev == true %}
+					<script src="/lib/js/libs/mustache.js"></script>
+					{% else %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+					{% endif %}
 				{% elsif customJS.lib == "moment" %}
+					{% if site.dev == true %}
+					<script src="/lib/js/libs/moment.min.js"></script>
+					{% else %}
 					<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+					{% endif %}
 				{% elsif customJS.lib == "ember" %}
-					<script src="/lib/js/handlebars-1.1.2.js"></script>
-					<script src="/lib/js/ember-1.7.0.js"></script>
+					<script src="/lib/js/libs/handlebars-1.1.2.js"></script>
+					<script src="/lib/js/libs/ember-1.7.0.js"></script>
 				{% endif %}
 			{% endif %}
 		{% endfor %}

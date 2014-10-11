@@ -1,7 +1,8 @@
 name: UIUIU
 markdown: redcarpet
+dev: true
 
-exclude: ["README.md", "Gruntfile.js", "package.json", "node_modules"]
+exclude: ["README.md", "Gruntfile.js", "package.json", "node_modules", "config.codekit"]
 
 collections:
   projects:

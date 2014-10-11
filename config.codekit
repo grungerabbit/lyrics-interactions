@@ -1531,28 +1531,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/js\/ember-1.7.0.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/ember-1.7.0.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/ember-1.7.0-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/handlebars-1.1.2.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/handlebars-1.1.2.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/handlebars-1.1.2-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/lib\/js\/interactions\/bingo.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -1817,45 +1795,111 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/js\/jquery.fittext.js": {
+	"\/lib\/js\/libs\/angular.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/jquery.fittext.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/jquery.fittext-min.js",
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/angular.min.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/angular.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/js\/jquery.js": {
+	"\/lib\/js\/libs\/ember-1.7.0.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/jquery.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/jquery-min.js",
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/ember-1.7.0.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/ember-1.7.0-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/js\/jquery.lettering.js": {
+	"\/lib\/js\/libs\/handlebars-1.1.2.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/jquery.lettering.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/jquery.lettering-min.js",
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/handlebars-1.1.2.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/handlebars-1.1.2-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/lib\/js\/knockout-3.0.0.js": {
+	"\/lib\/js\/libs\/jquery.fittext.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/knockout-3.0.0.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/knockout-3.0.0-min.js",
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/jquery.fittext.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/jquery.fittext-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/js\/libs\/jquery.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/jquery.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/jquery-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/js\/libs\/jquery.lettering.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/jquery.lettering.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/jquery.lettering-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/js\/libs\/knockout-3.0.0.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/knockout-3.0.0.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/knockout-3.0.0-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/js\/libs\/moment.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/moment.min.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/moment.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/js\/libs\/mustache.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/mustache.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/mustache-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/js\/libs\/raphael-min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/libs\/raphael-min.js",
+		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/raphael-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
