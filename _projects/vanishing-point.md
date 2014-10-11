@@ -23,6 +23,15 @@ body {
 	background: none;
 	font-family: "WhitneyLight", helvetica, arial, sans-serif;
 	color: rgba(0,0,0,0);
+	transition: color 0.5s;
+}
+.control-toggle i {
+	color: rgba(130,11,4,255);
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 20px;
+	transition: color 0.5s;
 }
 .control-toggle:before {
 	content: "";
@@ -42,20 +51,23 @@ body {
 .control-toggle:focus {
 	outline: none;
 }
+.control-toggle:hover i { 
+	color: #fef9dc;
+}
 .vp__control-panel {
 	position: fixed;
 	height: 100%;
 	z-index: 500;
-	top: 20px;
+	top: 0;
+	padding: 50px 25px;
 	right: 0;
 	width: 50%;
 	background-color: rgba(255,255,255,0.5);
 }
-
 </style>
 
 <div ng-app="vanish" ng-controller="vanishingSettings">
-	<button class="control-toggle" ng-click="toggleCtrlPanel()">Toggle Control Panel</button>
+	<button class="control-toggle" ng-click="toggleCtrlPanel()"><i class="ion-gear-b" data-pack="default" data-tags="settings, options, cog"></i> Toggle Control Panel</button>
 	
 	<div class="vp__control-panel" ng-show="openControl">
 		<label>
@@ -95,7 +107,7 @@ body {
 		<input ng-model="horizon">
 		
 		
-		<table>
+		<table class="prism-dimensions">
 			<thead>
 				<tr>
 					<td>Width (rel)</td>
