@@ -19,6 +19,28 @@ body {
 	right: 0;
 	top: 0;
 	z-index: 501;
+	border: none;
+	background: none;
+	font-family: "WhitneyLight", helvetica, arial, sans-serif;
+	color: rgba(0,0,0,0);
+}
+.control-toggle:before {
+	content: "";
+	height: 0;
+	width: 0;
+	float: right;
+	display: block;
+	border-right: 25px solid #f8d516;
+	border-top: 25px solid #f8d516;
+	border-bottom: 25px solid transparent;
+	border-left: 25px solid transparent;
+}
+.control-toggle:hover {
+	color: rgba(0,0,0,1);
+	cursor: pointer;
+}
+.control-toggle:focus {
+	outline: none;
 }
 .vp__control-panel {
 	position: fixed;

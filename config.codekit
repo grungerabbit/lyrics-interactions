@@ -1652,6 +1652,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/lib\/js\/interactions\/min\/vanishing-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/js\/interactions\/min\/vanishing-min.js",
+		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/min\/vanishing-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/lib\/js\/interactions\/ratings.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -1793,7 +1804,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/lib\/js\/interactions\/why.js": {
 		"fileType": 64,
