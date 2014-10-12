@@ -11,6 +11,11 @@ customJS:
 {% raw %}
 
 <style>
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
 body {
 	font-family: "WhitneyLight", helvetica, arial, sans-serif;
 }
@@ -62,14 +67,39 @@ body {
 	padding: 50px 25px;
 	right: 0;
 	width: 50%;
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(41,55,86,.9);
+}
+.hide {
+	display: none;
+}
+.prism__dimensions {
+	border-collapse: collapse;
+	width: 100%;
+}
+.prism__dimensions tr {
+	display: block;
+	border-bottom: 1px solid #eee;
+}
+.prism__dimensions tbody td {
+	border-right: 1px solid #eee;
+	width: 20%;
+}
+.prism__dimensions tr input {
+	border: none;
+	padding: 0.5em;
+	font: 1em "WhitneyLight", helvetica, arial, sans-serif;
+	width: 100%;
+}
+.button {
+	font: 1em "WhitneyLight", helvetica, arial, sans-serif;
+	background-color: ;
 }
 </style>
 
 <div ng-app="vanish" ng-controller="vanishingSettings">
 	<button class="control-toggle" ng-click="toggleCtrlPanel()"><i class="ion-gear-b" data-pack="default" data-tags="settings, options, cog"></i> Toggle Control Panel</button>
 	
-	<div class="vp__control-panel" ng-show="openControl">
+	<div class="vp__control-panel" ng-class="{'hide': !openControl}">
 		<label>
 		<input type="checkbox" ng-model="showVertices">
 		show vertices
@@ -107,7 +137,7 @@ body {
 		<input ng-model="horizon">
 		
 		
-		<table class="prism-dimensions">
+		<table class="prism__dimensions">
 			<thead>
 				<tr>
 					<td>Width (rel)</td>

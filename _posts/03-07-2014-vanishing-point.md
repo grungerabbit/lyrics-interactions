@@ -5,9 +5,9 @@ subtitle: 3-point perspective
 layout: post
 featured: true
 image: vp.png
-version: 1.0.0
+version: 1.1.0
 status: In active development.
-lastmod: 07/28/2014
+lastmod: 10/11/2014
 description: Generate a 2D line drawing of a 3D prism in three-point graphical perspective. With user defined initial locations and dimensions, the program calculates a horizon line, vertices, and guide lines.
 todo: 
 - Build hatching
