@@ -73,6 +73,10 @@ input:focus, textarea:focus {
 	right: 1em;
 	margin-top: -2.25em;
 }
+.solution {
+	width: 50%;
+	float: left;
+}
 </style>
 
 <div ng-app="reframe">
@@ -96,7 +100,7 @@ input:focus, textarea:focus {
 					</form>
 					
 					<em ng-if="affected.length == 1">That's {{affected.length}} other person.</em>
-					<em ng-if="affected.length > 1">That's {{affected.length}} other people.</em>
+					<em ng-if="affected.length > 1">That's {{affected.length}} other (groups of) people.</em>
 				</div>
 			</section>
 		</div>
@@ -104,11 +108,20 @@ input:focus, textarea:focus {
 			<section class="question" ng-repeat="person in affected">
 				<h1>Why would {{person.name}} want to help you {{wanted}}?</h1>
 				<em>What does {{person.name}} get in return?</em>
-				<textarea></textarea>
+				<textarea ng-model="person.wish"></textarea>
 			</section>
 			
 			<section class="question">
-				<p ng-if="affected.length > 0"><em>See if you can reconcile your wish {{wanted}} with these {{affected.length}} other wishes.</em> They will be more likely to agree because they feel appreciated!</p>
+				<p ng-if="affected.length > 0"><em>See if you can reconcile your wish {{wanted}} with these {{affected.length}} other wishes.</em> If you can, you'll be more likely to find success.</p>
+			</section>
+			
+			<section class="solution">
+				<p ng-if="why && affected.length > 0"><em>You</em>: {{why}}</p>
+			</section>
+			<section class="solution" ng-if="affected.length > 0">
+				<ul ng-repeat="person in affected">
+					<li><em>{{person.name}}</em>: {{person.wish}}</li>
+				</ul>
 			</section>
 		</div>
 			
