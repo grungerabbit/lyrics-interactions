@@ -136,6 +136,7 @@ body {
 		
 		<input ng-model="horizon">
 		
+		<select ng-model="dataset" ng-options="preset.set as preset.name for preset in presets"></select>
 		
 		<table class="prism__dimensions">
 			<thead>
