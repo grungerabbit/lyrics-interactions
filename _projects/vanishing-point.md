@@ -1,6 +1,6 @@
 ---
 title: vanishing point
-subtitle: 
+subtitle: 3-point graphical perspective plotting.
 reference: vp
 layout: project
 customJS:

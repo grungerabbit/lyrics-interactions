@@ -1,7 +1,7 @@
 ---
 title: recipe calculator
 reference: recipe
-subtitle: recipe calculator
+subtitle: what does a recipe cost compared to the restaurant version?
 layout: project
 customJS:
 - lib: angular
