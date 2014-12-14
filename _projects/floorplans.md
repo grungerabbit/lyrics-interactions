@@ -11,7 +11,7 @@ customJS:
 {% raw %}
 <style>
 body {
-	background-color: #69878c;
+	background-color: #555;
 }
 </style>
 
