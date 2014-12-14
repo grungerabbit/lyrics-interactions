@@ -9,13 +9,15 @@ version: 1.0.0
 image: eight.png
 featured: true
 description: My project at hackNY 2013, an infographic/short story built in Raphael.js
+annotations:
+- On <a href="https://www.hackerleague.org/hackathons/fall-2013-hackny-student-hackathon">September 28th-29th, 2013</a>
 ---
 
 > 12/13/2014: eight was one of my first projects with Javascript and Raphael. I have moved eight from my personal site, as UIUIU.me became the "play" section on the original site.
 
 -----
 
-I participated in the [hackNY fall 2013 hackathon](http://hackny.org) two weekends ago.
+I participated in the [hackNY fall 2013 hackathon](http://hackny.org) two weekends ago<sup>1</sup>.
 
 Over 24 sleepless hours, I volunteered as a design ambassador, covering everything from idea generation and UX, to visual design, to frontend code. In the down time, I made my own project. Instead of solving a problem, I decided to tell a story.
 
