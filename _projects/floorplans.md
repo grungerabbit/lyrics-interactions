@@ -13,6 +13,9 @@ customJS:
 body {
 	background-color: #555;
 }
+circle {
+	cursor: help;
+}
 </style>
 
 {% endraw %}
