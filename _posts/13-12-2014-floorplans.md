@@ -6,12 +6,15 @@ layout: post
 featured: true
 design: 
 image: floorplan.png
-version: 0.0.0
-amazon: 
+version: 1.0.0
+amazon: //ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=ss_til&ad_type=product_link&tracking_id=&marketplace=amazon&region=US&placement=0961392142&asins=0961392142&linkId=&show_border=true&link_opens_in_new_window=true
 status: In progress
 category: 
 description: Small multiples floorplan viewer and illustrator.
 todo:
+- make timeline
+- different layouts
+- settings
 annotations:
 - Product Design at Nasdaq
 - We had three very similar grey-greens, amongst other similar colors
