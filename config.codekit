@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "18027",
+"creatorBuild": "18270",
 "files": {
 	"\/_drafts\/_play-from-gr\/lib\/css\/eight.css": {
 		"fileType": 16,
@@ -293,6 +293,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/_site\/projects\/loan-calculator.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/_site\/projects\/lucid.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/_site\/projects\/lucid.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -752,6 +761,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/lib\/img\/floorplan.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17982,
+		"inputAbbreviatedPath": "\/lib\/img\/floorplan.png",
+		"outputAbbreviatedPath": "\/lib\/img\/floorplan.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/lib\/img\/food.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -905,446 +925,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
-		},
-	"\/lib\/js\/app.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/app.js",
-		"outputAbbreviatedPath": "\/lib\/js\/min\/app-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/bingo.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/bingo.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/bingo-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/compound.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/compound.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/compound-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/dayevent.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/dayevent.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/dayevent-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/eight.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/eight.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/eight-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/floorplans.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/floorplans.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/floorplans-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/habit.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/habit.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/habit-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/inhaler.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/inhaler.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/inhaler-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/jade.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/jade.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/jade-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/loan.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/loan.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/loan-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/madras.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/madras.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/madras-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/min\/dayevent-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/min\/dayevent-min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/min\/dayevent-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/min\/floorplans-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/min\/floorplans-min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/min\/floorplans-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/min\/reframe-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/min\/reframe-min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/min\/reframe-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/min\/tritrail-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/min\/tritrail-min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/min\/tritrail-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/min\/vanishing-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/min\/vanishing-min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/min\/vanishing-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/ratings.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/ratings.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/ratings-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/recipe.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/recipe.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/recipe-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/reframe.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/reframe.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/reframe-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/responsibility.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/responsibility.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/responsibility-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/snax.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/snax.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/snax-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/spiral.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/spiral.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/spiral-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/thesis.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/thesis.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/thesis-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/tiles.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/tiles.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/tiles-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/triangles.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/triangles.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/triangles-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/triangles2.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/triangles2.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/triangles2-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/tritrail.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/tritrail.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/tritrail-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/truecolors.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/truecolors.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/truecolors-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/interactions\/vanishing.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/vanishing.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/vanishing-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
-		},
-	"\/lib\/js\/interactions\/why.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/interactions\/why.js",
-		"outputAbbreviatedPath": "\/lib\/js\/interactions\/min\/why-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/angular.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/angular.min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/angular.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/ember-1.7.0.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/ember-1.7.0.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/ember-1.7.0-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/handlebars-1.1.2.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/handlebars-1.1.2.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/handlebars-1.1.2-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/jquery.fittext.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/jquery.fittext.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/jquery.fittext-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/jquery.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/jquery.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/jquery-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/jquery.lettering.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/jquery.lettering.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/jquery.lettering-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/knockout-3.0.0.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/knockout-3.0.0.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/knockout-3.0.0-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/moment.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/moment.min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/moment.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/mustache.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/mustache.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/mustache-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/lib\/js\/libs\/raphael-min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/lib\/js\/libs\/raphael-min.js",
-		"outputAbbreviatedPath": "\/lib\/js\/libs\/min\/raphael-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		}
 	},
 "hooks": [
@@ -1752,6 +1332,10 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"singleGroups": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"strict": {
 			"active": 0,
 			"flagValue": -1
@@ -1943,7 +1527,7 @@
 	"sassUseLibsass": 0,
 	"shouldRunAutoprefixer": 0,
 	"shouldRunBless": 0,
-	"skippedItemsString": ".svn, .git, .hg, log, _logs, _cache, cache, logs, node_modules, *.md",
+	"skippedItemsString": "_cache, logs, _logs, cache, *.md, .git, \/lib\/js, log, node_modules, .svn, .hg",
 	"slimAutoOutputPathEnabled": 1,
 	"slimAutoOutputPathFilenamePattern": "*.html",
 	"slimAutoOutputPathRelativePath": "",
