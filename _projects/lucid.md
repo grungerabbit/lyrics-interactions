@@ -11,12 +11,18 @@ customJS:
 <style>
 @import url(http://fonts.googleapis.com/css?family=Abel);
 	body {
+		background-color: #e2e2e2;
 		font-family: "Abel";
 	}
 	.lucid__header {
 		text-align: center;
+		width: 100%;
+		position: absolute;
+		z-index: 2;
+		color: #25B79B;
 	}
 	.half {
+		margin-top: -30px;
 		width: 50%;
 		float: left;
 		height: 100%;
@@ -25,7 +31,7 @@ customJS:
 	}
 	.negative {
 		background-color: #343434;
-		border-right: 1px #2288ff;
+		border-right: 1px solid #25B79B;
 	}
 	.half textarea {
 		width: 100%;
