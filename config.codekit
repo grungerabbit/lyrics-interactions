@@ -805,6 +805,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/lib\/img\/lucid.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31745,
+		"inputAbbreviatedPath": "\/lib\/img\/lucid.png",
+		"outputAbbreviatedPath": "\/lib\/img\/lucid.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/lib\/img\/madras.png": {
 		"fileType": 32768,
 		"ignore": 0,
