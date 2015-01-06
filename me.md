@@ -68,7 +68,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 <h1>I love making things better.</h1>
 
-<p>I lead Community at <a href="http://www.techatnyu.org" class="rebus techatnyu" title="and also 'swiss army knife'"><span>tech@NYU</span></a>. I am a <a href="http://www.hackny.org" class="rebus hackNY" title="hackNY Summer Fellowship"><span>hackNY</span></a> 2012 Fellow. I work at <a href="http://www.twitter.com/prodaqomx" class="rebus prodaq" title="Nasdaq Product Design"><span>Prodaq</span></a>. My experimental art/design/math/code projects are on <a href="http://www.uiuiu.me">uiuiu.me</a>.</p>
+<p>I lead Community at <a href="http://www.techatnyu.org" class="rebus techatnyu" title="and also 'swiss army knife'"><span>tech@NYU</span></a>. I am a <a href="http://www.hackny.org" class="rebus hackNY" title="hackNY Summer Fellowship"><span>hackNY</span></a> 2012 Fellow. I work at <a href="http://www.twitter.com/NasdaqDesign" class="rebus prodaq" title="Nasdaq Product Design"><span>Prodaq</span></a>. My experimental art/design/math/code projects are on <a href="http://www.uiuiu.me">uiuiu.me</a>.</p>
 
 <p>If you&#39;re in New York, let&#39;s get some tea! <a href="http://www.twitter.com/grungerabbit">@grungerabbit</a> &para; <a href="http://www.github.com/grungerabbit">Github</a></p>
 
