@@ -1,6 +1,6 @@
 ---
 layout: page
-title: welcome
+title: about UIUIU.me
 permalink: /about/
 ---
 
