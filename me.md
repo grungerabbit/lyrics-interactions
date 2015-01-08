@@ -117,7 +117,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <li>
 <a href="/lib-gr/art/untitled.png" title="Untitled, Summer 2012">
 <img src="/lib-gr/art/thumbnails/untitled.jpg">
-<p>Untitled, Summer 2014</p>
+<p>Untitled, Summer 2012</p>
 </a>
 </li>
 </ul>

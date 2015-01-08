@@ -13,21 +13,35 @@ customJS:
 	body {
 		background-color: #e2e2e2;
 		font-family: "Abel";
+		overflow: hidden;
+	}
+	::selection {
+		background-color: rgba(37,183,155,.5); /* Safari */
+	}
+	::-moz-selection {
+		background-color: rgba(37,183,155,.5); /* Firefox */
 	}
 	.lucid__header {
 		text-align: center;
-		width: 100%;
+		width: 100px;
+		left: 50%;
+		margin-left: -50px;
 		position: fixed;
 		z-index: 2;
 		color: #25B79B;
-		top: 320px;
+		top: 300px;
+		padding-top: 20px;
+		/*transition: 1s background-color;*/
+		transition: 1s top;
 	}
+	/*.lucid__header:hover {
+		background-color: #8B8B8B;
+	}*/
 	.half {
 		margin-top: -35px;
 		width: 50%;
 		float: left;
 		height: 100%;
-		min-height: 1000px;
 		position: relative;
 		overflow-x: hidden;
 	}
@@ -57,6 +71,7 @@ customJS:
 		width: 50%;
 		background-color: rgba(37,183,155,.5);
 		top: 0px;
+		z-index: 5;
 	}
 	.original__length--focus {
 		background-color: #25B79B;
@@ -84,6 +99,7 @@ customJS:
 		top: 300px;
 		width: 50px;
 		overflow: hidden;
+		transition: 1s top;
 	}
 	.negative .circle-crop {
 		right: 50%;
@@ -110,11 +126,15 @@ customJS:
 		margin-left: 2px;
 		cursor: pointer;
 	}
+	.risen {
+		z-index: 1;
+		top: -20px;
+	}
 </style>
 
 <div ng-app="lucid">
 	<div ng-controller="editor">
-		<header class="lucid__header">
+		<header class="lucid__header circle">
 			<h1>Lucid</h1>
 			<h3 class="copier pos-neg" ng-click="copy('posNeg', original)">&raquo;</h3> <h3 class="copier neg-pos" ng-click="copy('negPos', edited)">&laquo;</h3>
 		</header>
