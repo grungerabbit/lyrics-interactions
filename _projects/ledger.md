@@ -46,14 +46,18 @@ body {
 	/*border-bottom-color: #9151bb;*/
 	color: black;
 }
-.ledger__form.item {
+.item {
 	width: 60%;
 }
-.ledger__form.cost {
+.cost {
 	width: 40%;
 }
 .ledger__add {
 	width: 5%;
+}
+.total__count {
+	float: left;
+	text-align: right;
 }
 
 @media print {
@@ -75,6 +79,7 @@ body {
 		<!--<button class="ledger__menu">?</button>-->
 	</div>
 	<footer class="ledger__total">
-		<h3>Total: $0</h3>
+		<h3 class="total__count item">Items: 0</h3>
+		<h3 class="total__count cost">Total: $0</h3>
 	</footer>
 </div>
