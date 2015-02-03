@@ -57,6 +57,9 @@
 				{% elsif customJS.lib == "ember" %}
 					<script src="/lib/js/libs/handlebars-1.1.2.js"></script>
 					<script src="/lib/js/libs/ember-1.7.0.js"></script>
+				{% elsif customJS.lib == "backbone" %}
+					<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
 				{% endif %}
 			{% endif %}
 		{% endfor %}
