@@ -4,10 +4,10 @@ reference: ledger
 subtitle: Instant, beautiful, printable spreadsheet
 layout: project
 customJS:
-- lib: backbone
+- lib: angular
 - file: ledger.js
 ---
-
+{% raw %}
 <style>
 @import url(http://fonts.googleapis.com/css?family=Fira+Mono);
 body {
@@ -30,6 +30,7 @@ body {
 	border: none;
 	background: none;
 	float: right;
+	display: none;
 }
 .ledger__form {
 	padding: 0.5em;
@@ -51,6 +52,7 @@ body {
 }
 .cost {
 	width: 40%;
+	text-align: right;
 }
 .ledger__add {
 	width: 5%;
@@ -70,16 +72,21 @@ body {
 }
 </style>
 
+<div ng-app ng-controller="Ledger">
 <div class="ledger">
 	<h1>Ledger</h1>
 
-	<div class="ledger__row">
-		<input type="text" class="ledger__form item" placeholder="item">
-		<input type="text" class="ledger__form cost" placeholder="cost">
-		<!--<button class="ledger__menu">?</button>-->
+	<div class="ledger__row" ng-repeat="row in inventory track by $index">
+		<form ng-submit="addCost()">
+		<input type="text" class="ledger__form item" placeholder="item" ng-model="row.item">
+		<input type="text" class="ledger__form cost" placeholder="cost" ng-model="row.cost">
+		<button class="ledger__menu">?</button>
+		</form>
 	</div>
 	<footer class="ledger__total">
-		<h3 class="total__count item">Items: 0</h3>
-		<h3 class="total__count cost">Total: $0</h3>
+		<h3 class="total__count item">Items: {{inventory.length}}</h3>
+		<h3 class="total__count cost">Total: ${{costs()}}</h3>
 	</footer>
 </div>
+</div>
+{% endraw %}
