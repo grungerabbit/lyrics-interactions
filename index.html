@@ -13,7 +13,7 @@ title: UIUIU.me - laboratory of Cheryl Wu
 {% for project in site.projects %}
 {% if post.reference == project.reference %}
 
-<div class="project-overview{% if post.featured == true %} featured{% endif %}" {% if post.image %}style="background: url(/lib/img/{{post.image}})"{% endif %}>
+<div class="b-lazy project-overview{% if post.featured == true %} featured{% endif %}" {% if post.image %}data-src="/lib/img/{{post.image}}"{% endif %}>
 <a href="{{project.url}}">
 		<h2 class="project__name">{{project.title}}</h2>
 		
@@ -58,7 +58,7 @@ title: UIUIU.me - laboratory of Cheryl Wu
 					{% for project in site.projects %}
 					{% if post.reference == project.reference %}
 						<a href="{{project.url}}">
-							{% if post.image %}<img src="/lib/img/{{post.image}}">
+							{% if post.image %}<img src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== class="b-lazy" data-src="/lib/img/{{post.image}}">
 							{% else %}
 							<p>see project</p>
 							{% endif %}
