@@ -12,7 +12,17 @@
 		
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2" />
 		<script src="/lib/js/libs/jquery.js"></script>
-		<script src="/lib/js/libs/jquery.fittext.js"></script>
+		<script src="/lib/js/libs/blazy.min.js"></script>
+
+		<script>
+		// image lazy loader
+		$(document).ready(function() {
+			var bLazy = new Blazy();
+			$(window).resize(function() {
+				bLazy.revalidate();
+			});
+		});
+		</script>
     </head>
     <body>
 		
