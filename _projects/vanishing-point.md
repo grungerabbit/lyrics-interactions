@@ -110,6 +110,18 @@ body {
 	float: right;
 	margin-top: 1em;
 }
+.prism__dimensions .vp__button {
+	display: none;
+}
+.prism__dimensions td {
+	position: relative;
+}
+.prism__dimensions tr:hover .vp__button {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 </style>
 
 <div ng-app="vanish" ng-controller="vanishingSettings">
@@ -194,7 +206,7 @@ body {
 		</section>
 		
 	<section class="vp__control-style">
-		<h3>Polyhedra</h3>
+		<h3>Configure Prisms</h3>
 		<select ng-model="dataset" ng-options="preset.set as preset.name for preset in presets"></select>
 		
 		<table class="vp__config-table prism__dimensions">
@@ -223,12 +235,13 @@ body {
 					</td>
 					<td>
 						<input type="text" ng-model="prism.seedY" />
+						<button class="vp__button" ng-click="removePrism($index)">X</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</section>
-		
+		<button ng-click="addPrism()" class="vp__button">Add prism</button>
 		<button ng-click="redraw()" class="vp__button vp__button--redraw">Redraw</button>
 	</div>
 </div>
