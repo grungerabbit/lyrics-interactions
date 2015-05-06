@@ -5,9 +5,9 @@ subtitle: 3-point perspective
 layout: post
 featured: true
 image: vp.png
-version: 1.1.0
+version: 1.2.0
 status: In active development.
-lastmod: 10/11/2014
+lastmod: 5/5/2015
 description: Generate a 2D line drawing of a 3D prism in three-point graphical perspective. With user defined initial locations and dimensions, the program calculates a horizon line, vertices, and guide lines.
 todo: 
 - Build hatching
@@ -57,3 +57,10 @@ Lucky for me, the internet has this forgotten information! Helpful posts:
 * [Point-slope](http://www.purplemath.com/modules/strtlneq2.htm)
 * [Endpoint of a line knowing slope, start and distance](http://math.stackexchange.com/questions/9365/endpoint-of-a-line-knowing-slope-start-and-distance)
 
+### Changelog
+
+- 5/5/2015: v. 1.2.0 - Control panel improvements, horizon/vanishing points config
+- 10/11/2014: v. 1.1.0 - Selecting presets and control panel
+- 8/24/2014: Scanlines
+- 7/26/2014: Major breakthrough in calcuating
+- 7/2/2014: First commits
