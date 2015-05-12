@@ -66,14 +66,23 @@ body {
 	top: 0;
 	padding: 50px 25px;
 	right: 0;
-	width: 50%;
-	background-color: rgba(252,251,247,.9);
+	width: 40%;
+	opacity: 0.25;
+	background-color: rgba(252,251,247,.95);
+	transition: 0.25s opacity;
+}
+.vp__control-panel:hover {
+	opacity: 1;
 }
 .hide {
 	display: none;
 }
 .vp__control-style {
 	display: block;
+	margin-bottom: 1em;
+}
+.vp__group {
+	padding: 0.25em 0;
 }
 .vp__config-table {
 	border-collapse: collapse;
@@ -99,6 +108,13 @@ body {
 	font: 1em "WhitneyLight", helvetica, arial, sans-serif;
 	padding: 0.5em;
 	border: 1px solid #eee;
+	background-color: #eaeaea;
+	border-radius: 4px;
+	transition: background-color 0.25s;
+	cursor: pointer;
+}
+.vp__button:hover {
+	background-color: #f8d516;
 }
 .vp__setting {
 	background-color: white;
@@ -122,6 +138,11 @@ body {
 	right: 0;
 	top: 0;
 }
+.prism__scroller {
+	height: 350px;
+	margin-top: 0.5em;
+	overflow-y: auto;
+}
 </style>
 
 <div ng-app="vanish" ng-controller="vanishingSettings">
@@ -130,63 +151,53 @@ body {
 	<div class="vp__control-panel" ng-class="{'hide': !openControl}">
 		<section class="vp__control-style">
 			<h3>Display Settings</h3>
-			<label class="vp__setting">
-			<input type="checkbox" ng-model="showVertices">
-			show vertices
-			</label>
-			
-			<label class="vp__setting">
-			<input type="checkbox" ng-model="showGrid">
-			show horizons
-			</label>
-			
-			<label class="vp__setting">
-			<input type="checkbox" ng-model="showSightlines">
 
-			show sightlines
-			</label>
-			
-			<label class="vp__setting">
-			<input type="checkbox" ng-model="showEdges">
-			show edges
-			</label>
-			
-			<label class="vp__setting">
-			<input type="checkbox" ng-model="scanlines">
-			show scanlines
-			</label>
+			<div class="vp__group">
+				<span class="vp__group-label">canvas</span>
+				<label class="vp__setting">
+				<input type="checkbox" ng-model="showVertices">
+				show vertices
+				</label>
+				
+				<label class="vp__setting">
+				<input type="checkbox" ng-model="showGrid">
+				show horizon
+				</label>
+				
+				<label class="vp__setting">
+				<input type="checkbox" ng-model="showSightlines">
 
-			<label class="vp__setting">
-			<input type="checkbox" ng-model="scanlineUniform">
-			uniform scanline
-			</label>
+				show sightlines
+				</label>
+			</div>
+			<div class="vp__group">
+				<span class="vp__group-label">prism</span>
+				<label class="vp__setting">
+				<input type="checkbox" ng-model="showEdges">
+				show edges
+				</label>
+				
+				<label class="vp__setting">
+				<input type="checkbox" ng-model="scanlines">
+				show scanlines
+				</label>
+
+				<label class="vp__setting">
+				<input type="checkbox" ng-model="scanlineUniform">
+				uniform scanline
+				</label>
+			</div>
 			
 			<!-- <button class="vp__button" ng-click="deselectAll()">Deselect All</button> -->
 		</section>
 		
 		<section class="vp__control-style">
-<!-- 		
-			<label></label>
-			<input ng-model="horizon">
-
-			<label>vpX1</label>
-			<input ng-model="vpX1">
-
-			<label>vpX2</label>
-			<input ng-model="vpX2">
-
-			<label>vpX3</label>
-			<input ng-model="vpX3">
-
-			<label>vpY3</label>
-			<input ng-model="vpY3"> -->
-
 			<h3>Horizon and Vanishing Points</h3>
 
 			<table class="vp__config-table point__definitions">
 				<thead>
 					<tr>
-						<th>Horizon (Y1 and Y2)</td>
+						<th>vpY1 + vpY2</td>
 						<th>vpX1</td>
 						<th>vpX2</td>
 						<th>vpX3</td>
@@ -207,39 +218,41 @@ body {
 		
 	<section class="vp__control-style">
 		<h3>Configure Prisms</h3>
-		<select ng-model="dataset" ng-options="preset.set as preset.name for preset in presets"></select>
+		<span class="vp__group-label">presets</span> <select ng-model="dataset" ng-options="preset.set as preset.name for preset in presets"></select>
 		
-		<table class="vp__config-table prism__dimensions">
-			<thead>
-				<tr>
-					<th>Width (rel)</td>
-					<th>Height (rel)</td>
-					<th>Depth (rel)</td>
-					<th>Seed X (abs)</td>
-					<th>Seed Y (abs)</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="prism in dataset">
-					<td>
-						<input type="text" ng-model="prism.width" />
-					</td>
-					<td>
-						<input type="text" ng-model="prism.height" />
-					</td>
-					<td>
-						<input type="text" ng-model="prism.depth" />
-					</td>
-					<td>
-						<input type="text" ng-model="prism.seedX" />
-					</td>
-					<td>
-						<input type="text" ng-model="prism.seedY" />
-						<button class="vp__button" ng-click="removePrism($index)">X</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="prism__scroller">
+			<table class="vp__config-table prism__dimensions">
+				<thead>
+					<tr>
+						<th>Width (rel)</th>
+						<th>Height (rel)</th>
+						<th>Depth (rel)</th>
+						<th>Seed X (abs)</th>
+						<th>Seed Y (abs)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="prism in dataset">
+						<td>
+							<input type="text" ng-model="prism.width" />
+						</td>
+						<td>
+							<input type="text" ng-model="prism.height" />
+						</td>
+						<td>
+							<input type="text" ng-model="prism.depth" />
+						</td>
+						<td>
+							<input type="text" ng-model="prism.seedX" />
+						</td>
+						<td>
+							<input type="text" ng-model="prism.seedY" />
+							<button class="vp__button" ng-click="removePrism($index)">X</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</section>
 		<button ng-click="addPrism()" class="vp__button">Add prism</button>
 		<button ng-click="redraw()" class="vp__button vp__button--redraw">Redraw</button>
