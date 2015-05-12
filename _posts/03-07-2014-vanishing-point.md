@@ -5,14 +5,17 @@ subtitle: 3-point perspective
 layout: post
 featured: true
 image: vp.png
-version: 1.1.0
+version: 1.2.3
 status: In active development.
-lastmod: 10/11/2014
+lastmod: 5/12/2015
 description: Generate a 2D line drawing of a 3D prism in three-point graphical perspective. With user defined initial locations and dimensions, the program calculates a horizon line, vertices, and guide lines.
 todo: 
 - Build hatching
-- Control Panel
 - Draggable?
+- Click to plot
+- Proper Angular structure for project
+- Keyboard shortcuts for control panel
+- Auto redraw
 annotations:
 - Not a properly "3D" object. It's an illusion, Michael
 - AKA height, width, depth
@@ -22,7 +25,7 @@ annotations:
 - Those word problems with the building and angle of the sun did not seem real enough to count as practical applications.
 ---
 
-Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space.<sup></sup> It is built in Javascript using the [Raphael.js](http://raphaeljs.com/) SVG library. As of version 1.0.0, you can:
+Vanishing Point is a 3-point perspective viewer that allows you to plot and calculate 3D objects in 2D space.<sup></sup> It is built in Javascript using the [Raphael.js](http://raphaeljs.com/) SVG library. As of version 1.2.1, you can:
 
 * Draw many basic rectangular prisms in perspective
 * Draw dashed guidelines from vanishing points to vertices
@@ -32,8 +35,10 @@ Vanishing Point is a 3-point perspective viewer that allows you to plot and calc
 	* Use distances from the seed point<sup></sup> to draw the 3 next closest vertices
 	* Use vertices 2-4 and the vanishing points to define the last 4 vertices
 	* Draw solid edges of the prism
+* Choose from preset prisms
+* Add and remove prisms (known bug: moving X or Y seed values will explode the prism)
 
-I hope to next add a visual treatment which simulates hatching lines leading to the vanishing points. I may later build a control panel<sup></sup> like in the [Wang Tiles](/projects/wang-tiles.html) project I made earlier.
+<strike>I hope to next add a visual treatment which simulates hatching lines leading to the vanishing points. I may later build a control panel<sup></sup> like in the [Wang Tiles](/projects/wang-tiles.html) project I made earlier.</strike>
 
 ###Why
 
@@ -57,3 +62,11 @@ Lucky for me, the internet has this forgotten information! Helpful posts:
 * [Point-slope](http://www.purplemath.com/modules/strtlneq2.htm)
 * [Endpoint of a line knowing slope, start and distance](http://math.stackexchange.com/questions/9365/endpoint-of-a-line-knowing-slope-start-and-distance)
 
+### Changelog
+
+- 5/12/2015: v. 1.2.3 - Fix parse bug, control panel styling
+- 5/5/2015: v. 1.2.0 - Control panel improvements, horizon/vanishing points config
+- 10/11/2014: v. 1.1.0 - Selecting presets and control panel
+- 8/24/2014: Scanlines
+- 7/26/2014: Major breakthrough in calcuating
+- 7/2/2014: First commits
