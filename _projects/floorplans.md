@@ -16,6 +16,19 @@ body {
 circle {
 	cursor: help;
 }
+#selectedLayout {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 100;
+}
 </style>
+
+<div ng-app="plans" ng-controller="planSettings">
+
+
+<select ng-model="selectedFloorplan" ng-options="name for (name, value) in layouts" id="selectedLayout"></select>
+
+</div>
 
 {% endraw %}
