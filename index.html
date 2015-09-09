@@ -13,17 +13,17 @@ title: UIUIU.me - laboratory of Cheryl Wu
 {% for project in site.projects %}
 {% if post.reference == project.reference %}
 
-<div class="b-lazy project-overview{% if post.featured == true %} featured{% endif %}" {% if post.image %}data-src="/lib/img/{{post.image}}"{% endif %}>
-<a href="{{project.url}}">
+<div class="b-lazy project-overview{% if post.featured == true %} featured{% elsif post.progress == true %} in-progress{% endif %}" {% if post.image %}data-src="/lib/img/{{post.image}}"{% endif %}>
+<a href="{% if post.progress == true %}{{post.url}}{% else %}{{project.url}}{% endif %}">
 		<h2 class="project__name">{{project.title}}</h2>
-		
+		{% if post.progress == true %}<p><small>coming soon</small></p>{% endif %}
 		<!--<h5>{{post.category}}</h5>-->
 			
 			
 		<div class="project-overview--description">
 			<h2 class="project__name">{{project.title}}</h2>
 			<p>{{project.subtitle}}</p>
-			<p><small>current {{post.version}}</small></p>
+			<p><small>{% if post.progress == true %}click for docs{% else %}current {{post.version}}{% endif %}</small></p>
 					
 			<ul class="project-overview__libraries">
 				{% for customJS in project.customJS %}
