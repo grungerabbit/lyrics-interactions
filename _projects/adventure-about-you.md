@@ -1,7 +1,7 @@
 ---
 title: adventure about you
 reference: adventure
-subtitle: adventure about you color coordinator for hackNY Fall 2015 shirt
+subtitle: color coordinator for hackNY Fall 2015 shirt
 layout: project
 customJS:
 - lib: angular
@@ -62,7 +62,6 @@ textarea:focus {
 			<li>Ink Colors</li>
 			<li ng-repeat="colors in inkColors" class="color__chip" ng-style="{'background-color': colors.hex}" ng-click="chooseArt(colors)"></li>
 		</ul>
-		<p class="instructions">Instructions: Play with colors. If you find a good combo, copy and paste the text below into hackNY#hackathon-shirts for Emoji-Voting. Thank you!!! --Cheryl && Hanne</p>
 		<textarea class="aay__slack" rows="1">@here - {{base.hex}} (base - {{base.name}}) `&&` {{art.hex}} (ink - {{art.name}})</textarea>
 	</div>
 
